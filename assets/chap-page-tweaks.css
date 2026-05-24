@@ -1,70 +1,60 @@
 /* Chap's Corner internal page tweaks
    ----------------------------------
-   Page currently flows: header → big quote/bio card → small CTA → newsletter.
-   We want: header → CTA (lead) → quote/bio (supporting) → newsletter.
+   Goal: header -> CTA (lead) -> quote/bio (supporting) -> newsletter.
+   Approach: make <main> a flex column on this page, then reorder the
+   CTA and quote sections to swap their visual positions.
 
-   Approach: make <main> a flex column. Assign `order` only to the two
-   sections we want to swap. Every other child stays in source order via
-   their default order value (0). The CTA gets order 1, the quote gets
-   order 2. Everything else with order 0 sits above the CTA in source
-   order (which is just the header block above both), and everything
-   originally after the CTA (newsletter, etc.) — those have source order
-   that puts them after, but flex `order: 0` defaults them to BEFORE our
-   ordered items. So we also need to keep them after by giving them order 3.
-
-   Simpler: only set order on the two sections we're swapping, and let
-   the rest be order 0 — which keeps them ABOVE our ordered items. That
-   means newsletter/footer will float above the CTA. Not desirable.
-
-   Solution: detect every direct child by position and assign order so
-   the visual flow is: [original 1, 2 (CTA), 3 (quote), 4, 5...].
+   We narrow the scope by also requiring the page to contain the
+   Chap's Corner external link. That guarantees these rules only kick
+   in on the /chaps-corner internal page, not other routes.
 */
 
-main:has(section.bg-\[hsl\(0\,0\%\,6\%\)\].py-24:has(blockquote)) {
-  display: flex;
-  flex-direction: column;
+/* Apply only on pages that have the chap.roundrockfirefoundation.org
+   CTA — i.e. the Chap's Corner internal page. */
+body:has(a[href*="chap.roundrockfirefoundation.org"]) main {
+  display: flex !important;
+  flex-direction: column !important;
 }
 
-/* Default: keep everything in normal source order (use big numbers so
-   our two swapped items can fit in between). */
-main:has(section.bg-\[hsl\(0\,0\%\,6\%\)\].py-24:has(blockquote)) > * {
+/* Default order for any direct child of main on this page. Large so
+   our specific overrides below have plenty of room above. */
+body:has(a[href*="chap.roundrockfirefoundation.org"]) main > * {
   order: 10;
 }
-/* Header / title block — first thing in <main> — stays at the top. */
-main:has(section.bg-\[hsl\(0\,0\%\,6\%\)\].py-24:has(blockquote)) > *:first-child {
+
+/* Header / title block (first section in source order) stays first. */
+body:has(a[href*="chap.roundrockfirefoundation.org"]) main > *:first-child {
   order: 1;
 }
-/* CTA section — second in visual order. */
-main section.bg-\[hsl\(0\,0\%\,4\%\)\].py-24:has(a[href*="chap.roundrockfirefoundation.org"]) {
-  order: 2;
+
+/* CTA section: second on screen. */
+body:has(a[href*="chap.roundrockfirefoundation.org"]) main section:has(a[href*="chap.roundrockfirefoundation.org"]) {
+  order: 2 !important;
 }
-/* Quote/bio section — third in visual order, right after CTA. */
-main section.bg-\[hsl\(0\,0\%\,6\%\)\].py-24:has(blockquote) {
-  order: 3;
+
+/* Quote/bio section: third on screen. */
+body:has(a[href*="chap.roundrockfirefoundation.org"]) main section:has(blockquote) {
+  order: 3 !important;
 }
 
 /* CTA visual polish: gentle gold glow, prominent button. */
-section.bg-\[hsl\(0\,0\%\,4\%\)\].py-24:has(a[href*="chap.roundrockfirefoundation.org"]) {
+main section:has(a[href*="chap.roundrockfirefoundation.org"]) {
   padding-top: 3rem !important;
   padding-bottom: 4rem !important;
   background: radial-gradient(ellipse at center top,
               hsla(43, 75%, 55%, 0.06),
               hsl(0, 0%, 4%) 65%) !important;
 }
-section.bg-\[hsl\(0\,0\%\,4\%\)\].py-24:has(a[href*="chap.roundrockfirefoundation.org"]) a[href*="chap.roundrockfirefoundation.org"] {
+main section:has(a[href*="chap.roundrockfirefoundation.org"]) a[href*="chap.roundrockfirefoundation.org"] {
   padding: 1.25rem 2.5rem !important;
   font-size: 1.125rem !important;
   box-shadow: 0 12px 32px -8px hsla(43, 75%, 55%, 0.35);
   transform: scale(1.02);
 }
 
-/* Quote section: soften so it reads as supporting context. */
-section.bg-\[hsl\(0\,0\%\,6\%\)\].py-24:has(blockquote) {
+/* Quote section: soften so it reads as supporting context, not a
+   competing centerpiece. */
+main section:has(blockquote) {
   padding-top: 3rem !important;
   padding-bottom: 4rem !important;
-  background: transparent !important;
-}
-section.bg-\[hsl\(0\,0\%\,6\%\)\].py-24:has(blockquote) .bg-\[hsl\(0\,0\%\,10\%\)\] {
-  background: hsl(0, 0%, 7%) !important;
-  border-color: hsla(0, 0%, 100%, 0.04) !important;
 }
