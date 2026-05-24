@@ -54,44 +54,7 @@
 
       .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
 
-      /* HEADER */
-      header.topbar {
-        position: sticky;
-        top: 0;
-        z-index: 50;
-        background: hsla(0, 0%, 4%, 0.92);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border-bottom: 1px solid var(--border-soft);
-      }
-      .topbar-inner {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 18px 32px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 24px;
-      }
-      .brand {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        color: var(--text);
-        font-weight: 700;
-        font-size: 16px;
-        letter-spacing: 0.4px;
-      }
-      .brand img { height: 40px; width: 40px; }
-      .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
-      .brand-text strong { font-weight: 800; font-size: 14px; letter-spacing: 1.5px; }
-      .brand-text span { font-size: 11px; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin-top: 2px; }
-      .topbar-cta {
-        font-size: 14px;
-        font-weight: 500;
-        color: var(--text-muted);
-      }
-      .topbar-cta:hover { color: var(--gold); }
+      /* HEADER is shared from main site — styles defined inline below the </style> tag */
 
       /* HERO */
       .hero {
@@ -395,7 +358,6 @@
 
       @media (max-width: 720px) {
         .container { padding: 0 20px; }
-        .topbar-inner { padding: 14px 20px; }
         .hero { padding: 64px 0 40px; }
         section.band { padding: 56px 0; }
       }
@@ -403,18 +365,69 @@
   </head>
   <body>
 
-    <header class="topbar">
-      <div class="topbar-inner">
-        <a class="brand" href="/">
-          <img src="/images/rrff-icon-transparent.png" alt="Round Rock Fire Foundation" />
-          <span class="brand-text">
-            <strong>ROUND ROCK</strong>
-            <span>FIRE FOUNDATION</span>
-          </span>
-        </a>
-        <a class="topbar-cta" href="/">← Back to Home</a>
+    <!-- Shared site header — matches main React app's nav exactly -->
+    <style>
+      .rrff-nav { position: sticky; top: 0; left: 0; right: 0; z-index: 50;
+        background: hsla(0, 0%, 4%, 0.95); backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px); }
+      .rrff-nav-inner { max-width: 80rem; margin: 0 auto; padding: 0 1rem; }
+      @media (min-width: 640px) { .rrff-nav-inner { padding: 0 1.5rem; } }
+      @media (min-width: 1024px) { .rrff-nav-inner { padding: 0 2rem; } }
+      .rrff-nav-row { display: flex; align-items: center; justify-content: space-between; height: 4rem; }
+      @media (min-width: 1024px) { .rrff-nav-row { height: 5rem; } }
+      .rrff-brand { display: flex; flex-direction: column; line-height: 1.1; text-decoration: none; }
+      .rrff-brand-1 { font-size: 13px; font-weight: 700; letter-spacing: 0.05em; color: #fff; }
+      .rrff-brand-2 { font-size: 10px; letter-spacing: 0.25em; color: hsl(43, 75%, 55%); text-transform: uppercase; font-weight: 500; }
+      .rrff-nav-links { display: none; align-items: center; gap: 1.5rem; }
+      @media (min-width: 1024px) { .rrff-nav-links { display: flex; } }
+      .rrff-nav-links a { font-size: 14px; color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.18s; }
+      .rrff-nav-links a:hover, .rrff-nav-links a.is-active { color: hsl(43, 75%, 55%); }
+      .rrff-donate { background: hsl(43, 75%, 55%); color: hsl(220, 15%, 8%) !important;
+        padding: 0.5rem 1.25rem; border-radius: 9999px; font-size: 14px; font-weight: 600; transition: background 0.18s; }
+      .rrff-donate:hover { background: hsl(43, 75%, 65%); }
+      .rrff-menu-btn { display: block; background: none; border: none; color: #fff; padding: 0.5rem; cursor: pointer; }
+      @media (min-width: 1024px) { .rrff-menu-btn { display: none; } }
+      .rrff-menu-btn svg { width: 24px; height: 24px; }
+      .rrff-mobile-menu { display: none; flex-direction: column; padding: 0.5rem 0 1rem; border-top: 1px solid rgba(255,255,255,0.06); }
+      .rrff-mobile-menu.is-open { display: flex; }
+      @media (min-width: 1024px) { .rrff-mobile-menu.is-open { display: none; } }
+      .rrff-mobile-menu a { padding: 0.875rem 0; font-size: 16px; color: rgba(255,255,255,0.85); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.04); }
+      .rrff-mobile-menu a:hover { color: hsl(43, 75%, 55%); }
+      .rrff-mobile-menu a.rrff-donate { margin-top: 1rem; text-align: center; border-bottom: none; }
+    </style>
+    <nav class="rrff-nav" aria-label="Primary">
+      <div class="rrff-nav-inner">
+        <div class="rrff-nav-row">
+          <a class="rrff-brand" href="/" aria-label="Round Rock Fire Foundation home">
+            <span class="rrff-brand-1">ROUND ROCK</span>
+            <span class="rrff-brand-2">FIRE FOUNDATION</span>
+          </a>
+          <div class="rrff-nav-links">
+            <a href="/">Home</a>
+            <a href="/#/the-1884-fund">The 1884 Fund</a>
+            <a href="/#/#events">Events</a>
+            <a href="/#/history">History</a>
+            <a href="/#/press-room">Press Room</a>
+            <a href="/#/get-involved">Get Involved</a>
+            <a href="/#/chaps-corner">Chap's Corner</a>
+            <a class="rrff-donate" href="https://ctxcf.networkforgood.com/projects/252774-the-round-rock-fire-foundation" target="_blank" rel="noopener noreferrer">Donate</a>
+          </div>
+          <button class="rrff-menu-btn" type="button" aria-label="Open menu" onclick="document.getElementById('rrff-mobile-menu').classList.toggle('is-open')">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+          </button>
+        </div>
+        <div class="rrff-mobile-menu" id="rrff-mobile-menu">
+          <a href="/">Home</a>
+          <a href="/#/the-1884-fund">The 1884 Fund</a>
+          <a href="/#/#events">Events</a>
+          <a href="/#/history">History</a>
+          <a href="/#/press-room">Press Room</a>
+          <a href="/#/get-involved">Get Involved</a>
+          <a href="/#/chaps-corner">Chap's Corner</a>
+          <a class="rrff-donate" href="https://ctxcf.networkforgood.com/projects/252774-the-round-rock-fire-foundation" target="_blank" rel="noopener noreferrer">Donate</a>
+        </div>
       </div>
-    </header>
+    </nav>
 
     <main>
 
