@@ -83,3 +83,11 @@ body:has(a[href*="kxan.com"]) section.bg-white h3 {
   font-size: 1.125rem !important;
   line-height: 1.35 !important;
 }
+
+/* (8) Fix Diedra Brownell photo crop — image is a tall portrait being
+   center-cropped, which chops off the top of her face. Shift the focal
+   point upward so the eyes/smile are visible. */
+body:has(a[href*="kxan.com"]) img[src*="diedra-brownell"] {
+  object-position: 50% 18% !important;
+}
+
