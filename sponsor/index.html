@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Become a Sponsor — Round Rock Fire Foundation</title>
+    <meta name="description" content="Sponsor the Round Rock Fire Foundation. Three tiers — Firefighter, Lieutenant, Chief — support firefighter families through The 1884 Fund and signature events including Blazing Paddles and Foundation Night." />
+
+    <meta property="og:site_name" content="Round Rock Fire Foundation" />
+    <meta property="og:title" content="Become a Sponsor — Round Rock Fire Foundation" />
+    <meta property="og:description" content="Three sponsorship tiers that support Round Rock firefighters and their families through The 1884 Fund." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.roundrockfirefoundation.org/sponsor" />
+    <meta property="og:image" content="https://www.roundrockfirefoundation.org/images/rrff-logo-dark.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Become a Sponsor — Round Rock Fire Foundation" />
+    <meta name="twitter:description" content="Three sponsorship tiers that support Round Rock firefighters and their families." />
+    <meta name="twitter:image" content="https://www.roundrockfirefoundation.org/images/rrff-logo-dark.png" />
+
+    <link rel="icon" type="image/png" href="/images/rrff-icon-transparent.png" />
+    <link rel="canonical" href="https://www.roundrockfirefoundation.org/sponsor" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+
+    <style>
+      :root {
+        --bg: hsl(220, 35%, 12%);
+        --bg-elev: hsl(220, 30%, 15%);
+        --card: hsl(220, 25%, 17%);
+        --card-elev: hsl(220, 25%, 20%);
+        --text: hsl(40, 20%, 95%);
+        --text-muted: hsl(40, 10%, 70%);
+        --text-dim: hsl(40, 8%, 55%);
+        --gold: hsl(43, 75%, 55%);
+        --gold-hover: hsl(43, 75%, 65%);
+        --gold-soft: hsla(43, 75%, 55%, 0.12);
+        --border: hsl(220, 15%, 25%);
+        --border-soft: hsl(220, 15%, 22%);
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; scroll-behavior: smooth; }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: var(--gold); text-decoration: none; transition: color 0.18s; }
+      a:hover { color: var(--gold-hover); }
+
+      .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+
+      /* HEADER */
+      header.topbar {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: hsla(220, 35%, 12%, 0.92);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border-soft);
+      }
+      .topbar-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 18px 32px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--text);
+        font-weight: 700;
+        font-size: 16px;
+        letter-spacing: 0.4px;
+      }
+      .brand img { height: 40px; width: 40px; }
+      .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+      .brand-text strong { font-weight: 800; font-size: 14px; letter-spacing: 1.5px; }
+      .brand-text span { font-size: 11px; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin-top: 2px; }
+      .topbar-cta {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--text-muted);
+      }
+      .topbar-cta:hover { color: var(--gold); }
+
+      /* HERO */
+      .hero {
+        position: relative;
+        padding: 96px 0 64px;
+        background:
+          radial-gradient(ellipse at top right, hsla(43, 75%, 55%, 0.08), transparent 50%),
+          radial-gradient(ellipse at bottom left, hsla(0, 70%, 50%, 0.05), transparent 60%),
+          var(--bg);
+        overflow: hidden;
+      }
+      .hero-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 20px;
+      }
+      .hero-eyebrow .dot {
+        width: 6px; height: 6px; border-radius: 50%;
+        background: var(--gold);
+        box-shadow: 0 0 0 4px hsla(43, 75%, 55%, 0.18);
+      }
+      .hero h1 {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: clamp(44px, 7vw, 80px);
+        line-height: 1.02;
+        font-weight: 700;
+        margin: 0 0 28px;
+        letter-spacing: -1px;
+      }
+      .hero h1 em {
+        color: var(--gold);
+        font-style: normal;
+      }
+      .hero-lede {
+        font-size: clamp(17px, 1.5vw, 20px);
+        max-width: 720px;
+        color: var(--text-muted);
+        margin: 0 0 36px;
+      }
+      .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 20px;
+        max-width: 800px;
+        margin-top: 48px;
+      }
+      .hero-stat {
+        padding: 20px 24px;
+        background: var(--card);
+        border: 1px solid var(--border-soft);
+        border-radius: 12px;
+      }
+      .hero-stat .label {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--text-dim);
+        margin-bottom: 6px;
+      }
+      .hero-stat .value { font-weight: 600; color: var(--text); font-size: 15px; line-height: 1.35; }
+
+      /* SECTIONS */
+      section.band { padding: 80px 0; }
+      section.band-alt { background: var(--bg-elev); }
+      .section-head { margin-bottom: 48px; max-width: 720px; }
+      .section-kicker {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin: 0 0 12px;
+      }
+      .section-head h2 {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: clamp(32px, 4vw, 48px);
+        line-height: 1.1;
+        margin: 0 0 16px;
+        font-weight: 700;
+      }
+      .section-head p {
+        font-size: 17px;
+        color: var(--text-muted);
+        margin: 0;
+      }
+
+      /* SPONSOR TIERS */
+      .tier-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+      @media (max-width: 980px) {
+        .tier-grid { grid-template-columns: 1fr; }
+      }
+      .tier {
+        position: relative;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 36px 32px;
+        display: flex;
+        flex-direction: column;
+        transition: border-color 0.2s, transform 0.2s;
+      }
+      .tier:hover { border-color: var(--gold); transform: translateY(-4px); }
+      .tier-rank {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--text-dim);
+        margin: 0 0 12px;
+      }
+      .tier h3 {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 28px;
+        font-weight: 700;
+        margin: 0 0 4px;
+      }
+      .tier .availability {
+        font-size: 13px;
+        color: var(--text-dim);
+        margin: 0 0 24px;
+      }
+      .tier .availability-scarce {
+        color: var(--gold);
+        font-weight: 600;
+        letter-spacing: 0.2px;
+      }
+      .tier-price {
+        font-size: 44px;
+        font-weight: 800;
+        color: var(--gold);
+        line-height: 1;
+        margin: 0 0 24px;
+        font-family: 'Inter', sans-serif;
+      }
+      .tier-price small {
+        display: block;
+        font-size: 13px;
+        color: var(--text-dim);
+        font-weight: 500;
+        margin-top: 6px;
+      }
+      .tier-perks {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 28px;
+        flex: 1;
+      }
+      .tier-perks li {
+        position: relative;
+        padding: 10px 0 10px 28px;
+        font-size: 14.5px;
+        color: var(--text);
+        border-bottom: 1px solid var(--border-soft);
+      }
+      .tier-perks li:last-child { border-bottom: none; }
+      .tier-perks li::before {
+        content: "";
+        position: absolute;
+        left: 0; top: 16px;
+        width: 16px; height: 16px;
+        background:
+          radial-gradient(circle, var(--gold) 0%, var(--gold) 35%, transparent 38%);
+        mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 8l3 3 7-7'/%3E%3C/svg%3E") no-repeat center;
+        -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 8l3 3 7-7'/%3E%3C/svg%3E") no-repeat center;
+      }
+
+      /* Featured tier (Chief) */
+      .tier-featured {
+        background: linear-gradient(180deg, hsla(43, 75%, 55%, 0.08), var(--card) 40%);
+        border-color: var(--gold);
+      }
+      .tier-featured .ribbon {
+        position: absolute;
+        top: -1px; right: 24px;
+        background: var(--gold);
+        color: hsl(220, 35%, 12%);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        padding: 8px 14px;
+        border-radius: 0 0 8px 8px;
+      }
+
+      /* CTA BUTTONS */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 26px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 15px;
+        font-family: inherit;
+        cursor: pointer;
+        border: 1px solid transparent;
+        transition: all 0.18s ease;
+      }
+      .btn-primary {
+        background: var(--gold);
+        color: hsl(220, 35%, 12%);
+      }
+      .btn-primary:hover {
+        background: var(--gold-hover);
+        text-decoration: none;
+        transform: translateY(-1px);
+        box-shadow: 0 12px 28px -10px hsla(43, 75%, 55%, 0.5);
+      }
+      .btn-ghost {
+        background: transparent;
+        color: var(--text);
+        border-color: var(--border);
+      }
+      .btn-ghost:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+        text-decoration: none;
+      }
+      .btn-lg { padding: 16px 32px; font-size: 16px; }
+
+      .cta-row {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-top: 40px;
+      }
+
+      /* RAFFLE / EXTRAS */
+      .info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+      }
+      .info-card {
+        padding: 28px;
+        background: var(--card);
+        border: 1px solid var(--border-soft);
+        border-radius: 14px;
+      }
+      .info-card .icon {
+        font-size: 24px;
+        width: 44px; height: 44px;
+        display: inline-flex; align-items: center; justify-content: center;
+        background: var(--gold-soft);
+        border-radius: 10px;
+        margin-bottom: 16px;
+      }
+      .info-card h3 {
+        font-size: 18px;
+        font-weight: 700;
+        margin: 0 0 8px;
+      }
+      .info-card p {
+        font-size: 14.5px;
+        color: var(--text-muted);
+        margin: 0;
+        line-height: 1.55;
+      }
+
+      /* CLOSING CTA */
+      .closer {
+        background: linear-gradient(135deg, hsla(43, 75%, 55%, 0.1), transparent 70%), var(--bg-elev);
+        border-top: 1px solid var(--border-soft);
+        border-bottom: 1px solid var(--border-soft);
+        padding: 72px 0;
+        text-align: center;
+      }
+      .closer h2 {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: clamp(32px, 4vw, 44px);
+        margin: 0 0 16px;
+      }
+      .closer p {
+        font-size: 17px;
+        color: var(--text-muted);
+        max-width: 580px;
+        margin: 0 auto 36px;
+      }
+      .closer .cta-row { justify-content: center; }
+
+      /* FOOTER */
+      footer.site-footer {
+        padding: 40px 32px;
+        text-align: center;
+        color: var(--text-dim);
+        font-size: 14px;
+        border-top: 1px solid var(--border-soft);
+      }
+      footer a { color: var(--text-muted); }
+
+      @media (max-width: 720px) {
+        .container { padding: 0 20px; }
+        .topbar-inner { padding: 14px 20px; }
+        .hero { padding: 64px 0 40px; }
+        section.band { padding: 56px 0; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="/">
+          <img src="/images/rrff-icon-transparent.png" alt="Round Rock Fire Foundation" />
+          <span class="brand-text">
+            <strong>ROUND ROCK</strong>
+            <span>FIRE FOUNDATION</span>
+          </span>
+        </a>
+        <a class="topbar-cta" href="/">← Back to Home</a>
+      </div>
+    </header>
+
+    <main>
+
+      <section class="hero">
+        <div class="container">
+          <p class="hero-eyebrow"><span class="dot"></span> Become a Sponsor</p>
+          <h1>Stand with <em>the crew</em> that<br/>stands with us.</h1>
+          <p class="hero-lede">
+            Local businesses make Round Rock Fire Foundation events possible. Sponsorship dollars fuel The 1884 Fund — the emergency-relief, wellness, and family-support work that quietly catches firefighter families when they need it most.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary btn-lg" href="#tiers">See Sponsor Levels</a>
+            <a class="btn btn-ghost btn-lg" href="mailto:info@roundrockfirefoundation.org?subject=RRFF%20Sponsorship%20Inquiry&body=Hi%20RRFF%20team%2C%0A%0AI%E2%80%99d%20like%20to%20learn%20more%20about%20sponsoring%20an%20RRFF%20event.%20Please%20send%20a%20sponsor%20packet%20at%20your%20convenience.%0A%0AThanks%2C">Email RRFF</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <div class="label">Signature Events</div>
+              <div class="value">Foundation Night<br/>Blazing Paddles<br/>Spouse Conference</div>
+            </div>
+            <div class="hero-stat">
+              <div class="label">Sponsorship Goes To</div>
+              <div class="value">Round Rock<br/>firefighter families</div>
+            </div>
+            <div class="hero-stat">
+              <div class="label">Tax Status</div>
+              <div class="value">Nonprofit fundraising<br/>through RRFF programs</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="band" id="tiers">
+        <div class="container">
+          <div class="section-head">
+            <p class="section-kicker">Sponsor Levels</p>
+            <h2>Power the day. Stand with the crew.</h2>
+            <p>Three tiers that match how your business shows up. Sponsorships are confirmed event-by-event — your recognition is tailored to the specific event you support.</p>
+          </div>
+
+          <div class="tier-grid">
+
+            <article class="tier">
+              <p class="tier-rank">Tier 1 · Entry</p>
+              <h3>Firefighter</h3>
+              <p class="availability">Open count — multiple Firefighter sponsors welcome</p>
+              <p class="tier-price">$1,000<small>per event</small></p>
+              <ul class="tier-perks">
+                <li>Logo on event website</li>
+                <li>Logo on shared event signage</li>
+                <li>Featured in RRFF social media updates during the event</li>
+                <li>Emcee recognition during program announcements</li>
+                <li>Event program listing</li>
+              </ul>
+            </article>
+
+            <article class="tier">
+              <p class="tier-rank">Tier 2 · Mid</p>
+              <h3>Lieutenant</h3>
+              <p class="availability">Open count — multiple Lieutenant sponsors welcome</p>
+              <p class="tier-price">$2,500<small>per event</small></p>
+              <ul class="tier-perks">
+                <li>Everything in Firefighter</li>
+                <li>Two social media mentions — one before, one during the event</li>
+                <li>Logo on printed materials and t-shirt back</li>
+                <li>Featured in official event program and donor thank-you communications</li>
+                <li>Branded recognition on event-day signage</li>
+              </ul>
+            </article>
+
+            <article class="tier tier-featured">
+              <span class="ribbon">3 Only</span>
+              <p class="tier-rank">Tier 3 · Presenting</p>
+              <h3>Chief</h3>
+              <p class="availability availability-scarce">Only 3 Chief sponsorships per event · Lock by T-8 weeks</p>
+              <p class="tier-price">$5,000<small>per event</small></p>
+              <ul class="tier-perks">
+                <li>Everything in Lieutenant</li>
+                <li>Presenting sponsor recognition across event branding</li>
+                <li>Premier logo placement on signage, printed materials, digital assets, and website</li>
+                <li>Full social media campaign — before, during, and after the event</li>
+                <li>Multiple emcee spotlights throughout the program</li>
+                <li>Business name on the front of limited-edition event t-shirts</li>
+                <li>Opportunity to provide branded items or promo materials in giveaways</li>
+              </ul>
+            </article>
+
+          </div>
+
+          <div class="cta-row">
+            <a class="btn btn-primary btn-lg" href="mailto:info@roundrockfirefoundation.org?subject=RRFF%20Sponsorship%20Commitment&body=Hi%20RRFF%20team%2C%0A%0AI%E2%80%99d%20like%20to%20sponsor%20an%20RRFF%20event.%0A%0ABusiness%20name%3A%0AContact%20name%3A%0APhone%3A%0AEvent(s)%20of%20interest%3A%20%5BFoundation%20Night%20%2F%20Blazing%20Paddles%20%2F%20Spouse%20Conference%20%2F%20Multiple%5D%0ATier%3A%20%5BFirefighter%20%2F%20Lieutenant%20%2F%20Chief%5D%0A%0AThanks%2C">Commit to a Sponsorship</a>
+            <a class="btn btn-ghost btn-lg" href="mailto:info@roundrockfirefoundation.org?subject=RRFF%20Sponsor%20Packet%20Request&body=Hi%20RRFF%20team%2C%0A%0APlease%20send%20me%20the%20RRFF%20sponsor%20packet.%0A%0AThanks%2C">Request the Sponsor Packet</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="band band-alt" id="raffle">
+        <div class="container">
+          <div class="section-head">
+            <p class="section-kicker">Beyond Cash Sponsorship</p>
+            <h2>Raffle &amp; in-kind donations are welcome anytime.</h2>
+            <p>Not every business gives at a tier level — and not every contribution needs to be a check. Raffle prizes and in-kind donations help fill the gap and create memorable event moments.</p>
+          </div>
+
+          <div class="info-grid">
+            <article class="info-card">
+              <div class="icon">🎁</div>
+              <h3>Donate a Raffle Prize</h3>
+              <p>Sports gear, electronics, experiences, outdoor items, dining, signed memorabilia, gift baskets, and local business packages all welcome.</p>
+            </article>
+            <article class="info-card">
+              <div class="icon">🤝</div>
+              <h3>Pair With Sponsorship</h3>
+              <p>Prize donors can also become tier sponsors if they want additional recognition and visibility with players and fire families.</p>
+            </article>
+            <article class="info-card">
+              <div class="icon">⏱</div>
+              <h3>Donate Anytime</h3>
+              <p>Raffle and in-kind donations are accepted year-round — not just close to event day. Reach out and we'll coordinate pickup or delivery.</p>
+            </article>
+          </div>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="mailto:info@roundrockfirefoundation.org?subject=RRFF%20Raffle%20%2F%20In-Kind%20Donation&body=Hi%20RRFF%20team%2C%0A%0AI%E2%80%99d%20like%20to%20donate%20or%20discuss%20a%20raffle%2Fin-kind%20gift%20for%20an%20RRFF%20event.%0A%0AItem%2Fgift%20idea%3A%0ADonor%20name%3A%0AContact%3A%0A%0AThanks%2C">Donate a Prize or In-Kind Gift</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="closer">
+        <div class="container">
+          <h2>Ready to sponsor?</h2>
+          <p>Tell us which event, which tier, and we'll send the sponsor packet within one business day. Most agreements are finalized in a single email exchange.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary btn-lg" href="mailto:info@roundrockfirefoundation.org?subject=RRFF%20Sponsorship%20Commitment&body=Hi%20RRFF%20team%2C%0A%0AI%E2%80%99d%20like%20to%20sponsor%20an%20RRFF%20event.%0A%0ABusiness%20name%3A%0AContact%20name%3A%0APhone%3A%0AEvent(s)%20of%20interest%3A%20%5BFoundation%20Night%20%2F%20Blazing%20Paddles%20%2F%20Spouse%20Conference%20%2F%20Multiple%5D%0ATier%3A%20%5BFirefighter%20%2F%20Lieutenant%20%2F%20Chief%5D%0A%0AThanks%2C">Email RRFF Now</a>
+            <a class="btn btn-ghost btn-lg" href="/">Back to Foundation Home</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      © Round Rock Fire Foundation · <a href="/">Home</a> · <a href="mailto:info@roundrockfirefoundation.org">info@roundrockfirefoundation.org</a> · (512) 967-1007
+    </footer>
+
+  </body>
+</html>
