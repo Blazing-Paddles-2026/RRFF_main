@@ -1,25 +1,20 @@
 /* Get Involved page restructure
    -----------------------------
-   The page used to have a top set of 3 boxes (Donate / Sponsor / Legacy)
-   followed by huge inline forms for sponsor inquiry and volunteer signup.
-   The forms walled off everything below — visitors hit the boxes and stopped.
-
-   With the JS bundle patched so the boxes now link out to dedicated pages
-   (/sponsor, /legacy-circle, /volunteer), we hide the inline forms entirely.
-   The "Ways to Participate" section (event list) stays so the page still
-   leads visitors deeper.
-
-   We narrow scope to the Get Involved page by requiring the page to contain
-   a "Volunteer With Us" section heading. (Plus an extra guard on links to
-   /volunteer to make sure we're on the updated page.)
+   Hide inline Sponsor and Volunteer forms now that boxes link to
+   dedicated /sponsor and /volunteer pages.
+   Page is identified by presence of a link to /volunteer.
 */
 
-/* Hide the Sponsor Inquiry form section */
-body:has(a[href="/volunteer"]) main section:has(form[action*="formspree.io/f/mjgzoaln"]) {
+/* Hide any section that contains the inline Sponsor inquiry form */
+body:has(a[href="/volunteer"]) main section:has(form[action*="mjgzoaln"]) {
   display: none !important;
 }
 
-/* Hide the Volunteer form section (the long signup form) */
-body:has(a[href="/volunteer"]) main section:has(form[action*="formspree.io/f/xkoezqpp"]:has(textarea[name="skills"])) {
+/* Hide any section that contains the inline Volunteer signup form.
+   Note: the same Formspree endpoint (xkoezqpp) is also used by a tiny
+   notify-me email form on other pages, but THAT form lives inside an
+   event card, not its own <section>. We target via 'textarea[name=skills]'
+   which only exists on the long volunteer form. */
+body:has(a[href="/volunteer"]) main section:has(textarea[name="skills"]) {
   display: none !important;
 }
