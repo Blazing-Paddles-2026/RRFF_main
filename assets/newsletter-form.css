@@ -1,14 +1,18 @@
 /* Newsletter signup form styling
    ==============================
    Matches the site's dark + gold aesthetic. Sits inside the existing
-   bg-[hsl(0,0%,6%)] section background that we're replacing into. */
+   bg-[hsl(0,0%,6%)] section background that we're replacing into.
+
+   Layout: stacked labeled fields + full-width gold button.
+   Designed to be obvious about what each section is — no crammed
+   single-pill layout that breaks on autofill / narrow widths. */
 
 .rrff-newsletter {
   padding: 3.5rem 1.5rem;
   text-align: center;
 }
 .rrff-newsletter-inner {
-  max-width: 640px;
+  max-width: 520px;
   margin: 0 auto;
 }
 .rrff-newsletter-eyebrow {
@@ -38,54 +42,82 @@
 
 .rrff-newsletter-form {
   margin: 0 auto;
-  max-width: 540px;
-}
-.rrff-newsletter-fields {
+  max-width: 460px;
+  text-align: left;
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.rrff-newsletter-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.rrff-newsletter-field label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: hsl(40, 10%, 70%);
+  padding-left: 2px;
+}
+.rrff-newsletter-field input {
+  width: 100%;
   background: hsl(0, 0%, 9%);
-  border: 1px solid hsla(0, 0%, 100%, 0.08);
-  border-radius: 14px;
-  padding: 10px;
-  transition: border-color 0.2s;
-}
-.rrff-newsletter-fields:focus-within {
-  border-color: hsla(43, 75%, 55%, 0.45);
-}
-.rrff-newsletter-fields input {
-  flex: 1 1 180px;
-  background: transparent;
-  border: 0;
-  outline: 0;
-  padding: 12px 14px;
+  border: 1px solid hsla(0, 0%, 100%, 0.12);
+  border-radius: 10px;
+  padding: 14px 16px;
   font-family: inherit;
   font-size: 15px;
   color: hsl(40, 20%, 95%);
+  transition: border-color 0.2s, background 0.2s;
+  box-sizing: border-box;
 }
-.rrff-newsletter-fields input::placeholder {
-  color: hsl(40, 8%, 55%);
+.rrff-newsletter-field input::placeholder {
+  color: hsl(40, 8%, 50%);
 }
-.rrff-newsletter-fields input:focus { outline: 0; }
+.rrff-newsletter-field input:hover {
+  border-color: hsla(0, 0%, 100%, 0.22);
+}
+.rrff-newsletter-field input:focus {
+  outline: 0;
+  border-color: hsl(43, 75%, 55%);
+  background: hsl(0, 0%, 11%);
+}
 
-.rrff-newsletter-fields button {
+/* Override Chrome / Safari autofill yellow background */
+.rrff-newsletter-field input:-webkit-autofill,
+.rrff-newsletter-field input:-webkit-autofill:hover,
+.rrff-newsletter-field input:-webkit-autofill:focus,
+.rrff-newsletter-field input:-webkit-autofill:active {
+  -webkit-text-fill-color: hsl(40, 20%, 95%) !important;
+  -webkit-box-shadow: 0 0 0 100px hsl(0, 0%, 9%) inset !important;
+  box-shadow: 0 0 0 100px hsl(0, 0%, 9%) inset !important;
+  caret-color: hsl(40, 20%, 95%);
+  transition: background-color 9999s ease-out 0s;
+}
+
+.rrff-newsletter-submit {
   background: hsl(43, 75%, 55%);
   color: hsl(0, 0%, 4%);
   border: 0;
   border-radius: 9999px;
-  padding: 12px 24px;
+  padding: 15px 24px;
   font-family: inherit;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
+  letter-spacing: 0.3px;
   cursor: pointer;
   transition: background 0.18s, transform 0.18s;
-  white-space: nowrap;
+  width: 100%;
+  margin-top: 4px;
 }
-.rrff-newsletter-fields button:hover {
-  background: hsl(43, 75%, 65%);
+.rrff-newsletter-submit:hover {
+  background: hsl(43, 80%, 62%);
   transform: translateY(-1px);
 }
-.rrff-newsletter-fields button:active {
+.rrff-newsletter-submit:active {
   transform: translateY(0);
 }
 
@@ -94,16 +126,5 @@
   color: hsl(40, 8%, 55%);
   margin: 18px 0 0;
   letter-spacing: 0.2px;
-}
-
-/* Mobile layout: stack the fields vertically */
-@media (max-width: 560px) {
-  .rrff-newsletter-fields {
-    flex-direction: column;
-    padding: 12px;
-  }
-  .rrff-newsletter-fields button {
-    width: 100%;
-    padding: 14px 24px;
-  }
+  text-align: center;
 }

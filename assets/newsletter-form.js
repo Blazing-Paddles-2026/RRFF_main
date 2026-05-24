@@ -22,11 +22,15 @@
         <p class="rrff-newsletter-lede">Stories, events, and one annual ask — sent only when there is something worth saying.</p>
 
         <form class="rrff-newsletter-form" action="${MAILCHIMP_ACTION}" method="post" target="_blank" novalidate>
-          <div class="rrff-newsletter-fields">
-            <input type="text" name="FNAME" placeholder="First name (optional)" aria-label="First name" autocomplete="given-name" />
-            <input type="email" name="EMAIL" placeholder="Email address" aria-label="Email address" autocomplete="email" required />
-            <button type="submit">Subscribe</button>
+          <div class="rrff-newsletter-field">
+            <label for="rrff-fname">First name <span style="font-weight:400;text-transform:none;letter-spacing:0;opacity:0.65;">(optional)</span></label>
+            <input id="rrff-fname" type="text" name="FNAME" placeholder="Jane" autocomplete="given-name" />
           </div>
+          <div class="rrff-newsletter-field">
+            <label for="rrff-email">Email address</label>
+            <input id="rrff-email" type="email" name="EMAIL" placeholder="you@example.com" autocomplete="email" required />
+          </div>
+          <button type="submit" class="rrff-newsletter-submit">Subscribe</button>
           <!-- Honeypot field for bots. Hidden from real users. -->
           <div aria-hidden="true" style="position:absolute;left:-5000px;">
             <input type="text" name="${HONEYPOT_NAME}" tabindex="-1" value="" autocomplete="off" />
