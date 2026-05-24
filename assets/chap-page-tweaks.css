@@ -1,36 +1,70 @@
 /* Chap's Corner internal page tweaks
    ----------------------------------
-   The original page led with a large quote card + biography section that
-   visually dominated everything, while the actual "Visit the Blog" CTA
-   was buried at the bottom. The destination (John's Squarespace page)
-   already shows the quote, bio, and photo in his own design — repeating
-   it here is noise on the path to the click.
+   Page currently flows: header → big quote/bio card → small CTA → newsletter.
+   We want: header → CTA (lead) → quote/bio (supporting) → newsletter.
 
-   This stylesheet:
-     1. Hides the quote/bio card section.
-     2. Elevates the blog CTA section into the hero spot.
+   Approach: make <main> a flex column. Assign `order` only to the two
+   sections we want to swap. Every other child stays in source order via
+   their default order value (0). The CTA gets order 1, the quote gets
+   order 2. Everything else with order 0 sits above the CTA in source
+   order (which is just the header block above both), and everything
+   originally after the CTA (newsletter, etc.) — those have source order
+   that puts them after, but flex `order: 0` defaults them to BEFORE our
+   ordered items. So we also need to keep them after by giving them order 3.
+
+   Simpler: only set order on the two sections we're swapping, and let
+   the rest be order 0 — which keeps them ABOVE our ordered items. That
+   means newsletter/footer will float above the CTA. Not desirable.
+
+   Solution: detect every direct child by position and assign order so
+   the visual flow is: [original 1, 2 (CTA), 3 (quote), 4, 5...].
 */
 
-/* (1) Hide the quote + bio section.
-   Targeted by background colour + padding combo unique to that section
-   on the Chap's Corner page. */
-section.bg-\[hsl\(0\,0\%\,6\%\)\].py-24:has(blockquote) {
-  display: none !important;
+main:has(section.bg-\[hsl\(0\,0\%\,6\%\)\].py-24:has(blockquote)) {
+  display: flex;
+  flex-direction: column;
 }
 
-/* (2) Elevate the blog CTA into the hero spot. */
+/* Default: keep everything in normal source order (use big numbers so
+   our two swapped items can fit in between). */
+main:has(section.bg-\[hsl\(0\,0\%\,6\%\)\].py-24:has(blockquote)) > * {
+  order: 10;
+}
+/* Header / title block — first thing in <main> — stays at the top. */
+main:has(section.bg-\[hsl\(0\,0\%\,6\%\)\].py-24:has(blockquote)) > *:first-child {
+  order: 1;
+}
+/* CTA section — second in visual order. */
+main section.bg-\[hsl\(0\,0\%\,4\%\)\].py-24:has(a[href*="chap.roundrockfirefoundation.org"]) {
+  order: 2;
+}
+/* Quote/bio section — third in visual order, right after CTA. */
+main section.bg-\[hsl\(0\,0\%\,6\%\)\].py-24:has(blockquote) {
+  order: 3;
+}
+
+/* CTA visual polish: gentle gold glow, prominent button. */
 section.bg-\[hsl\(0\,0\%\,4\%\)\].py-24:has(a[href*="chap.roundrockfirefoundation.org"]) {
   padding-top: 3rem !important;
-  padding-bottom: 6rem !important;
+  padding-bottom: 4rem !important;
   background: radial-gradient(ellipse at center top,
               hsla(43, 75%, 55%, 0.06),
               hsl(0, 0%, 4%) 65%) !important;
 }
-
-/* Visually amplify the CTA button itself for clarity. */
 section.bg-\[hsl\(0\,0\%\,4\%\)\].py-24:has(a[href*="chap.roundrockfirefoundation.org"]) a[href*="chap.roundrockfirefoundation.org"] {
   padding: 1.25rem 2.5rem !important;
   font-size: 1.125rem !important;
   box-shadow: 0 12px 32px -8px hsla(43, 75%, 55%, 0.35);
   transform: scale(1.02);
+}
+
+/* Quote section: soften so it reads as supporting context. */
+section.bg-\[hsl\(0\,0\%\,6\%\)\].py-24:has(blockquote) {
+  padding-top: 3rem !important;
+  padding-bottom: 4rem !important;
+  background: transparent !important;
+}
+section.bg-\[hsl\(0\,0\%\,6\%\)\].py-24:has(blockquote) .bg-\[hsl\(0\,0\%\,10\%\)\] {
+  background: hsl(0, 0%, 7%) !important;
+  border-color: hsla(0, 0%, 100%, 0.04) !important;
 }
