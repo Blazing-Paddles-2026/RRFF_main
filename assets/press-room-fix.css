@@ -44,12 +44,14 @@ body:has(a[href*="kxan.com"]) section.bg-white [class*="text-[hsl(220,15%,50%)]"
   color: hsl(40, 8%, 55%) !important;
 }
 
-/* (4) Article cards: swap their light surfaces for dark, add subtle border */
-body:has(a[href*="kxan.com"]) section.bg-\[hsl\(40\,20\%\,94\%\)\] .bg-white,
-body:has(a[href*="kxan.com"]) section.bg-white .bg-\[hsl\(40\,15\%\,96\%\)\],
-body:has(a[href*="kxan.com"]) section.bg-\[hsl\(40\,20\%\,94\%\)\] .bg-\[hsl\(40\,15\%\,96\%\)\] {
+/* (4) Article cards: any white or near-white inner card on the press
+   page becomes a dark card with subtle border. Targets press-card,
+   .bg-white inside sections (not the section itself), and the cream
+   .bg-[hsl(40,15%,96%)] surface used inside the press release section. */
+body:has(a[href*="kxan.com"]) main .press-card,
+body:has(a[href*="kxan.com"]) main section :is(.bg-white, .bg-\[hsl\(40\,15\%\,96\%\)\]) {
   background: hsl(0, 0%, 9%) !important;
-  border: 1px solid hsla(0, 0%, 100%, 0.06) !important;
+  border-color: hsla(0, 0%, 100%, 0.08) !important;
 }
 
 /* (5) Compact press-card thumbnails (cap height so cards stay scannable) */
