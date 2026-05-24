@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Board Members — Round Rock Fire Foundation</title>
+<meta name="description" content="Meet the board of the Round Rock Fire Foundation — fire department leaders, community advocates, and dedicated volunteers." />
+<meta property="og:title" content="Board Members — Round Rock Fire Foundation" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.roundrockfirefoundation.org/board/" />
+<link rel="icon" type="image/png" href="/images/rrff-icon-transparent.png" />
+<link rel="canonical" href="https://www.roundrockfirefoundation.org/board/" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/page-shell.css" />
+<style>
+.board-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+@media (max-width: 1000px) { .board-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px)  { .board-grid { grid-template-columns: 1fr; } }
+.member-card {
+  background: var(--card); border: 1px solid var(--border-soft);
+  border-radius: 16px; overflow: hidden;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+.member-card:hover {
+  transform: translateY(-2px);
+  border-color: hsla(43, 75%, 55%, 0.35);
+  box-shadow: 0 18px 36px -20px hsla(0,0%,0%,0.6);
+}
+.member-photo {
+  position: relative; aspect-ratio: 4/5; overflow: hidden;
+  background: var(--bg-elev);
+}
+.member-photo img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: saturate(1.02);
+  transition: transform 0.4s ease;
+}
+.member-card:hover .member-photo img { transform: scale(1.03); }
+.member-photo::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 50%, hsla(0,0%,0%,0.55) 100%);
+  pointer-events: none;
+}
+.member-body { padding: 20px 22px 22px; }
+.member-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 21px; font-weight: 700; margin: 0 0 4px;
+  letter-spacing: -0.2px;
+}
+.member-role {
+  font-size: 13px; font-weight: 600; color: var(--gold);
+  letter-spacing: 0.6px; text-transform: uppercase; margin: 0 0 6px;
+}
+.member-affil {
+  font-size: 14.5px; color: var(--text-muted); margin: 0; line-height: 1.45;
+}
+.president-card { grid-column: 1 / -1; }
+.president-card .member-photo { aspect-ratio: 16/9; }
+@media (max-width: 620px) { .president-card .member-photo { aspect-ratio: 4/5; } }
+
+.board-intro { max-width: 720px; margin: 0 0 40px; color: var(--text-muted); font-size: 16px; }
+</style>
+</head>
+<body>
+
+<nav class="rrff-nav" aria-label="Primary">
+  <div class="rrff-nav-inner">
+    <div class="rrff-nav-row">
+      <a class="rrff-brand" href="/" aria-label="Round Rock Fire Foundation home">
+        <span class="rrff-brand-1">ROUND ROCK</span>
+        <span class="rrff-brand-2">FIRE FOUNDATION</span>
+      </a>
+      <div class="rrff-nav-links"></div>
+      <button class="rrff-menu-btn" type="button" aria-label="Open menu" onclick="document.getElementById('rrff-mobile-menu').classList.toggle('is-open')">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+      </button>
+    </div>
+    <div class="rrff-mobile-menu" id="rrff-mobile-menu"></div>
+  </div>
+</nav>
+
+<main>
+
+<section class="hero">
+  <div class="container">
+    <p class="hero-eyebrow"><span class="dot"></span> Who We Are</p>
+    <h1>Meet our <em>Board</em>.</h1>
+    <p class="hero-lede">
+      Our board brings together fire department leadership, financial and community advocates, and the chaplain who walks alongside our firefighters every day. Together, they steward the mission of the Round Rock Fire Foundation.
+    </p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="container">
+    <p class="board-intro">
+      A volunteer board of seven, balancing operational expertise with community leadership — chosen for their commitment to fire families and their roots in Round Rock.
+    </p>
+
+    <div class="board-grid">
+
+      <article class="member-card">
+        <div class="member-photo"><img src="/images/board/wylie-brownell.jpg" alt="Portrait of Assistant Fire Chief Wylie Brownell in uniform" loading="lazy" /></div>
+        <div class="member-body">
+          <h3 class="member-name">Wylie Brownell</h3>
+          <p class="member-role">Assistant Fire Chief</p>
+          <p class="member-affil">Round Rock Fire Department</p>
+        </div>
+      </article>
+
+      <article class="member-card">
+        <div class="member-photo"><img src="/images/board/will-peckham.jpg" alt="Headshot of Will Peckham" loading="lazy" /></div>
+        <div class="member-body">
+          <h3 class="member-name">Will Peckham, CIC | CRM</h3>
+          <p class="member-role">Watkins Insurance</p>
+          <p class="member-affil">Community Leader &amp; Dedicated Advocate</p>
+        </div>
+      </article>
+
+      <article class="member-card">
+        <div class="member-photo"><img src="/images/board/jeff-paull.jpg" alt="Headshot of Jeff Paull" loading="lazy" /></div>
+        <div class="member-body">
+          <h3 class="member-name">Jeff Paull</h3>
+          <p class="member-role">Regional Vice President</p>
+          <p class="member-affil">Primerica</p>
+        </div>
+      </article>
+
+      <article class="member-card">
+        <div class="member-photo"><img src="/images/board/hunter-leatherman.jpg" alt="Headshot of Hunter Leatherman" loading="lazy" /></div>
+        <div class="member-body">
+          <h3 class="member-name">Hunter Leatherman</h3>
+          <p class="member-role">Vice President, Business &amp; Community Banking</p>
+          <p class="member-affil">Frontier Bank of Texas</p>
+        </div>
+      </article>
+
+      <article class="member-card">
+        <div class="member-photo"><img src="/images/board/trevor-burwick.jpg" alt="Headshot of Trevor Burwick" loading="lazy" /></div>
+        <div class="member-body">
+          <h3 class="member-name">Trevor Burwick</h3>
+          <p class="member-role">Market President — Round Rock</p>
+          <p class="member-affil">Happy State Bank</p>
+        </div>
+      </article>
+
+      <article class="member-card">
+        <div class="member-photo"><img src="/images/board/john-patterson.jpg" alt="Headshot of Chaplain John Patterson" loading="lazy" /></div>
+        <div class="member-body">
+          <h3 class="member-name">John Patterson</h3>
+          <p class="member-role">Chaplain</p>
+          <p class="member-affil">Round Rock Fire Department · Writes <a href="https://chap.roundrockfirefoundation.org/firechaplain">Chap's Corner</a></p>
+        </div>
+      </article>
+
+      <article class="member-card president-card">
+        <div class="member-photo"><img src="/images/board/diedra-brownell.png" alt="Headshot of Diedra Brownell" loading="lazy" /></div>
+        <div class="member-body">
+          <h3 class="member-name">Diedra Brownell</h3>
+          <p class="member-role">President, Board of Directors</p>
+          <p class="member-affil">Round Rock Fire Foundation</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="band-tight" style="background: var(--bg-elev); text-align: center;">
+  <div class="container-narrow">
+    <p style="font-family: 'Playfair Display', Georgia, serif; font-size: clamp(20px, 2vw, 24px); color: var(--gold); font-style: italic; margin: 0 0 8px;">
+      "Honoring heroes. Supporting families."
+    </p>
+    <p style="color: var(--text-dim); margin: 0; font-size: 14px;">Have a question for the board? <a href="/contact/">Contact us</a>.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  © Round Rock Fire Foundation · <a href="/">Home</a> · <a href="mailto:info@roundrockfirefoundation.org">info@roundrockfirefoundation.org</a> · (512) 967-1007
+</footer>
+
+<script src="/assets/page-nav.js" defer></script>
+
+</body>
+</html>

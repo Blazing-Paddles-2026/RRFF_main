@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact Us — Round Rock Fire Foundation</title>
+<meta name="description" content="Get in touch with the Round Rock Fire Foundation. Questions, partnerships, sponsorships, or volunteer opportunities — we'd love to hear from you." />
+<meta property="og:title" content="Contact Us — Round Rock Fire Foundation" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.roundrockfirefoundation.org/contact/" />
+<link rel="icon" type="image/png" href="/images/rrff-icon-transparent.png" />
+<link rel="canonical" href="https://www.roundrockfirefoundation.org/contact/" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/page-shell.css" />
+<style>
+.contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 56px; align-items: start; }
+@media (max-width: 880px) { .contact-grid { grid-template-columns: 1fr; gap: 32px; } }
+
+.contact-channels { display: flex; flex-direction: column; gap: 14px; }
+.channel-card {
+  background: var(--card); border: 1px solid var(--border-soft);
+  border-radius: 14px; padding: 22px;
+  display: flex; align-items: flex-start; gap: 16px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+a.channel-card { text-decoration: none; color: inherit; }
+a.channel-card:hover { border-color: hsla(43, 75%, 55%, 0.4); transform: translateY(-1px); }
+.channel-icon {
+  flex: 0 0 44px; width: 44px; height: 44px; border-radius: 50%;
+  background: hsla(43, 75%, 55%, 0.12);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold);
+}
+.channel-icon svg { width: 22px; height: 22px; }
+.channel-text h4 { font-family: 'Playfair Display', Georgia, serif; font-size: 17px; margin: 0 0 4px; color: var(--text); }
+.channel-text p { font-size: 14.5px; color: var(--text-muted); margin: 0; line-height: 1.5; }
+.channel-text .val { color: var(--gold); font-weight: 600; }
+
+/* FORM */
+form.contact-form {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 16px; padding: 32px;
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 540px) { .form-row { grid-template-columns: 1fr; } }
+form label { display: block; font-size: 12.5px; font-weight: 700;
+  letter-spacing: 1.2px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 7px; }
+form .req { color: var(--gold); margin-left: 2px; }
+form input, form textarea {
+  width: 100%; background: var(--bg-elev); border: 1px solid var(--border);
+  border-radius: 10px; padding: 13px 15px; color: var(--text);
+  font-family: inherit; font-size: 15px; margin-bottom: 18px;
+  transition: border-color 0.18s, box-shadow 0.18s;
+}
+form input:focus, form textarea:focus {
+  outline: none; border-color: var(--gold); box-shadow: 0 0 0 4px hsla(43,75%,55%,0.12);
+}
+form input:-webkit-autofill, form textarea:-webkit-autofill {
+  -webkit-text-fill-color: var(--text) !important;
+  -webkit-box-shadow: 0 0 0 100px var(--bg-elev) inset !important;
+}
+form textarea { resize: vertical; min-height: 130px; }
+.form-check { display: flex; align-items: center; gap: 10px; margin: 0 0 22px; font-size: 14px; color: var(--text-muted); }
+.form-check input { width: auto; margin: 0; }
+.form-note { font-size: 13px; color: var(--text-dim); margin: 16px 0 0; text-align: center; }
+</style>
+</head>
+<body>
+
+<nav class="rrff-nav" aria-label="Primary">
+  <div class="rrff-nav-inner">
+    <div class="rrff-nav-row">
+      <a class="rrff-brand" href="/" aria-label="Round Rock Fire Foundation home">
+        <span class="rrff-brand-1">ROUND ROCK</span>
+        <span class="rrff-brand-2">FIRE FOUNDATION</span>
+      </a>
+      <div class="rrff-nav-links"></div>
+      <button class="rrff-menu-btn" type="button" aria-label="Open menu" onclick="document.getElementById('rrff-mobile-menu').classList.toggle('is-open')">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+      </button>
+    </div>
+    <div class="rrff-mobile-menu" id="rrff-mobile-menu"></div>
+  </div>
+</nav>
+
+<main>
+
+<section class="hero">
+  <div class="container">
+    <p class="hero-eyebrow"><span class="dot"></span> Who We Are</p>
+    <h1>Get in <em>touch</em>.</h1>
+    <p class="hero-lede">
+      Questions, partnerships, sponsorships, or volunteer opportunities — we'd love to hear from you. Reach out and we'll respond within a couple of business days.
+    </p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="container">
+    <div class="contact-grid">
+
+      <div>
+        <p class="section-eyebrow">Reach us directly</p>
+        <h2 class="section-title">Choose your channel.</h2>
+        <div class="contact-channels" style="margin-top: 24px;">
+
+          <a class="channel-card" href="mailto:info@roundrockfirefoundation.org">
+            <div class="channel-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>
+            </div>
+            <div class="channel-text">
+              <h4>Email</h4>
+              <p><span class="val">info@roundrockfirefoundation.org</span></p>
+            </div>
+          </a>
+
+          <a class="channel-card" href="tel:+15129671007">
+            <div class="channel-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </div>
+            <div class="channel-text">
+              <h4>Phone</h4>
+              <p><span class="val">(512) 967-1007</span></p>
+            </div>
+          </a>
+
+          <div class="channel-card">
+            <div class="channel-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div class="channel-text">
+              <h4>Round Rock, TX</h4>
+              <p>Serving the City of Round Rock and the families of the Round Rock Fire Department.</p>
+            </div>
+          </div>
+
+          <div class="channel-card">
+            <div class="channel-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+            </div>
+            <div class="channel-text">
+              <h4>Response time</h4>
+              <p>Within 2 business days. Urgent items, call us.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <form class="contact-form" action="https://formspree.io/f/xkoezqpp" method="POST">
+        <p class="section-eyebrow" style="margin-bottom: 8px;">Send a message</p>
+        <h2 class="section-title" style="font-size: 26px; margin: 0 0 22px;">Tell us how we can help.</h2>
+
+        <div class="form-row">
+          <div>
+            <label for="fname">First Name <span class="req">*</span></label>
+            <input type="text" id="fname" name="first_name" required autocomplete="given-name" />
+          </div>
+          <div>
+            <label for="lname">Last Name <span class="req">*</span></label>
+            <input type="text" id="lname" name="last_name" required autocomplete="family-name" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div>
+            <label for="email">Email <span class="req">*</span></label>
+            <input type="email" id="email" name="_replyto" required autocomplete="email" />
+          </div>
+          <div>
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" />
+          </div>
+        </div>
+
+        <label for="message">Message <span class="req">*</span></label>
+        <textarea id="message" name="message" required placeholder="Let us know what you have in mind — questions, sponsorship interest, volunteer ideas, or anything else."></textarea>
+
+        <label class="form-check">
+          <input type="checkbox" name="newsletter" value="yes" />
+          <span>Sign me up for news and updates from the Foundation.</span>
+        </label>
+
+        <input type="hidden" name="_subject" value="New contact form submission — RRFF" />
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+        <p class="form-note">We'll reply by email within 2 business days.</p>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  © Round Rock Fire Foundation · <a href="/">Home</a> · <a href="mailto:info@roundrockfirefoundation.org">info@roundrockfirefoundation.org</a> · (512) 967-1007
+</footer>
+
+<script src="/assets/page-nav.js" defer></script>
+
+</body>
+</html>

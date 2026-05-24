@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About Us — Round Rock Fire Foundation</title>
+<meta name="description" content="Founded by fire families, for fire families. Learn the mission, story, and values of the Round Rock Fire Foundation." />
+<meta property="og:site_name" content="Round Rock Fire Foundation" />
+<meta property="og:title" content="About Us — Round Rock Fire Foundation" />
+<meta property="og:description" content="Founded by fire families, for fire families." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.roundrockfirefoundation.org/about/" />
+<link rel="icon" type="image/png" href="/images/rrff-icon-transparent.png" />
+<link rel="canonical" href="https://www.roundrockfirefoundation.org/about/" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/page-shell.css" />
+<style>
+.about-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 56px; align-items: start; }
+@media (max-width: 880px) { .about-grid { grid-template-columns: 1fr; gap: 32px; } }
+.values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 12px; }
+@media (max-width: 880px) { .values-grid { grid-template-columns: repeat(2, 1fr); } }
+.value-card { background: var(--card); border: 1px solid var(--border-soft); border-radius: 12px; padding: 22px; }
+.value-card h4 { font-family: 'Playfair Display', Georgia, serif; font-size: 18px; margin: 0 0 8px; color: var(--gold); }
+.value-card p { font-size: 14px; color: var(--text-muted); margin: 0; line-height: 1.55; }
+.what-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 22px; }
+@media (max-width: 880px) { .what-grid { grid-template-columns: 1fr; } }
+.tagline { text-align: center; margin-top: 56px; }
+.tagline p { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(20px, 2.2vw, 26px); color: var(--gold); font-style: italic; margin: 0; }
+.tagline small { display: block; margin-top: 10px; color: var(--text-dim); font-size: 14px; letter-spacing: 0.5px; }
+</style>
+</head>
+<body>
+
+<nav class="rrff-nav" aria-label="Primary">
+  <div class="rrff-nav-inner">
+    <div class="rrff-nav-row">
+      <a class="rrff-brand" href="/" aria-label="Round Rock Fire Foundation home">
+        <span class="rrff-brand-1">ROUND ROCK</span>
+        <span class="rrff-brand-2">FIRE FOUNDATION</span>
+      </a>
+      <div class="rrff-nav-links"></div>
+      <button class="rrff-menu-btn" type="button" aria-label="Open menu" onclick="document.getElementById('rrff-mobile-menu').classList.toggle('is-open')">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+      </button>
+    </div>
+    <div class="rrff-mobile-menu" id="rrff-mobile-menu"></div>
+  </div>
+</nav>
+
+<main>
+
+<section class="hero">
+  <div class="container">
+    <p class="hero-eyebrow"><span class="dot"></span> Who We Are</p>
+    <h1>About the <em>Round Rock Fire Foundation</em></h1>
+    <p class="hero-lede">
+      Founded by fire families, for fire families. The Round Rock Fire Foundation supports the firefighters of the Round Rock Fire Department, their families, and the broader community with critical resources, programs, and enduring partnerships.
+    </p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <p class="section-eyebrow">Our Story</p>
+        <h2 class="section-title">Built around a kitchen table.</h2>
+        <p style="color: var(--text-muted); font-size: 16px;">
+          The Foundation was created by fire families who saw the need to extend the department's long tradition of caring for its own. What began as conversations about how to strengthen and support fire families year-round grew into a foundation built on community, compassion, and commitment.
+        </p>
+        <p style="color: var(--text-muted); font-size: 16px;">
+          Today, RRFF carries that vision forward — ensuring firefighters and their families are cared for in lasting, meaningful ways, from the start of a career through retirement.
+        </p>
+      </div>
+
+      <div class="info-card">
+        <h3>Our Mission</h3>
+        <p>
+          The Round Rock Fire Foundation provides resources, care, and community-driven programs that support fire families from the start of their careers to retirement, ensuring they thrive in every aspect of their lives.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" style="background: var(--bg-elev);">
+  <div class="container">
+    <p class="section-eyebrow">What We Do</p>
+    <h2 class="section-title">Three pillars of support.</h2>
+    <div class="what-grid">
+      <div class="info-card">
+        <h3>Family Support</h3>
+        <p>Crisis relief, wellness programs, and peer connection for fire families when they need it most.</p>
+      </div>
+      <div class="info-card">
+        <h3>Health &amp; Resilience</h3>
+        <p>Mental health resources, family-focused wellness, and training that supports the whole firefighter.</p>
+      </div>
+      <div class="info-card">
+        <h3>Legacy &amp; Support</h3>
+        <p>Uniforms, gear, and programs that honor the tradition of service — past, present, and future.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="container">
+    <p class="section-eyebrow">What Makes Us Different</p>
+    <h2 class="section-title">Founded by fire families, for fire families.</h2>
+    <p style="color: var(--text-muted); font-size: 16px; max-width: 760px;">
+      Our programs focus on family integration, resilience, and long-term care. We work in support of the Round Rock Fire Department, helping highlight its national example of how family-centered policies strengthen both firefighters and the people who stand beside them.
+    </p>
+  </div>
+</section>
+
+<section class="band" style="background: var(--bg-elev);">
+  <div class="container">
+    <p class="section-eyebrow">Core Values</p>
+    <h2 class="section-title">Community. Compassion. Commitment. Legacy.</h2>
+    <div class="values-grid">
+      <div class="value-card"><h4>Community</h4><p>A connected community is stronger and more resilient.</p></div>
+      <div class="value-card"><h4>Compassion</h4><p>Built on empathy and understanding for every fire family.</p></div>
+      <div class="value-card"><h4>Commitment</h4><p>Dedicated to the long-term well-being of Round Rock fire families.</p></div>
+      <div class="value-card"><h4>Legacy</h4><p>Ensuring future generations of firefighters receive the support they deserve.</p></div>
+    </div>
+
+    <div class="tagline">
+      <p>"We serve those who serve our community."</p>
+      <small>Rooted in legacy. Driven by compassion. Powered by community.</small>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  © Round Rock Fire Foundation · <a href="/">Home</a> · <a href="mailto:info@roundrockfirefoundation.org">info@roundrockfirefoundation.org</a> · (512) 967-1007
+</footer>
+
+<script src="/assets/page-nav.js" defer></script>
+
+</body>
+</html>
