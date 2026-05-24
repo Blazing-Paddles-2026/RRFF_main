@@ -1,0 +1,83 @@
+/* Press Room visual fix
+   ---------------------
+   The Press Room page uses cream/white backgrounds that clash with
+   the rest of the dark + gold site. This stylesheet converts the
+   light sections to dark, inverts text colors, and tightens the layout
+   so visitors can scan more items per screen.
+
+   IMPORTANT: The same cream/white background classes (bg-[hsl(40,20%,94%)],
+   bg-white) are used on the homepage for the light/dark rhythm sections.
+   So we MUST scope every rule with a guard: body:has(a[href*="kxan.com"])
+   which matches only when Press Room is rendered (KXAN link is unique
+   to Press Room — confirmed not present on any other page).
+*/
+
+/* (1) Dark background on the formerly-cream sections */
+body:has(a[href*="kxan.com"]) section.bg-\[hsl\(40\,20\%\,94\%\)\] {
+  background: hsl(0, 0%, 6%) !important;
+  padding-top: 3.5rem !important;
+  padding-bottom: 3.5rem !important;
+}
+
+/* (2) Dark background on the formerly-white middle section */
+body:has(a[href*="kxan.com"]) section.bg-white {
+  background: hsl(0, 0%, 5%) !important;
+  padding-top: 3.5rem !important;
+  padding-bottom: 3.5rem !important;
+}
+
+/* (3) Text inside the (now-dark) sections needs light colors */
+body:has(a[href*="kxan.com"]) section.bg-\[hsl\(40\,20\%\,94\%\)\] [class*="text-[hsl(220,15%,15%)]"],
+body:has(a[href*="kxan.com"]) section.bg-\[hsl\(40\,20\%\,94\%\)\] [class*="text-[hsl(220,15%,20%)]"],
+body:has(a[href*="kxan.com"]) section.bg-white [class*="text-[hsl(220,15%,15%)]"],
+body:has(a[href*="kxan.com"]) section.bg-white [class*="text-[hsl(220,15%,20%)]"] {
+  color: hsl(40, 20%, 95%) !important;
+}
+body:has(a[href*="kxan.com"]) section.bg-\[hsl\(40\,20\%\,94\%\)\] [class*="text-[hsl(220,15%,35%)]"],
+body:has(a[href*="kxan.com"]) section.bg-\[hsl\(40\,20\%\,94\%\)\] [class*="text-[hsl(220,15%,40%)]"],
+body:has(a[href*="kxan.com"]) section.bg-white [class*="text-[hsl(220,15%,35%)]"],
+body:has(a[href*="kxan.com"]) section.bg-white [class*="text-[hsl(220,15%,40%)]"] {
+  color: hsl(40, 10%, 70%) !important;
+}
+body:has(a[href*="kxan.com"]) section.bg-\[hsl\(40\,20\%\,94\%\)\] [class*="text-[hsl(220,15%,50%)]"],
+body:has(a[href*="kxan.com"]) section.bg-white [class*="text-[hsl(220,15%,50%)]"] {
+  color: hsl(40, 8%, 55%) !important;
+}
+
+/* (4) Article cards: swap their light surfaces for dark, add subtle border */
+body:has(a[href*="kxan.com"]) section.bg-\[hsl\(40\,20\%\,94\%\)\] .bg-white,
+body:has(a[href*="kxan.com"]) section.bg-white .bg-\[hsl\(40\,15\%\,96\%\)\],
+body:has(a[href*="kxan.com"]) section.bg-\[hsl\(40\,20\%\,94\%\)\] .bg-\[hsl\(40\,15\%\,96\%\)\] {
+  background: hsl(0, 0%, 9%) !important;
+  border: 1px solid hsla(0, 0%, 100%, 0.06) !important;
+}
+
+/* (5) Compact press-card thumbnails (cap height so cards stay scannable) */
+body:has(a[href*="kxan.com"]) section.bg-\[hsl\(40\,20\%\,94\%\)\] img,
+body:has(a[href*="kxan.com"]) section.bg-white img {
+  max-height: 200px;
+  object-fit: cover;
+}
+/* Diedra portrait is already a small square — leave it alone */
+body:has(a[href*="kxan.com"]) section.bg-white img[src*="diedra"] {
+  max-height: none;
+}
+
+/* (6) Tighten the kicker / eyebrow line */
+body:has(a[href*="kxan.com"]) section.bg-\[hsl\(40\,20\%\,94\%\)\] [class*="tracking-["],
+body:has(a[href*="kxan.com"]) section.bg-white [class*="tracking-["] {
+  margin-bottom: 0.5rem !important;
+}
+
+/* (7) Side-card borders so the dark Media Inquiries cards stay visible
+   against the (now also dark) main section */
+body:has(a[href*="kxan.com"]) section.bg-\[hsl\(40\,20\%\,94\%\)\] .bg-\[hsl\(0\,0\%\,10\%\)\] {
+  border: 1px solid hsla(0, 0%, 100%, 0.08) !important;
+}
+
+/* (8) Smaller h3 headings on press cards so titles don't dominate */
+body:has(a[href*="kxan.com"]) section.bg-\[hsl\(40\,20\%\,94\%\)\] h3,
+body:has(a[href*="kxan.com"]) section.bg-white h3 {
+  font-size: 1.125rem !important;
+  line-height: 1.35 !important;
+}
