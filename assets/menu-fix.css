@@ -1,0 +1,20 @@
+/* Mobile menu scroll fix
+   When the header nav expands into a full-screen mobile menu and its
+   content exceeds the viewport height, allow internal scrolling so
+   no items get clipped under the pinned Donate button.
+   Does not affect the closed nav (80px) which never overflows. */
+header nav.fixed.top-0,
+nav.fixed.top-0.left-0.right-0 {
+  max-height: 100vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+/* Ensure the inner column inside the open mobile menu can grow and
+   leaves breathing room at the bottom so the last menu item isn't
+   visually covered by the sticky Donate button. */
+header nav.fixed.top-0 > div,
+nav.fixed.top-0.left-0.right-0 > div {
+  min-height: 0;
+}
