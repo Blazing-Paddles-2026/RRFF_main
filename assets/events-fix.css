@@ -1,0 +1,25 @@
+/* Events listing page — image cropping fix
+   ----------------------------------------
+   Event card images are square (1080x1080) flyers, but the cards
+   crop them to a wide banner with object-fit: cover, chopping off
+   the top and bottom of each flyer (titles get cut off).
+   This rule lets the full flyer show without cropping by switching
+   to contain + letterboxing the leftover space with a dark band.
+*/
+img[src*="express-appreciation-night-flyer"],
+img[src*="blazing-paddles-logo-light"],
+img[src*="foundation-night-flyer"] {
+  object-fit: contain !important;
+  object-position: center !important;
+  background: hsl(0, 0%, 6%);
+  max-height: 480px;
+}
+
+/* When these images appear as a hero background (opacity-10 in the
+   detail page), keep the cover behaviour and don't change them. */
+img[src*="express-appreciation-night-flyer"].opacity-10,
+img[src*="blazing-paddles-logo-light"].opacity-10 {
+  object-fit: cover !important;
+  background: transparent;
+  max-height: none;
+}
