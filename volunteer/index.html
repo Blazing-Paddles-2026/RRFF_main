@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Volunteer — Round Rock Fire Foundation</title>
+    <meta name="description" content="Volunteer with the Round Rock Fire Foundation. Help at signature events like Foundation Night, Blazing Paddles, and the National Spouse Conference." />
+
+    <meta property="og:site_name" content="Round Rock Fire Foundation" />
+    <meta property="og:title" content="Volunteer — Round Rock Fire Foundation" />
+    <meta property="og:description" content="Volunteer at RRFF events and help support Round Rock firefighter families." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.roundrockfirefoundation.org/volunteer" />
+    <meta property="og:image" content="https://www.roundrockfirefoundation.org/images/rrff-logo-dark.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" type="image/png" href="/images/rrff-icon-transparent.png" />
+    <link rel="canonical" href="https://www.roundrockfirefoundation.org/volunteer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+
+    <style>
+      :root {
+        --bg: hsl(0, 0%, 4%);
+        --bg-elev: hsl(0, 0%, 7%);
+        --card: hsl(0, 0%, 9%);
+        --text: hsl(40, 20%, 95%);
+        --text-muted: hsl(40, 10%, 70%);
+        --text-dim: hsl(40, 8%, 55%);
+        --gold: hsl(43, 75%, 55%);
+        --gold-hover: hsl(43, 75%, 65%);
+        --border: hsl(0, 0%, 18%);
+        --border-soft: hsl(0, 0%, 14%);
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; scroll-behavior: smooth; }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: var(--gold); text-decoration: none; transition: color 0.18s; }
+      a:hover { color: var(--gold-hover); }
+      .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+
+      /* SHARED HEADER (matches main site nav) */
+      .rrff-nav { position: sticky; top: 0; left: 0; right: 0; z-index: 50;
+        background: hsla(0, 0%, 4%, 0.95); backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px); }
+      .rrff-nav-inner { max-width: 80rem; margin: 0 auto; padding: 0 1rem; }
+      @media (min-width: 640px) { .rrff-nav-inner { padding: 0 1.5rem; } }
+      @media (min-width: 1024px) { .rrff-nav-inner { padding: 0 2rem; } }
+      .rrff-nav-row { display: flex; align-items: center; justify-content: space-between; height: 4rem; }
+      @media (min-width: 1024px) { .rrff-nav-row { height: 5rem; } }
+      .rrff-brand { display: flex; flex-direction: column; line-height: 1.1; text-decoration: none; }
+      .rrff-brand-1 { font-size: 13px; font-weight: 700; letter-spacing: 0.05em; color: #fff; }
+      .rrff-brand-2 { font-size: 10px; letter-spacing: 0.25em; color: hsl(43, 75%, 55%); text-transform: uppercase; font-weight: 500; }
+      .rrff-nav-links { display: none; align-items: center; gap: 1.5rem; }
+      @media (min-width: 1024px) { .rrff-nav-links { display: flex; } }
+      .rrff-nav-links a { font-size: 14px; color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.18s; }
+      .rrff-nav-links a:hover { color: hsl(43, 75%, 55%); }
+      .rrff-donate { background: hsl(43, 75%, 55%); color: hsl(220, 15%, 8%) !important;
+        padding: 0.5rem 1.25rem; border-radius: 9999px; font-size: 14px; font-weight: 600; transition: background 0.18s; }
+      .rrff-donate:hover { background: hsl(43, 75%, 65%); }
+      .rrff-menu-btn { display: block; background: none; border: none; color: #fff; padding: 0.5rem; cursor: pointer; }
+      @media (min-width: 1024px) { .rrff-menu-btn { display: none; } }
+      .rrff-menu-btn svg { width: 24px; height: 24px; }
+      .rrff-mobile-menu { display: none; flex-direction: column; padding: 0.5rem 0 1rem; border-top: 1px solid rgba(255,255,255,0.06); }
+      .rrff-mobile-menu.is-open { display: flex; }
+      @media (min-width: 1024px) { .rrff-mobile-menu.is-open { display: none; } }
+      .rrff-mobile-menu a { padding: 0.875rem 0; font-size: 16px; color: rgba(255,255,255,0.85); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.04); }
+      .rrff-mobile-menu a:hover { color: hsl(43, 75%, 55%); }
+      .rrff-mobile-menu a.rrff-donate { margin-top: 1rem; text-align: center; border-bottom: none; }
+
+      /* HERO */
+      .hero { padding: 80px 0 56px; background:
+        radial-gradient(ellipse at top right, hsla(43, 75%, 55%, 0.08), transparent 50%),
+        var(--bg); }
+      .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px;
+        font-size: 12px; font-weight: 700; letter-spacing: 2.5px;
+        text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+      .hero-eyebrow .dot { width: 6px; height: 6px; border-radius: 50%;
+        background: var(--gold); box-shadow: 0 0 0 4px hsla(43, 75%, 55%, 0.18); }
+      .hero h1 { font-family: 'Playfair Display', Georgia, serif;
+        font-size: clamp(40px, 6vw, 64px); line-height: 1.05;
+        font-weight: 700; margin: 0 0 24px; letter-spacing: -0.5px; }
+      .hero h1 em { color: var(--gold); font-style: normal; }
+      .hero-lede { font-size: clamp(16px, 1.4vw, 19px);
+        max-width: 680px; color: var(--text-muted); margin: 0; }
+
+      /* SECTION */
+      section.band { padding: 64px 0; }
+      .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+      @media (max-width: 880px) { .grid-2 { grid-template-columns: 1fr; gap: 32px; } }
+
+      .info-card { background: var(--card); border: 1px solid var(--border-soft);
+        border-radius: 14px; padding: 28px; }
+      .info-card h3 { font-family: 'Playfair Display', Georgia, serif;
+        font-size: 22px; margin: 0 0 12px; }
+      .info-card p { color: var(--text-muted); margin: 0 0 14px; font-size: 15px; }
+      .info-card p:last-child { margin-bottom: 0; }
+      .info-card ul { color: var(--text-muted); margin: 12px 0 0; padding-left: 20px; font-size: 14.5px; }
+      .info-card li { margin-bottom: 8px; }
+
+      /* FORM */
+      form.volunteer-form {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 32px;
+      }
+      form label { display: block; font-size: 13px; font-weight: 600;
+        letter-spacing: 0.5px; color: var(--text-muted); margin-bottom: 8px; }
+      form input, form textarea {
+        width: 100%;
+        background: var(--bg-elev);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 12px 14px;
+        color: var(--text);
+        font-family: inherit;
+        font-size: 15px;
+        margin-bottom: 18px;
+        transition: border-color 0.18s;
+      }
+      form input:focus, form textarea:focus {
+        outline: none;
+        border-color: var(--gold);
+      }
+      form textarea { resize: vertical; min-height: 110px; }
+      form .req { color: var(--gold); margin-left: 2px; }
+
+      .btn { display: inline-flex; align-items: center; gap: 8px;
+        padding: 14px 26px; border-radius: 999px; font-weight: 700;
+        font-size: 15px; font-family: inherit; cursor: pointer;
+        border: 1px solid transparent; transition: all 0.18s ease;
+        text-decoration: none; }
+      .btn-primary { background: var(--gold); color: hsl(0, 0%, 4%); width: 100%; justify-content: center; }
+      .btn-primary:hover { background: var(--gold-hover); text-decoration: none; transform: translateY(-1px);
+        box-shadow: 0 12px 28px -10px hsla(43, 75%, 55%, 0.5); }
+      .form-note { font-size: 13px; color: var(--text-dim); margin: 16px 0 0; text-align: center; }
+
+      /* FOOTER */
+      footer.site-footer { padding: 32px; text-align: center;
+        color: var(--text-dim); font-size: 14px; border-top: 1px solid var(--border-soft); }
+      footer a { color: var(--text-muted); }
+    </style>
+  </head>
+  <body>
+
+    <nav class="rrff-nav" aria-label="Primary">
+      <div class="rrff-nav-inner">
+        <div class="rrff-nav-row">
+          <a class="rrff-brand" href="/" aria-label="Round Rock Fire Foundation home">
+            <span class="rrff-brand-1">ROUND ROCK</span>
+            <span class="rrff-brand-2">FIRE FOUNDATION</span>
+          </a>
+          <div class="rrff-nav-links">
+            <a href="/">Home</a>
+            <a href="/#/the-1884-fund">The 1884 Fund</a>
+            <a href="/#/#events">Events</a>
+            <a href="/#/history">History</a>
+            <a href="/#/press-room">Press Room</a>
+            <a href="/#/get-involved">Get Involved</a>
+            <a href="/#/chaps-corner">Chap's Corner</a>
+            <a class="rrff-donate" href="https://ctxcf.networkforgood.com/projects/252774-the-round-rock-fire-foundation" target="_blank" rel="noopener noreferrer">Donate</a>
+          </div>
+          <button class="rrff-menu-btn" type="button" aria-label="Open menu" onclick="document.getElementById('rrff-mobile-menu').classList.toggle('is-open')">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+          </button>
+        </div>
+        <div class="rrff-mobile-menu" id="rrff-mobile-menu">
+          <a href="/">Home</a>
+          <a href="/#/the-1884-fund">The 1884 Fund</a>
+          <a href="/#/#events">Events</a>
+          <a href="/#/history">History</a>
+          <a href="/#/press-room">Press Room</a>
+          <a href="/#/get-involved">Get Involved</a>
+          <a href="/#/chaps-corner">Chap's Corner</a>
+          <a class="rrff-donate" href="https://ctxcf.networkforgood.com/projects/252774-the-round-rock-fire-foundation" target="_blank" rel="noopener noreferrer">Donate</a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+
+      <section class="hero">
+        <div class="container">
+          <p class="hero-eyebrow"><span class="dot"></span> Join Our Crew</p>
+          <h1>Volunteer with <em>RRFF</em>.</h1>
+          <p class="hero-lede">
+            Our signature events run on volunteer power. Whether you can give a few hours at Foundation Night, work check-in tables at Blazing Paddles, or help host the Spouse Conference — we have a spot for you.
+          </p>
+        </div>
+      </section>
+
+      <section class="band">
+        <div class="container">
+          <div class="grid-2">
+
+            <div>
+              <div class="info-card" style="margin-bottom: 20px;">
+                <h3>Where we need help</h3>
+                <p>Volunteer roles change by event, but here's what tends to come up most:</p>
+                <ul>
+                  <li>Event check-in &amp; registration tables</li>
+                  <li>Setup, breakdown, and day-of logistics</li>
+                  <li>Fundraising &amp; outreach support</li>
+                  <li>Community engagement and sponsor relations</li>
+                  <li>Family support and Spouse Conference hospitality</li>
+                </ul>
+              </div>
+
+              <div class="info-card">
+                <h3>How it works</h3>
+                <p>Sign up below with a quick note about what you'd like to help with. We'll follow up by email with the next volunteer call when it matches.</p>
+                <p>No minimum commitment, no recurring shifts — show up for what fits your schedule.</p>
+              </div>
+            </div>
+
+            <form class="volunteer-form" action="https://formspree.io/f/xkoezqpp" method="POST">
+              <label for="name">Your name <span class="req">*</span></label>
+              <input type="text" id="name" name="name" required autocomplete="name" />
+
+              <label for="email">Email <span class="req">*</span></label>
+              <input type="email" id="email" name="_replyto" required autocomplete="email" />
+
+              <label for="help">What you'd like to help with</label>
+              <textarea id="help" name="help" placeholder="e.g. event setup at Foundation Night, registration tables at Blazing Paddles, Spouse Conference hospitality — or just 'wherever you need me'"></textarea>
+
+              <input type="hidden" name="_subject" value="New volunteer signup — RRFF" />
+              <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+              <button type="submit" class="btn btn-primary">Sign Up to Volunteer</button>
+              <p class="form-note">We'll respond by email. No spam — we only reach out when there's a real volunteer need.</p>
+            </form>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      © Round Rock Fire Foundation · <a href="/">Home</a> · <a href="mailto:info@roundrockfirefoundation.org">info@roundrockfirefoundation.org</a> · (512) 967-1007
+    </footer>
+
+  </body>
+</html>
