@@ -91,3 +91,46 @@ body:has(a[href*="kxan.com"]) img[src*="diedra-brownell"] {
   object-position: 50% 18% !important;
 }
 
+
+/* (9) Diedra photo on the Foundation News card — bump the card image
+   height so the wide-card crop can breathe (eyes + smile + hair all
+   visible) without the previous tight-zoom feel. Keep cover, just give
+   it more room. */
+body:has(a[href*="kxan.com"]) img[src*="diedra-brownell"] {
+  height: 360px !important;
+  object-fit: cover !important;
+  object-position: 50% 22% !important;
+}
+@media (max-width: 640px) {
+  body:has(a[href*="kxan.com"]) img[src*="diedra-brownell"] {
+    height: 300px !important;
+  }
+}
+
+/* (10) Make the SECOND featured-coverage card (Community Impact /
+   Blazing Paddles) keep a light/cream background. A small JS shim
+   (press-room-marker.js) stamps data-rrff-light-card="1" on cards
+   whose body contains "Community Impact"; everything below targets
+   that marker. */
+body:has(a[href*="kxan.com"]) .press-card[data-rrff-light-card="1"] {
+  background: hsl(40, 20%, 96%) !important;
+  border-color: hsl(40, 15%, 88%) !important;
+}
+body:has(a[href*="kxan.com"]) .press-card[data-rrff-light-card="1"] h3,
+body:has(a[href*="kxan.com"]) .press-card[data-rrff-light-card="1"] h4 {
+  color: hsl(220, 15%, 12%) !important;
+}
+body:has(a[href*="kxan.com"]) .press-card[data-rrff-light-card="1"] p,
+body:has(a[href*="kxan.com"]) .press-card[data-rrff-light-card="1"] .text-white\/70,
+body:has(a[href*="kxan.com"]) .press-card[data-rrff-light-card="1"] [class*="text-white"] {
+  color: hsl(220, 15%, 30%) !important;
+}
+/* Keep the gold accents gold even on the light card */
+body:has(a[href*="kxan.com"]) .press-card[data-rrff-light-card="1"] .text-gold {
+  color: hsl(43, 75%, 45%) !important;
+}
+/* Image fill background on the light card uses the cream so the flyer
+   sits on a coherent surface */
+body:has(a[href*="kxan.com"]) .press-card[data-rrff-light-card="1"] img {
+  background: hsl(40, 20%, 96%) !important;
+}
