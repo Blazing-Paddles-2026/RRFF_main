@@ -56,7 +56,7 @@
 .member-affil {
   font-size: 14.5px; color: var(--text-muted); margin: 0; line-height: 1.45;
 }
-.president-card { max-width: 100%; }
+.president-card { grid-column: 1 / -1; }
 .president-card .member-photo { aspect-ratio: 16/9; }
 @media (max-width: 620px) { .president-card .member-photo { aspect-ratio: 4/5; } }
 
@@ -99,16 +99,7 @@
       A volunteer board of seven, balancing operational expertise with community leadership — chosen for their commitment to fire families and their roots in Round Rock.
     </p>
 
-    <article class="member-card president-card">
-      <div class="member-photo"><img src="/images/board/diedra-brownell.png" alt="Headshot of Diedra Brownell" loading="lazy" /></div>
-      <div class="member-body">
-        <h3 class="member-name">Diedra Brownell</h3>
-        <p class="member-role">President, Board of Directors</p>
-        <p class="member-affil">Round Rock Fire Foundation</p>
-      </div>
-    </article>
-
-    <div class="board-grid" style="margin-top: 24px;">
+    <div class="board-grid">
 
       <article class="member-card">
         <div class="member-photo"><img src="/images/board/wylie-brownell.jpg" alt="Portrait of Assistant Fire Chief Wylie Brownell in uniform" loading="lazy" /></div>
@@ -161,6 +152,15 @@
           <h3 class="member-name">John Patterson</h3>
           <p class="member-role">Chaplain</p>
           <p class="member-affil">Round Rock Fire Department · Writes <a href="https://chap.roundrockfirefoundation.org/firechaplain">Chap's Corner</a></p>
+        </div>
+      </article>
+
+      <article class="member-card president-card">
+        <div class="member-photo"><img src="/images/board/diedra-brownell.png" alt="Headshot of Diedra Brownell" loading="lazy" /></div>
+        <div class="member-body">
+          <h3 class="member-name">Diedra Brownell</h3>
+          <p class="member-role">President, Board of Directors</p>
+          <p class="member-affil">Round Rock Fire Foundation</p>
         </div>
       </article>
 
