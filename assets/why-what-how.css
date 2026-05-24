@@ -1,0 +1,59 @@
+/* Why / What / How clickable cards
+   =================================
+   The compiled React bundle renders the Why/What/How boxes as plain
+   <div>s. A small JS shim wraps each in an <a> with the data-rrff-wwh
+   marker, and this file styles them as clearly-clickable cards while
+   keeping the existing inner layout. */
+
+a[data-rrff-wwh] {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 0.5rem; /* match rounded-lg */
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* The inner card already has bg + border + padding. Layer hover effects
+   on the anchor wrapper so we don't fight Tailwind classes. */
+a[data-rrff-wwh] > div {
+  transition: border-color 0.18s ease, background 0.18s ease;
+  height: 100%;
+}
+
+/* Subtle gold corner indicator that becomes an arrow on hover */
+a[data-rrff-wwh]::after {
+  content: '→';
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  color: hsla(43, 75%, 55%, 0.35);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  transition: color 0.18s ease, transform 0.18s ease, opacity 0.18s ease;
+  pointer-events: none;
+}
+
+a[data-rrff-wwh]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -16px hsla(43, 75%, 50%, 0.45);
+}
+a[data-rrff-wwh]:hover > div {
+  border-color: hsla(43, 75%, 55%, 0.45) !important;
+  background: hsla(0, 0%, 12%, 0.9) !important;
+}
+a[data-rrff-wwh]:hover::after {
+  color: hsl(43, 75%, 60%);
+  transform: translateX(3px);
+}
+
+a[data-rrff-wwh]:focus-visible {
+  outline: 2px solid hsl(43, 75%, 55%);
+  outline-offset: 2px;
+}
+
+a[data-rrff-wwh]:active {
+  transform: translateY(0);
+}
