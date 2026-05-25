@@ -22,7 +22,7 @@
         { label: 'Our History',    href: '/#/history' },
       ],
     },
-    events:     { label: 'Events',      href: '/#/#events' },
+    events:     { label: 'Events',      href: '/events/' },
     pressRoom:  { label: 'Press Room',  href: '/#/press-room' },
     getInvolved:{ label: 'Get Involved',href: '/#/get-involved' },
   };

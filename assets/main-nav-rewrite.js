@@ -26,7 +26,7 @@
         { label: 'Legacy Circle', href: '/legacy-circle/' },
         { label: 'Our History',   href: '#/history' },
     ] },
-    { type: 'link',  label: 'Events',      href: '#/#events' },
+    { type: 'link',  label: 'Events',      href: '/events/' },
     { type: 'link',  label: 'Press Room',  href: '#/press-room' },
     { type: 'link',  label: 'Get Involved',href: '#/get-involved' },
   ];
