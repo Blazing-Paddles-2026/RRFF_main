@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Foundation Night at Dell Diamond — May 29, 2026 | Round Rock Fire Foundation</title>
+<meta name="description" content="Round Rock Fire Foundation Night at Dell Diamond — Friday, May 29, 2026. First pitch 7:05 PM. Use code FIRE26 at checkout — a portion of every ticket benefits the Round Rock Fire Foundation." />
+
+<!-- Open Graph (Facebook, iMessage, Slack share previews) -->
+<meta property="og:site_name" content="Round Rock Fire Foundation" />
+<meta property="og:title" content="Foundation Night at Dell Diamond · May 29, 2026" />
+<meta property="og:description" content="Friday · May 29 · 7:05 PM. Round Rock Express vs. Salt Lake Bees. Use code FIRE26 — a portion of every ticket benefits the Round Rock Fire Foundation." />
+<meta property="og:type" content="event" />
+<meta property="og:url" content="https://www.roundrockfirefoundation.org/foundation-night/" />
+<meta property="og:image" content="https://www.roundrockfirefoundation.org/images/foundation-night-flyer-2026.jpg" />
+<meta property="og:image:alt" content="Round Rock Fire Foundation Night at Dell Diamond — May 29, 2026 flyer" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="1500" />
+
+<!-- Twitter / X card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Foundation Night at Dell Diamond · May 29, 2026" />
+<meta name="twitter:description" content="Use code FIRE26 — a portion of every ticket benefits the Round Rock Fire Foundation." />
+<meta name="twitter:image" content="https://www.roundrockfirefoundation.org/images/foundation-night-flyer-2026.jpg" />
+
+<link rel="icon" type="image/png" href="/images/rrff-icon-transparent.png" />
+<link rel="canonical" href="https://www.roundrockfirefoundation.org/foundation-night/" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/page-shell.css" />
+<style>
+.fn-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 56px;
+  align-items: start;
+  margin-top: 8px;
+}
+@media (max-width: 980px) { .fn-layout { grid-template-columns: 1fr; gap: 32px; } }
+
+.fn-flyer {
+  position: relative;
+  background: hsl(0, 0%, 6%);
+  border: 1px solid var(--border-soft);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 24px 56px -28px hsla(0,0%,0%,0.7);
+}
+.fn-flyer img { display: block; width: 100%; height: auto; border-radius: 10px; }
+
+.fn-body { display: flex; flex-direction: column; gap: 18px; }
+.fn-tag {
+  align-self: flex-start;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--gold);
+  background: hsla(43, 75%, 55%, 0.12);
+  padding: 6px 14px; border-radius: 999px;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.fn-when {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(28px, 3.2vw, 38px);
+  font-weight: 700; line-height: 1.1;
+  letter-spacing: -0.4px; margin: 0;
+}
+.fn-when em { color: var(--gold); font-style: normal; }
+.fn-where {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  gap: 12px 14px;
+  align-items: start;
+  font-size: 15.5px;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+.fn-where svg { width: 18px; height: 18px; color: var(--gold); margin-top: 2px; }
+
+/* Code highlight card */
+.fn-code {
+  background: linear-gradient(180deg, hsl(0,0%,9%) 0%, hsl(0,0%,7%) 100%);
+  border: 1px solid hsla(43, 75%, 55%, 0.25);
+  border-radius: 16px;
+  padding: 22px 24px;
+  margin-top: 4px;
+  position: relative;
+  overflow: hidden;
+}
+.fn-code::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent 0%, hsl(43, 75%, 55%) 50%, transparent 100%);
+}
+.fn-code-eyebrow {
+  display: inline-block;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 2.2px; text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.fn-code-row {
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: 16px; margin-bottom: 12px;
+}
+.fn-code-pill {
+  font-family: 'Inter', monospace;
+  font-size: 26px; font-weight: 800;
+  letter-spacing: 4px;
+  color: hsl(0, 0%, 4%);
+  background: linear-gradient(180deg, hsl(43, 80%, 60%) 0%, hsl(43, 75%, 50%) 100%);
+  padding: 10px 22px;
+  border-radius: 10px;
+  box-shadow: 0 10px 24px -10px hsla(43, 75%, 50%, 0.6);
+}
+.fn-code-explain {
+  font-size: 15px; line-height: 1.55;
+  color: var(--text); margin: 0;
+}
+.fn-code-explain strong { color: var(--gold); }
+
+.fn-cta-row {
+  display: flex; gap: 12px; flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+/* Highlights list */
+.fn-highlights {
+  margin: 56px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+@media (max-width: 880px) { .fn-highlights { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .fn-highlights { grid-template-columns: 1fr; } }
+.fn-highlight {
+  background: var(--card);
+  border: 1px solid var(--border-soft);
+  border-radius: 14px;
+  padding: 22px 22px 20px;
+}
+.fn-highlight-icon {
+  width: 36px; height: 36px; border-radius: 10px;
+  background: hsla(43, 75%, 55%, 0.10);
+  color: var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 14px;
+}
+.fn-highlight-icon svg { width: 18px; height: 18px; }
+.fn-highlight h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 17px; font-weight: 700;
+  margin: 0 0 6px; color: var(--text);
+  letter-spacing: -0.2px;
+}
+.fn-highlight p {
+  font-size: 14px; line-height: 1.55;
+  color: var(--text-muted); margin: 0;
+}
+
+/* Bottom strip CTA */
+.fn-bottom-cta {
+  text-align: center;
+  background: var(--bg-elev);
+  padding: 56px 24px;
+}
+.fn-bottom-cta h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(22px, 2.4vw, 28px);
+  margin: 0 0 10px;
+  letter-spacing: -0.3px;
+}
+.fn-bottom-cta p { color: var(--text-muted); max-width: 520px; margin: 0 auto 24px; font-size: 15px; }
+.fn-bottom-cta strong { color: var(--gold); }
+</style>
+</head>
+<body>
+
+<nav class="rrff-nav" aria-label="Primary">
+  <div class="rrff-nav-inner">
+    <div class="rrff-nav-row">
+      <a class="rrff-brand" href="/" aria-label="Round Rock Fire Foundation home">
+        <span class="rrff-brand-1">ROUND ROCK</span>
+        <span class="rrff-brand-2">FIRE FOUNDATION</span>
+      </a>
+      <div class="rrff-nav-links"></div>
+      <button class="rrff-menu-btn" type="button" aria-label="Open menu" onclick="document.getElementById('rrff-mobile-menu').classList.toggle('is-open')">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+      </button>
+    </div>
+    <div class="rrff-mobile-menu" id="rrff-mobile-menu"></div>
+  </div>
+</nav>
+
+<main>
+
+<section class="hero">
+  <div class="container">
+    <p class="hero-eyebrow"><span class="dot"></span> Featured Event · May 29, 2026</p>
+    <h1>Foundation Night at <em>Dell Diamond</em></h1>
+    <p class="hero-lede">
+      An inaugural community-wide tribute to Central Texas firefighters and fire families. Round Rock Express vs. Salt Lake Bees — first pitch at 7:05 PM.
+    </p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="container">
+    <div class="fn-layout">
+
+      <!-- LEFT: Flyer -->
+      <div class="fn-flyer">
+        <img src="/images/foundation-night-flyer-2026.jpg" alt="Round Rock Fire Foundation Night at Dell Diamond — May 29, 2026 flyer" />
+      </div>
+
+      <!-- RIGHT: Details + Code + CTA -->
+      <div class="fn-body">
+        <span class="fn-tag">★ Featured Event</span>
+
+        <h2 class="fn-when">Friday, May 29 · <em>7:05 PM</em></h2>
+
+        <div class="fn-where">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+          <div>
+            <strong style="color: var(--text);">Round Rock Express vs. Salt Lake Bees</strong><br>
+            Pre-game ceremonies, fire family recognition, and a community tribute throughout the night.
+          </div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div>
+            <strong style="color: var(--text);">Dell Diamond</strong><br>
+            3400 E. Palm Valley Blvd. · Round Rock, TX 78665
+          </div>
+        </div>
+
+        <!-- FIRE26 code card -->
+        <div class="fn-code">
+          <p class="fn-code-eyebrow">Use Coupon Code</p>
+          <div class="fn-code-row">
+            <span class="fn-code-pill">FIRE26</span>
+            <p class="fn-code-explain" style="flex: 1 1 200px; min-width: 200px;">
+              Enter <strong>FIRE26</strong> at checkout. A portion of every ticket purchased with this code benefits the <strong>Round Rock Fire Foundation</strong> — supporting firefighter wellness, family assistance, and crisis relief for Round Rock fire families.
+            </p>
+          </div>
+          <div class="fn-cta-row">
+            <a class="btn btn-primary" href="https://mlb.tickets.com/?orgId=58189&amp;agency=MILB_MPV&amp;eventId=27339" target="_blank" rel="noopener noreferrer">
+              Get Tickets — Use FIRE26 →
+            </a>
+            <a class="btn btn-ghost" href="/#/events/fire-foundation-night">More Event Info</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Highlights -->
+    <ul class="fn-highlights">
+      <li class="fn-highlight">
+        <div class="fn-highlight-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <h3>Pre-Game Apparatus Display</h3>
+        <p>Round Rock Fire Department trucks and equipment on display outside Dell Diamond before gates open.</p>
+      </li>
+      <li class="fn-highlight">
+        <div class="fn-highlight-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+        </div>
+        <h3>Pipes &amp; Drums</h3>
+        <p>The Round Rock Fire Department Pipes and Drums Band performs in the main concourse before the game.</p>
+      </li>
+      <li class="fn-highlight">
+        <div class="fn-highlight-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l4 8 4-8 4 8 4-8M4 20h16"/></svg>
+        </div>
+        <h3>Presentation of Colors</h3>
+        <p>The RRFD Honor Guard presents the colors during the National Anthem, performed by a Round Rock fire family member.</p>
+      </li>
+      <li class="fn-highlight">
+        <div class="fn-highlight-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></svg>
+        </div>
+        <h3>Ceremonial First Pitch</h3>
+        <p>Round Rock Fire Assistant Chief Wylie Brownell throws out the ceremonial first pitch — fire families recognized on the field.</p>
+      </li>
+      <li class="fn-highlight">
+        <div class="fn-highlight-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M21 21v-2a4 4 0 0 0-3-3.87"/><path d="M17 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Active-Duty Recognition</h3>
+        <p>Between-innings moments recognizing active-duty firefighters serving the Round Rock fire community.</p>
+      </li>
+      <li class="fn-highlight">
+        <div class="fn-highlight-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 12l9 4 9-4"/><path d="M3 17l9 4 9-4"/></svg>
+        </div>
+        <h3>Foundation Info Booths</h3>
+        <p>Meet the Foundation team, learn about The 1884 Fund, and find ways to volunteer, sponsor, or donate.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="fn-bottom-cta">
+  <div class="container-narrow">
+    <h2>Wear red. Cheer loud. <strong>Use FIRE26.</strong></h2>
+    <p>Every ticket purchased with code <strong>FIRE26</strong> sends a portion back to the Round Rock Fire Foundation — directly supporting the families behind our firefighters.</p>
+    <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+      <a class="btn btn-primary" href="https://mlb.tickets.com/?orgId=58189&amp;agency=MILB_MPV&amp;eventId=27339" target="_blank" rel="noopener noreferrer">Get Tickets →</a>
+      <a class="btn btn-ghost" href="/events/">All Events</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  © Round Rock Fire Foundation · <a href="/">Home</a> · <a href="mailto:info@roundrockfirefoundation.org">info@roundrockfirefoundation.org</a> · (512) 967-1007
+</footer>
+
+<script src="/assets/page-nav.js" defer></script>
+
+</body>
+</html>
