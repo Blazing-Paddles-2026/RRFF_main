@@ -26,7 +26,7 @@
       label: 'Our Events',
       items: [
         { label: 'All Events',                   href: '/events/' },
-        { label: 'Foundation Night · May 29',    href: 'https://mlb.tickets.com/?orgId=58189&agency=MILB_MPV&eventId=27339' },
+        { label: 'Foundation Night · May 29',    href: '/foundation-night/' },
         { label: 'Blazing Paddles · Oct 10',     href: 'https://pickleball.roundrockfirefoundation.org/' },
         { label: 'Spouse Conference · Nov 6–8', href: 'https://spouseconference.roundrockfirefoundation.org/' },
       ],
