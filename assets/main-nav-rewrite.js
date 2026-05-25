@@ -26,7 +26,12 @@
         { label: 'Legacy Circle', href: '/legacy-circle/' },
         { label: 'Our History',   href: '#/history' },
     ] },
-    { type: 'link',  label: 'Events',      href: '/events/' },
+    { type: 'group', label: 'Our Events', items: [
+        { label: 'All Events',                  href: '/events/' },
+        { label: 'Foundation Night · May 29',   href: 'https://mlb.tickets.com/?orgId=58189&agency=MILB_MPV&eventId=27339' },
+        { label: 'Blazing Paddles · Oct 10',    href: 'https://pickleball.roundrockfirefoundation.org/' },
+        { label: 'Spouse Conference · Nov 6–8',href: 'https://spouseconference.roundrockfirefoundation.org/' },
+    ] },
     { type: 'link',  label: 'Press Room',  href: '#/press-room' },
     { type: 'link',  label: 'Get Involved',href: '#/get-involved' },
   ];
