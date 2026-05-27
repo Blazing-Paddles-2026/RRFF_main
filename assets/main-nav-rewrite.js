@@ -76,6 +76,26 @@
     return a;
   }
 
+  function addBrandIcon() {
+    // Add the RRFF Maltese-cross icon to the left of the brand text in the
+    // React app's header. Idempotent via a data attribute.
+    const brand = document.querySelector('nav a[href="#/"], nav a[href="/"]');
+    if (!brand || brand.dataset.rrffIconAdded === '1') return;
+    // The brand is a column flex; we want to convert it into a row layout
+    // with an icon on the left. Insert an <img> as the first child.
+    const img = document.createElement('img');
+    img.src = '/images/rrff-icon-transparent.png';
+    img.alt = '';
+    img.setAttribute('aria-hidden', 'true');
+    img.style.cssText = 'width:40px;height:40px;object-fit:contain;flex-shrink:0;';
+    brand.style.display = 'flex';
+    brand.style.alignItems = 'center';
+    brand.style.gap = '12px';
+    brand.style.flexDirection = 'row';
+    brand.insertBefore(img, brand.firstChild);
+    brand.dataset.rrffIconAdded = '1';
+  }
+
   function rewriteDesktop() {
     const desktop = document.querySelector('nav .hidden.lg\\:flex.items-center.gap-6');
     if (!desktop || desktop.dataset.rrffNavRewritten === '1') return;
@@ -109,6 +129,7 @@
   }
 
   function run() {
+    addBrandIcon();
     rewriteDesktop();
     rewriteMobile();
   }
