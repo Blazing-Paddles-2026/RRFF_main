@@ -128,10 +128,33 @@
     mobile.innerHTML = html.join('');
   }
 
+  function addMobileDonate() {
+    // On narrow screens the entire desktop nav (including the Donate pill)
+    // is hidden by 'hidden lg:flex'. Inject a separate Donate button that
+    // stays visible next to the hamburger so the primary CTA is never
+    // hidden behind a menu tap.
+    const navRow = document.querySelector('nav .flex.items-center.justify-between');
+    if (!navRow || navRow.dataset.rrffMobileDonate === '1') return;
+    const burger = navRow.querySelector('button.lg\\:hidden, button[class*="lg:hidden"]');
+    if (!burger) return;
+
+    const mobileDonate = document.createElement('a');
+    mobileDonate.href = DONATE_HREF;
+    mobileDonate.target = '_blank';
+    mobileDonate.rel = 'noopener noreferrer';
+    mobileDonate.textContent = 'Donate';
+    // Visible on mobile only (lg:hidden) — same gold pill style, slightly
+    // smaller padding so it pairs nicely with the hamburger.
+    mobileDonate.className = 'lg:hidden bg-gold text-[hsl(220,15%,8%)] px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-[hsl(43,75%,65%)] transition-colors mr-2';
+    burger.parentNode.insertBefore(mobileDonate, burger);
+    navRow.dataset.rrffMobileDonate = '1';
+  }
+
   function run() {
     addBrandIcon();
     rewriteDesktop();
     rewriteMobile();
+    addMobileDonate();
   }
 
   // Close dropdowns on outside click

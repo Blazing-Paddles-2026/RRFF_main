@@ -83,6 +83,19 @@
     const mobile  = document.querySelector('.rrff-mobile-menu');
     if (desktop) desktop.innerHTML = buildDesktop();
     if (mobile)  mobile.innerHTML  = buildMobile();
+
+    // Inject a mobile-visible Donate pill next to the hamburger, so the
+    // primary CTA is never hidden behind a menu tap.
+    const burger = document.querySelector('.rrff-menu-btn');
+    if (burger && !document.querySelector('.rrff-donate-mobile')) {
+      const m = document.createElement('a');
+      m.href = DONATE_HREF;
+      m.target = '_blank';
+      m.rel = 'noopener noreferrer';
+      m.textContent = 'Donate';
+      m.className = 'rrff-donate-mobile';
+      burger.parentNode.insertBefore(m, burger);
+    }
     // Tap-to-toggle for touch devices on dropdowns
     document.querySelectorAll('.rrff-dropdown > button').forEach(btn => {
       btn.addEventListener('click', (e) => {

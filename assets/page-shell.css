@@ -92,6 +92,25 @@ a:hover { color: var(--gold-hover); }
 
 .rrff-menu-btn { display: block; background: none; border: none; color: #fff; padding: 0.5rem; cursor: pointer; }
 @media (min-width: 1024px) { .rrff-menu-btn { display: none; } }
+
+/* Mobile-only Donate pill that sits next to the hamburger so the primary
+   CTA stays visible even when the rest of the nav is collapsed. */
+.rrff-donate-mobile {
+  display: inline-flex;
+  align-items: center;
+  background: hsl(43, 75%, 55%);
+  color: hsl(220, 15%, 8%);
+  padding: 0.4rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  margin-right: 0.5rem;
+  transition: background 0.18s;
+  white-space: nowrap;
+}
+.rrff-donate-mobile:hover { background: hsl(43, 75%, 65%); color: hsl(220, 15%, 8%); }
+@media (min-width: 1024px) { .rrff-donate-mobile { display: none; } }
 .rrff-menu-btn svg { width: 24px; height: 24px; }
 .rrff-mobile-menu { display: none; flex-direction: column; padding: 0.5rem 0 1rem; border-top: 1px solid rgba(255,255,255,0.06); max-height: 70vh; overflow-y: auto; }
 .rrff-mobile-menu.is-open { display: flex; }
