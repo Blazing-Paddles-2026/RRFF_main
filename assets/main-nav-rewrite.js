@@ -133,6 +133,10 @@
     // is hidden by 'hidden lg:flex'. Inject a separate Donate button that
     // stays visible next to the hamburger so the primary CTA is never
     // hidden behind a menu tap.
+    //
+    // The nav row uses 'justify-between' across 3 children, so a 4th item
+    // gets spread out and ends up centered. To keep Donate next to the
+    // hamburger we wrap them together in one right-aligned container.
     const navRow = document.querySelector('nav .flex.items-center.justify-between');
     if (!navRow || navRow.dataset.rrffMobileDonate === '1') return;
     const burger = navRow.querySelector('button.lg\\:hidden, button[class*="lg:hidden"]');
@@ -143,10 +147,16 @@
     mobileDonate.target = '_blank';
     mobileDonate.rel = 'noopener noreferrer';
     mobileDonate.textContent = 'Donate';
-    // Visible on mobile only (lg:hidden) — same gold pill style, slightly
-    // smaller padding so it pairs nicely with the hamburger.
-    mobileDonate.className = 'lg:hidden bg-gold text-[hsl(220,15%,8%)] px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-[hsl(43,75%,65%)] transition-colors mr-2';
-    burger.parentNode.insertBefore(mobileDonate, burger);
+    mobileDonate.className = 'bg-gold text-[hsl(220,15%,8%)] px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-[hsl(43,75%,65%)] transition-colors';
+
+    // Build a wrapper that holds Donate + hamburger together, replacing
+    // the hamburger's current spot in the row.
+    const rightCluster = document.createElement('div');
+    rightCluster.className = 'flex items-center gap-3 lg:hidden';
+    burger.parentNode.insertBefore(rightCluster, burger);
+    rightCluster.appendChild(mobileDonate);
+    rightCluster.appendChild(burger);
+
     navRow.dataset.rrffMobileDonate = '1';
   }
 

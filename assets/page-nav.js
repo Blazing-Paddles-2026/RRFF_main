@@ -84,8 +84,9 @@
     if (desktop) desktop.innerHTML = buildDesktop();
     if (mobile)  mobile.innerHTML  = buildMobile();
 
-    // Inject a mobile-visible Donate pill next to the hamburger, so the
-    // primary CTA is never hidden behind a menu tap.
+    // Inject a mobile-visible Donate pill next to the hamburger, wrapped
+    // together in a right-aligned cluster so they sit as a unit (the nav
+    // row uses space-between, otherwise Donate would end up centered).
     const burger = document.querySelector('.rrff-menu-btn');
     if (burger && !document.querySelector('.rrff-donate-mobile')) {
       const m = document.createElement('a');
@@ -94,7 +95,12 @@
       m.rel = 'noopener noreferrer';
       m.textContent = 'Donate';
       m.className = 'rrff-donate-mobile';
-      burger.parentNode.insertBefore(m, burger);
+
+      const cluster = document.createElement('div');
+      cluster.className = 'rrff-mobile-right';
+      burger.parentNode.insertBefore(cluster, burger);
+      cluster.appendChild(m);
+      cluster.appendChild(burger);
     }
     // Tap-to-toggle for touch devices on dropdowns
     document.querySelectorAll('.rrff-dropdown > button').forEach(btn => {

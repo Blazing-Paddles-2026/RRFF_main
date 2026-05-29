@@ -93,6 +93,10 @@ a:hover { color: var(--gold-hover); }
 .rrff-menu-btn { display: block; background: none; border: none; color: #fff; padding: 0.5rem; cursor: pointer; }
 @media (min-width: 1024px) { .rrff-menu-btn { display: none; } }
 
+/* Mobile-only cluster that pairs Donate + hamburger together on the right */
+.rrff-mobile-right { display: flex; align-items: center; gap: 0.5rem; }
+@media (min-width: 1024px) { .rrff-mobile-right { display: contents; } }
+
 /* Mobile-only Donate pill that sits next to the hamburger so the primary
    CTA stays visible even when the rest of the nav is collapsed. */
 .rrff-donate-mobile {
@@ -105,7 +109,6 @@ a:hover { color: var(--gold-hover); }
   font-size: 0.85rem;
   font-weight: 700;
   text-decoration: none;
-  margin-right: 0.5rem;
   transition: background 0.18s;
   white-space: nowrap;
 }
