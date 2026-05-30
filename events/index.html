@@ -161,6 +161,116 @@
   margin: 0 0 36px;
 }
 
+/* ============ Past Events ============ */
+.band-past {
+  padding: 56px 0 64px;
+  background: var(--bg-elev);
+  border-top: 1px solid var(--border-soft);
+}
+.past-events-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-top: 16px;
+  max-width: 920px;
+}
+@media (min-width: 720px) {
+  .past-events-list { grid-template-columns: repeat(2, 1fr); }
+}
+
+.past-event-card {
+  background: var(--card);
+  border: 1px solid var(--border-soft);
+  border-radius: 14px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  transition: border-color 0.2s;
+  opacity: 0.92;
+}
+@media (max-width: 540px) {
+  .past-event-card { grid-template-columns: 1fr; }
+}
+.past-event-card:hover {
+  border-color: hsla(43, 75%, 55%, 0.25);
+  opacity: 1;
+}
+.past-event-image {
+  position: relative;
+  background: hsl(0, 0%, 4%);
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+@media (max-width: 540px) {
+  .past-event-image { aspect-ratio: 16/10; }
+}
+.past-event-image img {
+  width: 100%; height: 100%;
+  object-fit: contain;
+  padding: 12px;
+  filter: saturate(0.85);
+}
+.past-event-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--text);
+  background: hsla(0, 0%, 0%, 0.7);
+  padding: 4px 10px;
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+}
+.past-event-body {
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.past-event-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin: 0;
+  font-weight: 600;
+}
+.past-event-date svg { width: 13px; height: 13px; color: var(--gold); opacity: 0.7; }
+.past-event-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 2px 0 4px;
+  line-height: 1.2;
+  color: var(--text);
+  letter-spacing: -0.2px;
+}
+.past-event-blurb {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-muted);
+  margin: 0 0 4px;
+}
+.past-event-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gold);
+  text-decoration: none;
+  margin-top: 4px;
+  align-self: flex-start;
+  transition: color 0.18s;
+}
+.past-event-link:hover { color: var(--gold-hi); }
+
 .section-cta {
   text-align: center;
   background: var(--bg-elev);
@@ -219,37 +329,7 @@
 
     <div class="events-list">
 
-      <!-- ============ Event 1: Foundation Night ============ -->
-      <article class="event-card">
-        <div class="event-image">
-          <img src="/images/foundation-night-flyer-2026.jpg" alt="Round Rock Fire Foundation Night at Dell Diamond — May 29, 2026 flyer" loading="lazy" />
-        </div>
-        <div class="event-body">
-          <span class="event-tag featured">★ Featured Event</span>
-          <p class="event-date">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
-            Friday · May 29, 2026 · 7:05 PM
-          </p>
-          <h2 class="event-title">Round Rock Fire Foundation Night at Dell Diamond</h2>
-          <p class="event-blurb">
-            An inaugural community-wide tribute to Central Texas firefighters and fire families. Round Rock Express vs. Salt Lake Bees — first pitch at 7:05 PM. Use code <strong style="color: var(--gold);">FIRE26</strong> at checkout.
-          </p>
-          <ul class="event-details">
-            <li>Pre-game fire apparatus display (Touch-A-Truck)</li>
-            <li>Pipes and Drums performance</li>
-            <li>Honor Guard presentation of colors</li>
-            <li>Ceremonial first pitch &amp; fire family recognition</li>
-            <li>Between-innings active-duty firefighter recognition</li>
-            <li>Foundation information booths</li>
-          </ul>
-          <div class="event-actions">
-            <a class="btn btn-primary" href="https://mlb.tickets.com/?orgId=58189&amp;agency=MILB_MPV&amp;eventId=27339" target="_blank" rel="noopener noreferrer">Get Tickets →</a>
-            <a class="btn btn-ghost" href="/#/events/fire-foundation-night">Event Details</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- ============ Event 2: Blazing Paddles ============ -->
+      <!-- ============ Event 1: Blazing Paddles ============ -->
       <article class="event-card">
         <div class="event-image">
           <img src="/images/blazing-paddles-logo-dark.jpg" alt="Blazing Paddles Pickleball Tournament — October 10, 2026 logo" loading="lazy" />
@@ -278,7 +358,7 @@
         </div>
       </article>
 
-      <!-- ============ Event 3: Spouse Conference ============ -->
+      <!-- ============ Event 2: Spouse Conference ============ -->
       <article class="event-card">
         <div class="event-image">
           <img src="/images/spouse-conference-flyer-2026.jpg" alt="2nd Annual Round Rock Fire Foundation National Spouse Conference — November 6–8, 2026 flyer" loading="lazy" />
@@ -303,6 +383,37 @@
             <a class="btn btn-primary" href="https://spouseconference.roundrockfirefoundation.org/">Learn More →</a>
             <a class="btn btn-ghost" href="https://forms.gle/VUuMEssGe3cqP4Ge8" target="_blank" rel="noopener noreferrer">Register</a>
           </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ PAST EVENTS ============ -->
+<section class="band-past">
+  <div class="container">
+    <p class="section-eyebrow">In Case You Missed It</p>
+    <h2 class="section-title">Past Events</h2>
+    <p class="intro-note">A look back at the gatherings that brought our fire-service community together.</p>
+
+    <div class="past-events-list">
+
+      <article class="past-event-card">
+        <div class="past-event-image">
+          <img src="/images/foundation-night-flyer-2026.jpg" alt="Round Rock Fire Foundation Night at Dell Diamond — May 29, 2026" loading="lazy" />
+          <span class="past-event-badge">Past Event</span>
+        </div>
+        <div class="past-event-body">
+          <p class="past-event-date">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+            May 29, 2026
+          </p>
+          <h3 class="past-event-title">Foundation Night at Dell Diamond</h3>
+          <p class="past-event-blurb">
+            Our inaugural community tribute to Central Texas firefighters and fire families. A sold-out night of pre-game apparatus, Pipes &amp; Drums, the Honor Guard, ceremonial first pitch, and a Round Rock Express win that brought everyone to their feet. Thank you to the 2,000+ fans who used <strong style="color: var(--gold);">FIRE26</strong> and helped support Round Rock fire families.
+          </p>
+          <a class="past-event-link" href="/foundation-night/">View event page →</a>
         </div>
       </article>
 
