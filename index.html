@@ -2,6 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      // Force redirect to www if served from apex (in case cert issue is bypassed)
+      (function(){
+        try {
+          if (location.hostname === 'roundrockfirefoundation.org') {
+            location.replace('https://www.roundrockfirefoundation.org' + location.pathname + location.search + location.hash);
+          }
+        } catch(e) {}
+      })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Round Rock Fire Foundation</title>
     <meta name="description" content="The Round Rock Fire Foundation supports Round Rock firefighters and their families through The 1884 Fund — emergency relief, wellness programs, and community-driven care." />
