@@ -6,6 +6,30 @@
    This rule lets the full flyer show without cropping by switching
    to contain + letterboxing the leftover space with a dark band.
 */
+
+/* Homepage Featured Event — hide-until-rewritten guard
+   ----------------------------------------------------
+   The compiled React bundle still ships with the past "Foundation Night"
+   as the homepage Featured Event. featured-event-rewrite.js rewrites it
+   to the upcoming Blazing Paddles tournament after render. Until that
+   patch completes, hide the card so users never see stale content or
+   click a stale link.
+
+   How it works:
+   - The patch script marks the stale card with .rrff-featured-pending
+     as soon as it detects it (before user can interact).
+   - When the rewrite succeeds, it swaps the class to .rrff-featured-ready.
+   - A 2-second failsafe in JS reveals the card no matter what so the
+     homepage hero spot is never blank forever. */
+.rrff-featured-pending {
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+.rrff-featured-ready {
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
 img[src*="express-appreciation-night-flyer"],
 img[src*="blazing-paddles-logo-light"],
 img[src*="foundation-night-flyer"] {

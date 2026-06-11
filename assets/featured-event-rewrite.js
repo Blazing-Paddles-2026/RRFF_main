@@ -20,6 +20,41 @@
 
   var PATCHED = false;
 
+  // Pre-hide guard: as soon as we spot the stale Featured Event card,
+  // hide it with .rrff-featured-pending so users never see or click it
+  // before the rewrite completes.
+  function prehide() {
+    var nodes = document.querySelectorAll('h1, h2, h3, h4');
+    for (var i = 0; i < nodes.length; i++) {
+      var t = (nodes[i].textContent || '').trim();
+      if (t.indexOf('Round Rock Fire Foundation Night at Dell Diamond') !== -1) {
+        var card = nodes[i].closest('article, section, div');
+        var root = card;
+        for (var hop = 0; hop < 6 && root; hop++) {
+          if ((root.textContent || '').indexOf('Featured Event') !== -1) break;
+          root = root.parentElement;
+        }
+        if (root && !root.classList.contains('rrff-featured-ready')) {
+          root.classList.add('rrff-featured-pending');
+        }
+        return root;
+      }
+    }
+    return null;
+  }
+
+  // Failsafe: never leave the card hidden longer than 2 seconds.
+  // Better to show stale content than a blank hero spot.
+  function reveal(el) {
+    if (!el) return;
+    el.classList.remove('rrff-featured-pending');
+    el.classList.add('rrff-featured-ready');
+  }
+  setTimeout(function () {
+    var stragglers = document.querySelectorAll('.rrff-featured-pending');
+    for (var s = 0; s < stragglers.length; s++) reveal(stragglers[s]);
+  }, 2000);
+
   function patch() {
     if (PATCHED) return;
 
@@ -47,6 +82,8 @@
     }
     if (!root) return;
 
+    // Hide the card during the rewrite
+    root.classList.add('rrff-featured-pending');
     PATCHED = true;
 
     // --- Rewrite title ---
@@ -213,15 +250,26 @@
     }
   }
 
+  // Wrapper that pre-hides then patches then reveals
+  function tryPatch() {
+    var hiddenRoot = prehide();
+    patch();
+    // After patch, reveal whatever ended up hidden
+    var pending = document.querySelectorAll('.rrff-featured-pending');
+    for (var p = 0; p < pending.length; p++) {
+      reveal(pending[p]);
+    }
+  }
+
   // Run now and observe future renders
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', patch);
+    document.addEventListener('DOMContentLoaded', tryPatch);
   } else {
-    patch();
+    tryPatch();
   }
 
   var mo = new MutationObserver(function () {
-    if (!PATCHED) patch();
+    if (!PATCHED) tryPatch();
   });
   mo.observe(document.documentElement, { childList: true, subtree: true });
 
