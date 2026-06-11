@@ -71,3 +71,55 @@ div.py-16.bg-\[hsl\(0\,0\%\,6\%\)\] {
   padding-top: 3rem !important;
   padding-bottom: 3rem !important;
 }
+
+/* --- Legacy Circle section: switch to dark background ---
+   The 'Be one of the first to help build lasting care' section is the
+   5th <section> in <main> (0-indexed: 4). It currently has bg-white +
+   dark text. Switch to a near-black background and lift text + numbered
+   step labels to cream/light values so contrast stays accessible. */
+main > section:nth-of-type(5) {
+  background-color: hsl(0, 0%, 6%) !important;
+}
+main > section:nth-of-type(5) h1,
+main > section:nth-of-type(5) h2,
+main > section:nth-of-type(5) h3,
+main > section:nth-of-type(5) h4,
+main > section:nth-of-type(5) blockquote {
+  color: hsl(40, 20%, 95%) !important;
+}
+main > section:nth-of-type(5) p {
+  color: hsl(40, 15%, 75%) !important;
+}
+/* Keep the small kicker label readable but muted on dark */
+main > section:nth-of-type(5) span.uppercase,
+main > section:nth-of-type(5) .text-xs.uppercase,
+main > section:nth-of-type(5) [class*="tracking-"][class*="uppercase"] {
+  color: hsl(40, 15%, 65%) !important;
+}
+/* Preserve the gold accents (numbered 01/02/03 + Founding Season callout) */
+main > section:nth-of-type(5) .text-gold,
+main > section:nth-of-type(5) [class*="text-gold"] {
+  color: hsl(43, 75%, 60%) !important;
+}
+/* The Founding Season info card inside this section uses a light background;
+   restyle it to sit on the dark with a soft cream border instead. */
+main > section:nth-of-type(5) .bg-white,
+main > section:nth-of-type(5) [class*="bg-\[hsl\(40\,20\%\,94\%\)\]"],
+main > section:nth-of-type(5) [class*="bg-\[hsl\(40\,20\%\,95\%\)\]"] {
+  background-color: hsl(0, 0%, 10%) !important;
+  border-color: hsl(43, 25%, 25%) !important;
+}
+/* Inputs and buttons inside the section keep their look but with cream text. */
+main > section:nth-of-type(5) a {
+  color: inherit;
+}
+/* Email link in the Founding Season callout: make sure it reads on dark */
+main > section:nth-of-type(5) a[href^="mailto:"] {
+  color: hsl(43, 75%, 60%) !important;
+}
+/* Buttons on the dark section: the 'Become a Founding Legacy Donor' button
+   was likely dark text on a light pill; flip to dark text on gold pill. */
+main > section:nth-of-type(5) a.bg-gold,
+main > section:nth-of-type(5) a[class*="bg-[hsl(43"] {
+  color: hsl(0, 0%, 6%) !important;
+}
