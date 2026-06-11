@@ -1,0 +1,64 @@
+/* Homepage white-space tighten.
+   Reduces oversized section padding and inner gaps on the homepage only.
+   This file is linked only from /index.html so subpages keep their styling. */
+
+/* Hero: was min-height 900px with 128px top padding. Bring it down. */
+main > section.min-h-screen {
+  min-height: 720px !important;
+}
+main > section.min-h-screen > div.pt-32 {
+  padding-top: 5rem !important;
+  padding-bottom: 3.5rem !important;
+}
+
+/* Cap section padding at 48px (was 128px on some sections). */
+main > section.py-24,
+main > section.lg\:py-32 {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+@media (min-width: 1024px) {
+  main > section.py-24,
+  main > section.lg\:py-32 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+}
+
+/* Trim large inner gaps and margins. */
+main > section .gap-16 { gap: 2.5rem !important; }
+main > section .gap-12 { gap: 2rem !important; }
+main > section .mb-16  { margin-bottom: 2.5rem !important; }
+main > section .mb-12  { margin-bottom: 2rem !important; }
+
+/* Card inner padding (p-12 = 48px) trimmed slightly. */
+main > section .p-8.md\:p-12,
+main > section .p-12 {
+  padding: 2rem !important;
+}
+@media (min-width: 768px) {
+  main > section .p-8.md\:p-12 {
+    padding: 2.5rem !important;
+  }
+}
+
+/* Mobile: ensure hero doesn't claim a whole viewport on phones. */
+@media (max-width: 768px) {
+  main > section.min-h-screen {
+    min-height: auto !important;
+  }
+  main > section.min-h-screen > div.pt-32 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+  main > section.py-24 {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+}
+
+/* Newsletter (dark band before footer) and pre-footer divs. */
+div.py-16.bg-\[hsl\(0\,0\%\,6\%\)\] {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
