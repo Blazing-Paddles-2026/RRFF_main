@@ -20,6 +20,20 @@ main > section.min-h-screen .text-white\/\[0\.04\] {
   color: rgba(255, 255, 255, 0.14) !important;
 }
 
+/* Lift the lower "1884" watermark up so the Why/What/How cards don't
+   overlap it. The wrapper uses Tailwind `bottom-8` (32px from hero bottom);
+   override to a much larger offset so the numerals sit above the card row. */
+main > section.min-h-screen .absolute.bottom-8 {
+  bottom: 16rem !important; /* ~256px clears the cards on desktop */
+}
+@media (max-width: 768px) {
+  /* On mobile the cards stack vertically; tuck the watermark just below the
+     hero copy and above the cards. */
+  main > section.min-h-screen .absolute.bottom-8 {
+    bottom: 22rem !important;
+  }
+}
+
 /* Cap section padding at 48px (was 128px on some sections). */
 main > section.py-24,
 main > section.lg\:py-32 {
