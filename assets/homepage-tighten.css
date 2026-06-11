@@ -115,13 +115,17 @@ main > section:nth-of-type(5) .text-gold,
 main > section:nth-of-type(5) [class*="text-gold"] {
   color: hsl(43, 75%, 60%) !important;
 }
-/* The Founding Season info card inside this section uses a light background;
-   restyle it to sit on the dark with a soft cream border instead. */
+/* The Founding Season info card inside this section uses a light background.
+   It's a `bg-[hsl(40,15%,96%)]` div (light cream) that becomes invisible-on-
+   invisible when we lift the section's body text to light cream. Catch every
+   light-background utility used in this section and convert to a darker fill
+   with a subtle warm border so the card still reads as a contained module. */
 main > section:nth-of-type(5) .bg-white,
-main > section:nth-of-type(5) [class*="bg-\[hsl\(40\,20\%\,94\%\)\]"],
-main > section:nth-of-type(5) [class*="bg-\[hsl\(40\,20\%\,95\%\)\]"] {
-  background-color: hsl(0, 0%, 10%) !important;
-  border-color: hsl(43, 25%, 25%) !important;
+main > section:nth-of-type(5) [class*="bg-[hsl(40,"],
+main > section:nth-of-type(5) [class*="bg-[hsl(0,0%,9"],
+main > section:nth-of-type(5) [class*="bg-[hsl(0,0%,10"] {
+  background-color: hsl(0, 0%, 11%) !important;
+  border: 1px solid hsl(43, 20%, 22%) !important;
 }
 /* Inputs and buttons inside the section keep their look but with cream text. */
 main > section:nth-of-type(5) a {
