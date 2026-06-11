@@ -55,6 +55,32 @@
     for (var s = 0; s < stragglers.length; s++) reveal(stragglers[s]);
   }, 2000);
 
+  // Modern React (17+) attaches click handlers to the root container, not
+  // individual elements — so cloning won't strip them. Instead, we attach
+  // our own listener in the CAPTURE phase (which fires before React's bubble-
+  // phase synthetic handler) and force navigation to the correct URL.
+  function hijackClick(el, targetUrl) {
+    if (!el) return;
+    // Mark so we don't double-bind
+    if (el.__rrffHijacked) return;
+    el.__rrffHijacked = true;
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+      window.open(targetUrl, '_blank', 'noopener,noreferrer');
+    }, true); // capture phase = fires before React's bubble-phase handler
+    // Also block the React handler running on auxclick (middle/cmd-click)
+    el.addEventListener('auxclick', function (e) {
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+      // Let the browser handle middle-click via the href normally
+    }, true);
+  }
+
+  // Backward-compat shim used by older versions of the patch.
+  function detachReactHandlers(el) { return el; }
+
   function patch() {
     if (PATCHED) return;
 
@@ -178,24 +204,31 @@
       // "Get Tickets" -> "Register Now" -> FluidPB
       if (!rewroteTickets && (
           /get\s*tickets/i.test(aText) ||
-          aHref.indexOf('mlb.tickets.com') !== -1)) {
+          /register\s*now/i.test(aText) ||
+          aHref.indexOf('mlb.tickets.com') !== -1 ||
+          aHref.indexOf('fluidpb') !== -1)) {
+        var fluidUrl = 'https://app.fluidpb.com/tournaments/blazing-paddles-pickleball-fundraiser-tournament-2';
         ah.textContent = 'Register Now';
-        ah.setAttribute('href', 'https://app.fluidpb.com/tournaments/blazing-paddles-pickleball-fundraiser-tournament-2');
+        ah.setAttribute('href', fluidUrl);
         ah.setAttribute('target', '_blank');
         ah.setAttribute('rel', 'noopener noreferrer');
+        hijackClick(ah, fluidUrl);
         rewroteTickets = true;
         continue;
       }
 
-      // "Event Details" -> point to pickleball subdomain
+      // "Event Details" / "Learn More" -> point to pickleball subdomain
       if (!rewroteDetails && (
           /event\s*details/i.test(aText) ||
+          /learn\s*more/i.test(aText) ||
           aHref.indexOf('/foundation-night') !== -1 ||
           aHref.indexOf('fire-foundation-night') !== -1)) {
+        var pickleUrl = 'https://pickleball.roundrockfirefoundation.org/';
         ah.textContent = 'Learn More';
-        ah.setAttribute('href', 'https://pickleball.roundrockfirefoundation.org');
+        ah.setAttribute('href', pickleUrl);
         ah.setAttribute('target', '_blank');
         ah.setAttribute('rel', 'noopener noreferrer');
+        hijackClick(ah, pickleUrl);
         rewroteDetails = true;
         continue;
       }
