@@ -11,6 +11,15 @@ main > section.min-h-screen > div.pt-32 {
   padding-bottom: 3.5rem !important;
 }
 
+/* Brighten the "1884" watermark numbers in the hero — they were rendered
+   at 3-4% white opacity (Tailwind text-white/[0.03] and text-white/[0.04])
+   which is nearly invisible. Bump to ~14% so the numerals read as a deliberate
+   design element instead of disappearing entirely. */
+main > section.min-h-screen .text-white\/\[0\.03\],
+main > section.min-h-screen .text-white\/\[0\.04\] {
+  color: rgba(255, 255, 255, 0.14) !important;
+}
+
 /* Cap section padding at 48px (was 128px on some sections). */
 main > section.py-24,
 main > section.lg\:py-32 {
