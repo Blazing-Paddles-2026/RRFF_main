@@ -7,10 +7,11 @@
     whoWeAre: {
       label: 'Who We Are',
       items: [
-        { label: 'About Us',             href: '/about/' },
-        { label: 'Board Members',        href: '/board/' },
-        { label: 'Letter From the Chief',href: '/chief-letter/' },
-        { label: 'Contact Us',           href: '/contact/' },
+        { label: 'About Us',              href: '/about/' },
+        { label: 'Board Members',         href: '/board/' },
+        { label: 'Letter From the Chief', href: '/chief-letter/' },
+        { label: 'History of the RRFD',   href: '/#/history' },
+        { label: 'Contact Us',            href: '/contact/' },
       ],
     },
     programs: {
@@ -19,7 +20,6 @@
         { label: 'The 1884 Fund',  href: '/#/the-1884-fund' },
         { label: "Chap's Corner",  href: 'https://chap.roundrockfirefoundation.org/firechaplain' },
         { label: 'Legacy Circle',  href: '/legacy-circle/' },
-        { label: 'Our History',    href: '/#/history' },
       ],
     },
     events: {
