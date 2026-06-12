@@ -18,3 +18,37 @@ body:has(a[href="/volunteer"]) main section:has(form[action*="mjgzoaln"]) {
 body:has(a[href="/volunteer"]) main section:has(textarea[name="skills"]) {
   display: none !important;
 }
+
+/* ---------------------------------------------------------------------
+   Spacing fixes (added Jun 2026)
+   All rules are scoped to the Get Involved page via
+   body:has(a[href="/volunteer"]) so they never affect other pages.
+   --------------------------------------------------------------------- */
+
+/* 1. Help-card grid row gap was too tight (24px) against the 32px card
+   padding and 48px section padding, making the second row of cards
+   (Legacy Circle / Volunteer) feel cramped under the first row.
+   Bump the vertical gap to 40px so the two rows breathe; keep the
+   horizontal gap at the original 24px. */
+body:has(a[href="/volunteer"]) main .grid.md\:grid-cols-2.gap-6 {
+  row-gap: 2.5rem !important;   /* 40px */
+  column-gap: 1.5rem !important; /* 24px, unchanged */
+}
+
+/* 2. Tighten the oversized empty gap between the "Not Sure How to Help?"
+   contact box (last section in <main>, 48px bottom padding) and the
+   "Stay Connected" newsletter block. The newsletter is injected into the
+   <footer> as a div.py-16; combined the two paddings left a large dead
+   zone. Trim the top padding of the newsletter wrapper so it reads as a
+   connected continuation rather than a floating block.
+   NOTE: the newsletter block is shared across pages, so this rule is
+   kept page-scoped via body:has(a[href="/volunteer"]). */
+body:has(a[href="/volunteer"]) footer > div:has(> .rrff-newsletter) {
+  padding-top: 1.5rem !important; /* 24px instead of 32px */
+}
+
+/* 3. Give the newsletter heading a bit more separation from its subhead
+   so the two-line title doesn't sit so close to the supporting copy. */
+body:has(a[href="/volunteer"]) .rrff-newsletter-inner h2 {
+  margin-bottom: 1.25rem !important; /* 20px instead of 14px */
+}
