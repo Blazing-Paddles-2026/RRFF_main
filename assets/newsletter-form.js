@@ -71,23 +71,29 @@
       section = headingEl.parentElement;
       while (section && !/bg-\[hsl\(0,0%,6%\)\]/.test(section.className || '')) {
         section = section.parentElement;
-        if (!section || section === document.body) return;
+        if (!section || section === document.body) return false;
       }
     }
-    if (!section || section.dataset.rrffNewsletterReplaced === '1') return;
+    if (!section || section.dataset.rrffNewsletterReplaced === '1') return false;
     section.dataset.rrffNewsletterReplaced = '1';
     const wrapper = buildForm();
     section.innerHTML = '';
     section.appendChild(wrapper);
+    return true;
   }
 
   function scan() {
+    // Only inject ONE newsletter form per page. Some pages (e.g. The 1884
+    // Fund) contain the matching heading text in more than one container,
+    // which previously produced two stacked, identical forms with a large
+    // gap. If a form has already been injected on this page, stop.
+    if (document.querySelector('.rrff-newsletter')) return;
     const headings = document.querySelectorAll('h1, h2, h3, h4');
-    headings.forEach(h => {
+    for (const h of headings) {
       if (/help build support before it is needed/i.test(h.textContent || '')) {
-        injectIntoSection(h);
+        if (injectIntoSection(h)) break; // injected once — done for this page
       }
-    });
+    }
   }
 
   function init() {
