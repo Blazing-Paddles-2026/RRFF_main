@@ -7,10 +7,10 @@
    Corrections (per official Round Rock city PDF + LinkedIn primary sources,
    confirmed by Diedra Brownell, Executive Director, Round Rock Fire Foundation):
 
-     - Bizzell:    2005-2011  ->  1978-2004  (first career Fire Chief)
-     - Hodge:      2011-2016  ->  2004-2011  (succeeded Bizzell)
-     - Coatney:    2016       ->  2011-2016  (succeeded Hodge)
-     - Smith:      REMOVED    (David W. Smith was never Fire Chief)
+     - Bizzell:    1978-2004  (first career Fire Chief)
+     - Coatney:    2004-2011  (succeeded Bizzell)
+     - Hodge:      2011-Present  (succeeded Coatney)
+     - Smith:      REMOVED  (David W. Smith was never Fire Chief)
 
    The narrative paragraph elsewhere on the page already says Bizzell served
    until 2004 -- no edit needed there.
@@ -19,9 +19,10 @@
   'use strict';
 
   var corrections = {
-    'Lynn Bizzell':   '1978\u20132004',
-    'Larry Hodge':    '2004\u20132011',
-    'David Coatney':  '2011\u20132016'
+    'Lynn Bizzell':    '1978\u20132004',
+    'David Coatney':   '2004\u20132011',
+    'Robert Coatney':  '2004\u20132011',
+    'Larry Hodge':     '2011\u2013Present'
   };
   var removeNames = ['David W. Smith'];
 
