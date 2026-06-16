@@ -11,13 +11,35 @@ main > section.min-h-screen > div.pt-32 {
   padding-bottom: 3.5rem !important;
 }
 
-/* Brighten the "1884" watermark numbers in the hero — they were rendered
-   at 3-4% white opacity (Tailwind text-white/[0.03] and text-white/[0.04])
-   which is nearly invisible. Bump to ~14% so the numerals read as a deliberate
-   design element instead of disappearing entirely. */
-main > section.min-h-screen .text-white\/\[0\.03\],
-main > section.min-h-screen .text-white\/\[0\.04\] {
-  color: rgba(255, 255, 255, 0.14) !important;
+/* "1884" hero watermark.
+   The build renders TWO overlapping 1884 numerals at slightly different sizes
+   (a text-[20rem] layer pinned bottom-right and a duplicate text-[18rem] layer
+   inside the hero grid). Their misaligned edges created a doubled, blurry
+   "double-vision" effect. Collapse it to ONE clean watermark: hide the in-grid
+   duplicate and tighten + soften the remaining bottom-right numerals. */
+
+/* Hide the duplicate in-grid 1884 layer. */
+main > section.min-h-screen .reveal span.text-\[18rem\] {
+  display: none !important;
+}
+
+/* Tighten the remaining bottom-right 1884 and keep it a subtle watermark. */
+main > section.min-h-screen .absolute.bottom-8 span.text-\[12rem\] {
+  font-size: 16rem !important;
+  letter-spacing: -1.2rem !important;
+  color: rgba(255, 255, 255, 0.05) !important;
+}
+@media (max-width: 768px) {
+  main > section.min-h-screen .absolute.bottom-8 span.text-\[12rem\] {
+    font-size: 9rem !important;
+    letter-spacing: -0.6rem !important;
+  }
+}
+
+/* The legacy label shares the duplicate's container; once that collapses, keep
+   the label on a single line so it doesn't wrap into a narrow stack. */
+main > section.min-h-screen .absolute.bottom-8.right-0 p {
+  white-space: nowrap !important;
 }
 
 /* Lift the lower "1884" watermark up so the Why/What/How cards don't
