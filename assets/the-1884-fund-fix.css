@@ -1,0 +1,96 @@
+/* The 1884 Fund page — spacing + section-band coloring fix.
+   Scoped with :has() to the 1884 Fund route only (its hero is the only
+   `min-h-[60vh]` section in the app), so other pages are unaffected.
+
+   Goals:
+   1. Tighten oversized vertical white space between and inside sections.
+   2. Make the section "bands" visibly distinct. The build alternates section
+      backgrounds between hsl(0,0%,4%) and hsl(0,0%,6%) — only a 2% lightness
+      difference, so the borders between sections are invisible. We widen that
+      contrast and add a hairline divider so each section reads as its own band.
+   3. Make card edges visible. */
+
+/* ---- 1. Tighten vertical spacing ---- */
+
+/* Section vertical padding: py-24 = 96px each side on large screens. Cap it. */
+main:has(section.min-h-\[60vh\]) > section.py-24 {
+  padding-top: 3.25rem !important;    /* 52px */
+  padding-bottom: 3.25rem !important;
+}
+@media (min-width: 1024px) {
+  main:has(section.min-h-\[60vh\]) > section.py-24 {
+    padding-top: 4rem !important;     /* 64px on desktop */
+    padding-bottom: 4rem !important;
+  }
+}
+
+/* Hero: it reserves 60vh and centers content; trim its breathing room a touch. */
+main:has(section.min-h-\[60vh\]) > section.min-h-\[60vh\] {
+  min-height: 52vh !important;
+}
+
+/* Trim large inner gaps / bottom margins used inside sections. */
+main:has(section.min-h-\[60vh\]) .gap-16 { gap: 2.5rem !important; }
+main:has(section.min-h-\[60vh\]) .gap-12 { gap: 2rem !important; }
+main:has(section.min-h-\[60vh\]) .mb-16  { margin-bottom: 2.5rem !important; }
+main:has(section.min-h-\[60vh\]) .mb-12  { margin-bottom: 2rem !important; }
+main:has(section.min-h-\[60vh\]) .mt-16  { margin-top: 2.5rem !important; }
+
+/* Card inner padding (p-8 / p-12) trimmed slightly so cards aren't airy. */
+main:has(section.min-h-\[60vh\]) .p-12 { padding: 2.25rem !important; }
+@media (min-width: 768px) {
+  main:has(section.min-h-\[60vh\]) .p-8.md\:p-12 { padding: 2.5rem !important; }
+}
+
+/* ---- 2. Distinct section bands + visible dividers ---- */
+
+/* Darker band (was hsl 0 0% 4%) */
+main:has(section.min-h-\[60vh\]) > section.bg-\[hsl\(0\2c 0\%\2c 4\%\)\] {
+  background-color: hsl(0, 0%, 4.5%) !important;
+}
+/* Lighter band (was hsl 0 0% 6%) — lift to ~9% so the contrast is obvious */
+main:has(section.min-h-\[60vh\]) > section.bg-\[hsl\(0\2c 0\%\2c 6\%\)\] {
+  background-color: hsl(0, 0%, 9%) !important;
+}
+
+/* Hairline divider on top of every section after the hero so each break
+   between bands is clearly evident. */
+main:has(section.min-h-\[60vh\]) > section + section {
+  border-top: 1px solid hsl(0, 0%, 14%) !important;
+}
+
+/* ---- 3. Make card edges visible ---- */
+/* Content cards inside this page use subtle dark fills with faint/no borders.
+   Give them a slightly lighter fill than their band and a clear hairline border
+   so they read as contained modules. */
+main:has(section.min-h-\[60vh\]) [class*="rounded-2xl"],
+main:has(section.min-h-\[60vh\]) [class*="rounded-3xl"],
+main:has(section.min-h-\[60vh\]) [class*="rounded-xl"] {
+  border: 1px solid hsl(0, 0%, 18%) !important;
+}
+
+/* ---- 4. Remove leftover placeholder CTA below the signup form ---- */
+/* The newsletter section originally held a placeholder block ("Help build
+   support before it is needed... To join the list while the signup is being
+   set up, email info@..."). The real signup form is injected above it by
+   newsletter-form.js, so this block is now a redundant duplicate heading that
+   also adds empty vertical space. Hide that wrapper on this page. */
+/* The block lives in the page <footer>, which sits beside (not inside) <main>.
+   Anchor on the shared page container that holds the 1884 hero, then hide the
+   footer's py-16 placeholder wrapper. Only the 1884 Fund route renders this. */
+div:has(> main section.min-h-\[60vh\]) footer > div.py-16.bg-\[hsl\(0\2c 0\%\2c 6\%\)\] {
+  display: none !important;
+}
+
+/* ---- Mobile: tighten further ---- */
+@media (max-width: 768px) {
+  main:has(section.min-h-\[60vh\]) > section.py-24 {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+  main:has(section.min-h-\[60vh\]) > section.min-h-\[60vh\] {
+    min-height: auto !important;
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+}
