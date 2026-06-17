@@ -27,7 +27,9 @@ main > section.min-h-screen .reveal span.text-\[18rem\] {
 main > section.min-h-screen .absolute.bottom-8 span.text-\[12rem\] {
   font-size: 16rem !important;
   letter-spacing: -1.2rem !important;
-  color: rgba(255, 255, 255, 0.05) !important;
+  /* 14% white keeps the numerals clearly readable while still reading as a
+     subtle background watermark (5% was too faint to read). */
+  color: rgba(255, 255, 255, 0.14) !important;
 }
 @media (max-width: 768px) {
   main > section.min-h-screen .absolute.bottom-8 span.text-\[12rem\] {
