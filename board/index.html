@@ -106,6 +106,18 @@
   color: var(--text-muted);
   font-size: 16px;
 }
+
+/* Small gold officer badge used on regular cards (Treasurer, Secretary, etc.) */
+.officer-badge {
+  display: inline-block;
+  font-size: 10.5px; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--gold);
+  background: hsla(43, 75%, 55%, 0.10);
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
 </style>
 </head>
 <body>
@@ -159,18 +171,20 @@
       </article>
 
       <article class="member-card">
-        <h3 class="member-name">Jeff Paull</h3>
-        <p class="member-role">Regional Vice President</p>
-        <p class="member-affil">Primerica</p>
+        <h3 class="member-name">Diedra Brownell</h3>
+        <p class="member-role">Executive Director</p>
+        <p class="member-affil">Round Rock Fire Foundation</p>
       </article>
 
       <article class="member-card">
+        <span class="officer-badge">Treasurer</span>
         <h3 class="member-name">Hunter Leatherman</h3>
-        <p class="member-role">Vice President, Business &amp; Community Banking</p>
-        <p class="member-affil">Frontier Bank of Texas</p>
+        <p class="member-role">Vice President</p>
+        <p class="member-affil">First State Bank</p>
       </article>
 
       <article class="member-card">
+        <span class="officer-badge">Secretary</span>
         <h3 class="member-name">John Patterson</h3>
         <p class="member-role">Chaplain</p>
         <p class="member-affil">Round Rock Fire Department · Writes <a href="https://chap.roundrockfirefoundation.org/firechaplain">Chap's Corner</a></p>
@@ -178,8 +192,9 @@
 
       <article class="member-card president-card">
         <span class="president-eyebrow">Board President</span>
-        <h3 class="member-name">Diedra Brownell</h3>
-        <p class="member-affil">Round Rock Fire Foundation</p>
+        <h3 class="member-name">Jeff Paull</h3>
+        <p class="member-role">Regional Vice President</p>
+        <p class="member-affil">Primerica</p>
       </article>
 
     </div>
