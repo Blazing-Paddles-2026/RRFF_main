@@ -118,6 +118,14 @@
   border-radius: 999px;
   margin-bottom: 10px;
 }
+
+/* Tighten up the large vertical gap between the hero paragraph and the
+   next section's intro paragraph on small screens (iPhone). */
+@media (max-width: 640px) {
+  .hero { padding: 56px 0 28px; }
+  section.band { padding: 36px 0; }
+  .board-intro { margin-bottom: 28px; }
+}
 </style>
 </head>
 <body>
@@ -159,21 +167,10 @@
     <div class="board-grid">
 
       <article class="member-card">
-        <h3 class="member-name">Wylie Brownell</h3>
-        <p class="member-role">Assistant Fire Chief</p>
-        <p class="member-affil">Round Rock Fire Department</p>
-      </article>
-
-      <article class="member-card">
-        <h3 class="member-name">Will Peckham, CIC | CRM</h3>
-        <p class="member-role">Watkins Insurance</p>
-        <p class="member-affil">Community Leader &amp; Dedicated Advocate</p>
-      </article>
-
-      <article class="member-card">
-        <h3 class="member-name">Diedra Brownell</h3>
-        <p class="member-role">Executive Director</p>
-        <p class="member-affil">Round Rock Fire Foundation</p>
+        <span class="officer-badge">President</span>
+        <h3 class="member-name">Jeff Paull</h3>
+        <p class="member-role">Regional Vice President</p>
+        <p class="member-affil">Primerica</p>
       </article>
 
       <article class="member-card">
@@ -190,11 +187,22 @@
         <p class="member-affil">Round Rock Fire Department · Writes <a href="https://chap.roundrockfirefoundation.org/firechaplain">Chap's Corner</a></p>
       </article>
 
+      <article class="member-card">
+        <h3 class="member-name">Wylie Brownell</h3>
+        <p class="member-role">Assistant Fire Chief</p>
+        <p class="member-affil">Round Rock Fire Department</p>
+      </article>
+
+      <article class="member-card">
+        <h3 class="member-name">Will Peckham, CIC | CRM</h3>
+        <p class="member-role">Watkins Insurance</p>
+        <p class="member-affil">Community Leader &amp; Dedicated Advocate</p>
+      </article>
+
       <article class="member-card president-card">
-        <span class="president-eyebrow">Board President</span>
-        <h3 class="member-name">Jeff Paull</h3>
-        <p class="member-role">Regional Vice President</p>
-        <p class="member-affil">Primerica</p>
+        <span class="president-eyebrow">Executive Director</span>
+        <h3 class="member-name">Diedra Brownell</h3>
+        <p class="member-affil">Round Rock Fire Foundation</p>
       </article>
 
     </div>
