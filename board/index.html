@@ -107,16 +107,29 @@
   font-size: 16px;
 }
 
-/* Small gold officer badge used on regular cards (Treasurer, Secretary, etc.) */
+/* Officer badge used on regular cards (President, Treasurer, Secretary) —
+   solid gold pill with a star and glow so it reads as a distinct honor. */
 .officer-badge {
-  display: inline-block;
-  font-size: 10.5px; font-weight: 700;
-  letter-spacing: 1.5px; text-transform: uppercase;
-  color: var(--gold);
-  background: hsla(43, 75%, 55%, 0.10);
-  padding: 3px 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px; font-weight: 800;
+  letter-spacing: 1.8px; text-transform: uppercase;
+  color: hsl(0, 0%, 9%);
+  background: linear-gradient(135deg, hsl(43, 90%, 66%), hsl(43, 80%, 52%));
+  padding: 5px 14px;
   border-radius: 999px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  box-shadow: 0 6px 16px -6px hsla(43, 75%, 55%, 0.65);
+}
+.officer-badge::before { content: '\2605'; font-size: 10px; line-height: 1; }
+
+/* Officer cards get a warmer gold-tinted border so they stand out at a glance */
+.member-card.officer-card {
+  border-color: hsla(43, 75%, 55%, 0.4);
+}
+.member-card.officer-card::before {
+  background: linear-gradient(180deg, hsl(43, 85%, 60%), hsl(43, 80%, 50%));
 }
 
 /* Tighten up the large vertical gap between the hero paragraph and the
@@ -166,21 +179,21 @@
 
     <div class="board-grid">
 
-      <article class="member-card">
+      <article class="member-card officer-card">
         <span class="officer-badge">President</span>
         <h3 class="member-name">Jeff Paull</h3>
         <p class="member-role">Regional Vice President</p>
         <p class="member-affil">Primerica</p>
       </article>
 
-      <article class="member-card">
+      <article class="member-card officer-card">
         <span class="officer-badge">Treasurer</span>
         <h3 class="member-name">Hunter Leatherman</h3>
         <p class="member-role">Vice President</p>
         <p class="member-affil">First State Bank</p>
       </article>
 
-      <article class="member-card">
+      <article class="member-card officer-card">
         <span class="officer-badge">Secretary</span>
         <h3 class="member-name">John Patterson</h3>
         <p class="member-role">Chaplain</p>
