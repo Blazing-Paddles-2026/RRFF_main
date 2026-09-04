@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Legacy Circle — Round Rock Fire Foundation</title>
-    <meta name="description" content="Become a Founding Legacy Donor and help build the long-term support system Round Rock fire families can count on for years to come." />
+    <meta name="description" content="Join the Legacy Circle with a $1,884 founding gift or $157/month. Help build lasting support for Round Rock fire families through The 1884 Fund." />
 
     <meta property="og:site_name" content="Round Rock Fire Foundation" />
     <meta property="og:title" content="Legacy Circle — Round Rock Fire Foundation" />
-    <meta property="og:description" content="Become a Founding Legacy Donor of The 1884 Fund. Help establish lasting care for Round Rock fire families." />
+    <meta property="og:description" content="Become a Founding Legacy Donor of The 1884 Fund with a $1,884 gift or $157/month. Help establish lasting care for Round Rock fire families." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.roundrockfirefoundation.org/legacy-circle" />
     <meta property="og:image" content="https://www.roundrockfirefoundation.org/images/rrff-logo-dark.png" />
@@ -113,6 +113,59 @@
       /* SECTIONS */
       section.band { padding: 64px 0; }
       section.band-alt { background: var(--bg-elev); }
+      .eyebrow { display: inline-flex; align-items: center; gap: 8px;
+        font-size: 12px; font-weight: 700; letter-spacing: 2.5px;
+        text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+      .section-head { max-width: 640px; margin: 0 auto 40px; text-align: center; }
+      .section-head h2 { font-family: 'Playfair Display', Georgia, serif;
+        font-size: clamp(28px, 3.2vw, 38px); margin: 0 0 14px; }
+      .section-head p { color: var(--text-muted); font-size: 16px; margin: 0; }
+
+      /* GIVING LEVEL CARDS */
+      .giving-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 900px; margin: 0 auto; }
+      @media (max-width: 720px) { .giving-grid { grid-template-columns: 1fr; } }
+      .giving-card {
+        background: var(--card);
+        border: 1px solid var(--border-soft);
+        border-radius: 18px;
+        padding: 36px 32px;
+        text-align: center;
+        position: relative;
+        transition: border-color 0.2s, transform 0.2s;
+      }
+      .giving-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+      .giving-card.featured { border-color: hsla(43, 75%, 55%, 0.45); background: linear-gradient(160deg, hsla(43, 75%, 55%, 0.08), var(--card) 60%); }
+      .giving-card .badge {
+        position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+        background: var(--gold); color: hsl(0,0%,4%); font-size: 11px; font-weight: 700;
+        letter-spacing: 1.5px; text-transform: uppercase; padding: 5px 14px; border-radius: 999px;
+        white-space: nowrap;
+      }
+      .giving-card .amount {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: clamp(34px, 4.4vw, 46px);
+        font-weight: 700;
+        line-height: 1;
+        margin: 10px 0 6px;
+      }
+      .giving-card .amount .accent { color: var(--gold); }
+      .giving-card .amount-label {
+        font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+        color: var(--text-dim); margin-bottom: 4px;
+      }
+      .giving-card .gift-name { font-size: 17px; font-weight: 700; margin: 0 0 14px; }
+      .giving-card .gift-desc { font-size: 14.5px; color: var(--text-muted); margin: 0 0 22px; line-height: 1.6; }
+      .giving-card .btn { width: 100%; justify-content: center; }
+      .giving-note { text-align: center; font-size: 13.5px; color: var(--text-dim); max-width: 640px; margin: 24px auto 0; }
+
+      /* BENEFITS GRID */
+      .benefits-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+        background: var(--border-soft); border: 1px solid var(--border-soft); border-radius: 14px; overflow: hidden; max-width: 1000px; margin: 0 auto; }
+      @media (max-width: 900px) { .benefits-grid { grid-template-columns: repeat(2, 1fr); } }
+      @media (max-width: 520px) { .benefits-grid { grid-template-columns: 1fr; } }
+      .benefit { background: var(--card); padding: 28px 24px; }
+      .benefit h3 { font-size: 16px; font-weight: 700; margin: 0 0 10px; }
+      .benefit p { font-size: 14px; color: var(--text-muted); margin: 0; line-height: 1.6; }
 
       /* NUMBERED POINTS */
       .points { display: grid; gap: 24px; max-width: 900px; }
@@ -265,12 +318,78 @@
             <p class="hero-eyebrow"><span class="dot"></span> How to Help · Legacy Circle</p>
             <h1>Be one of the first to <em>build lasting care</em>.</h1>
             <p class="hero-lede">
-              The Legacy Circle is an invitation to become a Founding Legacy Donor — part of the first group of people, families, and businesses helping launch The 1884 Fund and the support system fire families can count on for years to come.
+              The Legacy Circle recognizes individuals, families, and businesses making a sustained commitment to The 1884 Fund — Round Rock Fire Foundation's dedicated emergency-relief program for fire families. Founding Legacy Donors are the first group helping build the support system fire families can count on for years to come.
             </p>
             <div class="cta-row">
               <a class="btn btn-primary btn-lg" href="https://ctxcf.networkforgood.com/projects/252774-the-round-rock-fire-foundation" target="_blank" rel="noopener noreferrer">Become a Founding Legacy Donor</a>
               <a class="btn btn-ghost btn-lg" href="/#/the-1884-fund">See How Your Gift Is Used</a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="band band-alt" id="giving-levels">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Join The Legacy Circle</p>
+            <h2>Build lasting support through The 1884 Fund.</h2>
+            <p>Two simple ways to become a Founding Legacy Donor — a one-time founding gift, or a monthly gift that adds up to the same impact every year.</p>
+          </div>
+
+          <div class="giving-grid">
+            <div class="giving-card featured">
+              <span class="badge">Founding Legacy Gift</span>
+              <div class="amount-label">One-Time</div>
+              <div class="amount"><span class="accent">$1,884</span></div>
+              <p class="gift-name">Founding Legacy Gift</p>
+              <p class="gift-desc">A single gift of $1,884 — honoring the year the Round Rock Fire Department was founded — provides a full year of Legacy Circle recognition and benefits.</p>
+              <a class="btn btn-primary" href="https://ctxcf.networkforgood.com/projects/252774-the-round-rock-fire-foundation" target="_blank" rel="noopener noreferrer">Give $1,884 Once</a>
+            </div>
+            <div class="giving-card">
+              <span class="badge">Legacy Circle Gift</span>
+              <div class="amount-label">Monthly</div>
+              <div class="amount"><span class="accent">$157</span> <span style="font-size: 15px; font-weight: 600; color: var(--text-dim);">/ month</span></div>
+              <p class="gift-name">Legacy Circle Gift</p>
+              <p class="gift-desc">A recurring gift of $157 a month provides $1,884 in support every year and continues until canceled — sustaining giving without a single large gift.</p>
+              <a class="btn btn-primary" href="https://ctxcf.networkforgood.com/projects/252774-the-round-rock-fire-foundation" target="_blank" rel="noopener noreferrer">Give $157 Monthly</a>
+            </div>
+          </div>
+          <p class="giving-note">When you reach the giving form, select "Recurring Donation" and enter $157 for the monthly gift, or enter $1,884 as your one-time amount. Gifts are processed securely through Central Texas Community Foundation and Network for Good, and are fully tax-deductible.</p>
+        </div>
+      </section>
+
+      <section class="band">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Legacy Circle Members Receive</p>
+            <h2>Recognition built to grow with the Fund.</h2>
+          </div>
+          <div class="benefits-grid">
+            <div class="benefit">
+              <h3>The 1884 Update</h3>
+              <p>Quarterly Foundation news, program updates, upcoming events, and accomplishments — before they go public.</p>
+            </div>
+            <div class="benefit">
+              <h3>Annual Impact Report</h3>
+              <p>A year-end summary showing the real impact made possible through Legacy Circle donor support.</p>
+            </div>
+            <div class="benefit">
+              <h3>Donor Recognition</h3>
+              <p>Optional recognition on the Round Rock Fire Foundation website and in select Foundation materials.</p>
+            </div>
+            <div class="benefit">
+              <h3>Early 1884 Fund Updates</h3>
+              <p>Advance notice of significant programs, initiatives, and events supported by the Fund.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="band band-alt">
+        <div class="container">
+          <div class="tagline">
+            <blockquote>"Rooted in legacy. Driven by compassion. Powered by community."</blockquote>
+            <div class="credit">— The Round Rock Fire Foundation</div>
           </div>
         </div>
       </section>
@@ -305,15 +424,6 @@
 
       <section class="band band-alt">
         <div class="container">
-          <div class="tagline">
-            <blockquote>"Rooted in legacy. Driven by compassion. Powered by community."</blockquote>
-            <div class="credit">— The Round Rock Fire Foundation</div>
-          </div>
-        </div>
-      </section>
-
-      <section class="band">
-        <div class="container">
           <div class="recognition">
             <p class="heart-line">A note on recognition</p>
             <p>As the Foundation grows, Founding Legacy Donor recognition will begin as gifts are received. This page invites people into the circle rather than showing names that have not yet been recorded.</p>
@@ -325,7 +435,7 @@
       <section class="closer">
         <div class="container">
           <h2>Ready to join the Legacy Circle?</h2>
-          <p>Two paths in. Either donate directly through our partner Network for Good, or reach out for a personal conversation about pledges, corporate giving, or named recognition.</p>
+          <p>Choose your path: give $1,884 once, give $157 a month, or reach out for a personal conversation about pledges, corporate giving, or named recognition.</p>
           <div class="cta-row">
             <a class="btn btn-primary btn-lg" href="https://ctxcf.networkforgood.com/projects/252774-the-round-rock-fire-foundation" target="_blank" rel="noopener noreferrer">Become a Founding Legacy Donor</a>
             <a class="btn btn-ghost btn-lg" href="mailto:info@roundrockfirefoundation.org?subject=Legacy%20Circle%20%2F%20Founding%20Gift%20Inquiry&body=Hi%20RRFF%20team%2C%0A%0AI'd%20like%20to%20learn%20more%20about%20joining%20the%20Legacy%20Circle%20or%20discussing%20a%20founding%20gift.%0A%0ANote%3A%0A%0AThanks%2C">Email RRFF</a>
