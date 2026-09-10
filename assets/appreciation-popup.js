@@ -1,7 +1,7 @@
 /**
  * appreciation-popup.js
  *
- * Homepage-only popup promoting the Round Rock Express Appreciation Night
+ * Homepage-only popup promoting the Round Rock Express Foundation Night
  * (Saturday, September 19, 2026). Shows once per browser session, a beat
  * after the page loads, with a link to the event page and the ticket page.
  *
@@ -57,6 +57,7 @@
       '.rrff-apn-title{font-family:"Playfair Display",Georgia,serif;font-weight:700;' +
       'font-size:27px;color:hsl(40,20%,95%);margin:0 0 6px;line-height:1.15;}' +
       '.rrff-apn-title em{color:hsl(43,75%,55%);font-style:italic;}' +
+      '.rrff-apn-venue{display:block;font-size:0.6em;font-style:italic;color:hsl(43,75%,55%);font-weight:600;margin-top:4px;}' +
       '.rrff-apn-sub{font-size:14px;color:hsl(40,10%,72%);margin:0 0 18px;line-height:1.5;}' +
       '.rrff-apn-sub strong{color:hsl(40,20%,95%);}' +
       '.rrff-apn-code{display:inline-block;font-size:12px;font-weight:700;letter-spacing:0.5px;' +
@@ -104,7 +105,7 @@
     overlay.className = 'rrff-apn-overlay';
     overlay.setAttribute('role', 'dialog');
     overlay.setAttribute('aria-modal', 'true');
-    overlay.setAttribute('aria-label', 'Round Rock Express Appreciation Night');
+    overlay.setAttribute('aria-label', 'Round Rock Express Foundation Night at Dell Diamond');
 
     overlay.innerHTML =
       '<div class="rrff-apn-card">' +
@@ -113,7 +114,7 @@
       '  </div>' +
       '  <div class="rrff-apn-body">' +
       '    <p class="rrff-apn-eyebrow">Saturday, September 19, 2026</p>' +
-      '    <h2 class="rrff-apn-title">Appreciation <em>Night</em></h2>' +
+      '    <h2 class="rrff-apn-title">Foundation <em>Night</em><span class="rrff-apn-venue">at Dell Diamond</span></h2>' +
       '    <p class="rrff-apn-sub">Join us at Dell Diamond as the <strong>Round Rock Express</strong> host the Tacoma Rainiers &mdash; honoring our firefighters and their families, with a Cowboy Hat Giveaway while supplies last.</p>' +
       '    <span class="rrff-apn-code">Discount code RRFIRE</span>' +
       '    <div class="rrff-apn-actions">' +
