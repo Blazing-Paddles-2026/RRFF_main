@@ -222,6 +222,65 @@
   color: var(--gold); margin: 0;
 }
 
+/* Countdown */
+.an-countdown-wrap { margin: 0 0 32px; }
+.an-countdown-label-top {
+  font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
+  color: hsl(0,0%,68%); margin: 0 0 14px;
+}
+.an-countdown { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.an-countdown-item {
+  background: hsla(0, 0%, 100%, 0.03);
+  border: 1px solid hsla(43, 75%, 55%, 0.24);
+  border-radius: 12px;
+  padding: 12px 16px;
+  min-width: 68px;
+  text-align: center;
+}
+.an-countdown-num {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 800; font-size: 26px; line-height: 1;
+  color: var(--gold);
+  font-variant-numeric: tabular-nums;
+}
+.an-countdown-unit {
+  font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+  color: hsl(0,0%,68%); margin-top: 6px;
+}
+.an-countdown-live {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic; font-weight: 700; font-size: 18px;
+  color: var(--gold); margin: 0;
+}
+
+/* Special Recognition */
+.an-honoree {
+  background: linear-gradient(180deg, hsl(213, 58%, 8%) 0%, hsl(213, 64%, 6%) 100%);
+  padding: 64px 24px;
+  border-top: 1px solid hsla(43, 75%, 55%, 0.18);
+  border-bottom: 1px solid hsla(43, 75%, 55%, 0.18);
+  text-align: center;
+}
+.an-honoree-inner { max-width: 620px; margin: 0 auto; }
+.an-honoree-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 800;
+  font-size: clamp(24px, 3.2vw, 34px);
+  color: #fff;
+  margin: 20px 0 16px;
+  line-height: 1.2;
+}
+.an-honoree-title em { color: var(--gold); font-style: italic; font-weight: 700; }
+.an-honoree-body {
+  font-size: 15.5px; line-height: 1.7; color: hsl(0,0%,80%);
+  margin: 0 0 18px;
+}
+.an-honoree-note {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic; font-weight: 600; font-size: 15px;
+  color: var(--gold); margin: 0;
+}
+
 /* Bottom strip CTA */
 .fn-bottom-cta {
   text-align: center;
@@ -269,6 +328,16 @@
 
     <p class="an-subtitle">Honoring Round Rock Firefighters &amp; Their Families</p>
 
+    <div class="an-countdown-wrap" id="an-countdown-wrap">
+      <p class="an-countdown-label-top">Counting Down to First Pitch</p>
+      <div class="an-countdown">
+        <div class="an-countdown-item"><div class="an-countdown-num" id="an-cd-d">&ndash;</div><div class="an-countdown-unit">Days</div></div>
+        <div class="an-countdown-item"><div class="an-countdown-num" id="an-cd-h">&ndash;</div><div class="an-countdown-unit">Hours</div></div>
+        <div class="an-countdown-item"><div class="an-countdown-num" id="an-cd-m">&ndash;</div><div class="an-countdown-unit">Minutes</div></div>
+        <div class="an-countdown-item"><div class="an-countdown-num" id="an-cd-s">&ndash;</div><div class="an-countdown-unit">Seconds</div></div>
+      </div>
+    </div>
+
     <div class="an-photo-stadium">
       <div class="an-info-grid">
         <div class="an-info-card">
@@ -296,6 +365,7 @@
         <p class="an-code-sub">A portion of each ticket purchased with this code benefits the Round Rock Fire Foundation — supporting firefighter wellness, family assistance, and crisis relief for Round Rock fire families.</p>
         <div class="an-cta-row">
           <a class="btn btn-primary" href="https://mlb.tickets.com/?orgId=58189&agency=MILB_MPV&eventId=27354#/event/E27354/ticketlist/?view=sections&minPrice=15&maxPrice=23&quantity=2&sort=price_desc&ada=false&coupon=RRFIRE&seatSelection=false&onlyCoupon=true&onlyVoucher=false" target="_blank" rel="noopener noreferrer">Get Tickets Now →</a>
+          <a class="btn btn-ghost" href="/foundation-night-2026.ics" download="Foundation-Night-Sept-19-2026.ics">Add to Calendar</a>
           <a class="btn btn-ghost" href="/images/express-appreciation-night-sept2026-flyer.jpg" download="Round-Rock-Fire-Foundation-Night-at-Dell-Diamond-Sept2026-Flyer.jpg">Download Flyer</a>
           <a class="btn btn-ghost" href="/events/">See All Events</a>
         </div>
@@ -309,6 +379,15 @@
         <p class="an-tagline-bold">Baseball &amp; Gratitude!</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="an-honoree">
+  <div class="an-honoree-inner">
+    <span class="an-eyebrow">Special Recognition</span>
+    <h2 class="an-honoree-title">In Appreciation of <em>One of Our Own</em></h2>
+    <p class="an-honoree-body">This Foundation Night, we'll be pausing the game to recognize a Round Rock firefighter whose dedication to this department and this community goes far beyond the job.</p>
+    <p class="an-honoree-note">Their story will be shared at Dell Diamond. &#9733;</p>
   </div>
 </section>
 
@@ -330,6 +409,33 @@
 </footer>
 
 <script src="/assets/page-nav.js" defer></script>
+<script>
+(function(){
+  var target = new Date('2026-09-19T19:00:00-05:00').getTime();
+  var wrap = document.getElementById('an-countdown-wrap');
+  var d = document.getElementById('an-cd-d');
+  var h = document.getElementById('an-cd-h');
+  var m = document.getElementById('an-cd-m');
+  var s = document.getElementById('an-cd-s');
+  if (!wrap || !d) return;
+  var timer;
+  function pad(n){ return String(n).padStart(2, '0'); }
+  function tick(){
+    var diff = target - Date.now();
+    if (diff <= 0) {
+      wrap.innerHTML = '<p class="an-countdown-live">First pitch is tonight &mdash; see you at Dell Diamond! &#9733;</p>';
+      clearInterval(timer);
+      return;
+    }
+    d.textContent = Math.floor(diff / 86400000);
+    h.textContent = pad(Math.floor((diff % 86400000) / 3600000));
+    m.textContent = pad(Math.floor((diff % 3600000) / 60000));
+    s.textContent = pad(Math.floor((diff % 60000) / 1000));
+  }
+  tick();
+  timer = setInterval(tick, 1000);
+})();
+</script>
 
 </body>
 </html>
