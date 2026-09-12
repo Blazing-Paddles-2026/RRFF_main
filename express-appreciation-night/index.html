@@ -281,6 +281,41 @@
   color: var(--gold); margin: 0;
 }
 
+/* Recap video */
+.an-recap {
+  padding: 64px 24px;
+  text-align: center;
+}
+.an-recap-inner { max-width: 560px; margin: 0 auto; }
+.an-recap-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 800;
+  font-size: clamp(24px, 3.2vw, 34px);
+  color: var(--text);
+  margin: 20px 0 14px;
+  line-height: 1.2;
+}
+.an-recap-title em { color: var(--gold); font-style: italic; font-weight: 700; }
+.an-recap-body {
+  font-size: 15.5px; line-height: 1.7; color: var(--text-muted);
+  margin: 0 0 28px;
+}
+.an-recap-video-wrap {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid hsla(43, 75%, 55%, 0.22);
+  max-width: 340px;
+  margin: 0 auto;
+  background: hsl(0, 0%, 2%);
+}
+.an-recap-video-wrap video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1080 / 1848;
+  object-fit: cover;
+}
+
 /* Bottom strip CTA */
 .fn-bottom-cta {
   text-align: center;
@@ -388,6 +423,19 @@
     <h2 class="an-honoree-title">In Appreciation of <em>One of Our Own</em></h2>
     <p class="an-honoree-body">This Foundation Night, we'll be pausing the game to recognize a Round Rock firefighter whose dedication to this department and this community goes far beyond the job.</p>
     <p class="an-honoree-note">Their story will be shared at Dell Diamond. &#9733;</p>
+  </div>
+</section>
+
+<section class="an-recap">
+  <div class="an-recap-inner">
+    <span class="an-eyebrow">From Last Year</span>
+    <h2 class="an-recap-title">The Night of <em>Our Lives</em></h2>
+    <p class="an-recap-body">Fire trucks at the gates, boots full of memories, first pitches, and a stadium full of community. Here's a look back at last year's Foundation Night &mdash; and why we can't wait to do it again.</p>
+    <div class="an-recap-video-wrap">
+      <video controls preload="metadata" poster="/images/foundation-night-2025-recap-poster.jpg" playsinline>
+        <source src="/videos/foundation-night-2025-recap.mp4" type="video/mp4">
+      </video>
+    </div>
   </div>
 </section>
 
