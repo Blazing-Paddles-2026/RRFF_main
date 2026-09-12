@@ -1,7 +1,7 @@
 /* Main React-app nav rewrite
    ==========================
    The compiled React bundle renders a flat nav (Home · 1884 Fund · Events ·
-   History · Press Room · Get Involved · Chap's Corner · Donate).
+   History · Press Room · Get Involved · Donate).
 
    This shim rewrites it in place to:
      Home · [Who We Are ▾] · [Our Programs ▾] · Events · Press Room ·
@@ -23,7 +23,6 @@
     ] },
     { type: 'group', label: 'Our Programs', items: [
         { label: 'The 1884 Fund', href: '#/the-1884-fund' },
-        { label: "Chap's Corner", href: 'https://chap.roundrockfirefoundation.org/firechaplain' },
         { label: 'Legacy Circle', href: '/legacy-circle/' },
     ] },
     { type: 'group', label: 'Our Events', items: [
