@@ -33,7 +33,7 @@
     pressRoom:  { label: 'Press Room',  href: '/#/press-room' },
     getInvolved:{ label: 'Get Involved',href: '/#/get-involved' },
   };
-  const DONATE_HREF = 'https://ctxcf.networkforgood.com/projects/252774-the-round-rock-fire-foundation';
+  const DONATE_HREF = 'https://ctxcf.fcsuite.com/erp/donate/create/fund?funit_id=1111';
 
   function buildDesktop() {
     return `

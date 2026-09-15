@@ -10,7 +10,7 @@
    It runs on first paint and on every SPA mutation (the React tree can
    re-render). Idempotent via a data attribute marker. */
 (function () {
-  const DONATE_HREF = 'https://ctxcf.networkforgood.com/projects/252774-the-round-rock-fire-foundation';
+  const DONATE_HREF = 'https://ctxcf.fcsuite.com/erp/donate/create/fund?funit_id=1111';
 
   const NAV = [
     { type: 'link',  label: 'Home', href: '#/' },
