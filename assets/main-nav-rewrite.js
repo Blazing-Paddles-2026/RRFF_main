@@ -33,6 +33,7 @@
     ] },
     { type: 'link',  label: 'Press Room',  href: '#/press-room' },
     { type: 'link',  label: 'Get Involved',href: '#/get-involved' },
+    { type: 'link',  label: "Chap's Corner", href: 'https://chap.roundrockfirefoundation.org/firechaplain' },
   ];
 
   function makeDesktopGroup(label, items) {
