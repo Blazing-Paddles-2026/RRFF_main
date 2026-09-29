@@ -25,7 +25,6 @@
       label: 'Our Events',
       items: [
         { label: 'All Events',                   href: '/events/' },
-        { label: 'Foundation Night · Sep 19',  href: '/express-appreciation-night/' },
         { label: 'Blazing Paddles · Oct 10',     href: 'https://pickleball.roundrockfirefoundation.org/' },
         { label: 'Spouse Conference · Nov 6–8', href: 'https://spouseconference.roundrockfirefoundation.org/' },
       ],
