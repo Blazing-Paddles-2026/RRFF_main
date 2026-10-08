@@ -56,50 +56,7 @@
     wrap.setAttribute('data-rrff-2026-callout', 'true');
     wrap.style.cssText = 'margin-top: 1.5rem;';
 
-    var inner;
-    if (SPONSORS_2026 && SPONSORS_2026.length > 0) {
-      // 2026 sponsors confirmed: render them as chips
-      inner =
-        '<p style="color: hsl(220,15%,40%); font-size: 0.875rem; margin-bottom: 1rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;">' +
-          '2026 Blazing Paddles Pickleball Tournament Sponsors' +
-        '</p>' +
-        '<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">';
-      for (var s = 0; s < SPONSORS_2026.length; s++) {
-        var name = String(SPONSORS_2026[s]).replace(/</g, '&lt;');
-        inner +=
-          '<div style="border: 1px solid hsl(40,15%,90%); border-radius: 0.5rem; padding: 0.75rem 1.5rem; color: hsl(220,15%,40%); font-size: 0.875rem;">' +
-            name +
-          '</div>';
-      }
-      inner += '</div>';
-    } else {
-      // No 2026 sponsors yet: invite businesses to sponsor
-      inner =
-        '<div style="max-width: 640px; margin: 0 auto; padding: 2rem 1.5rem; border: 1px solid hsl(40,15%,90%); border-radius: 0.75rem; background: hsl(40,20%,98%);">' +
-          '<p style="color: hsl(43,75%,45%); font-size: 0.8125rem; margin: 0 0 0.5rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;">' +
-            'Blazing Paddles 2026' +
-          '</p>' +
-          '<h3 style="font-family: \'Playfair Display\', Georgia, serif; color: hsl(220,15%,15%); font-size: 1.5rem; line-height: 1.25; margin: 0 0 0.75rem; font-weight: 600;">' +
-            'Be part of the Blazing Paddles 2026 sponsor list.' +
-          '</h3>' +
-          '<p style="color: hsl(220,15%,40%); font-size: 0.95rem; line-height: 1.5; margin: 0 0 1.25rem;">' +
-            'Sponsorships are open for the October 10, 2026 tournament. ' +
-            'Four tiers, every dollar tax-deductible, every gift directly supports Round Rock firefighter families.' +
-          '</p>' +
-          '<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem;">' +
-            '<a href="https://pickleball.roundrockfirefoundation.org/sponsor.html" target="_blank" rel="noopener noreferrer" ' +
-               'style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; border-radius: 999px; ' +
-                      'background: hsl(43,75%,55%); color: hsl(0,0%,4%); font-weight: 700; font-size: 0.9375rem; text-decoration: none;">' +
-              'See Sponsor Levels' +
-            '</a>' +
-            '<a href="mailto:info@roundrockfirefoundation.org?subject=Blazing%20Paddles%202026%20Sponsorship" ' +
-               'style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; border-radius: 999px; ' +
-                      'border: 1px solid hsl(40,15%,80%); color: hsl(220,15%,25%); font-weight: 600; font-size: 0.9375rem; text-decoration: none; background: white;">' +
-              'Email to Sponsor' +
-            '</a>' +
-          '</div>' +
-        '</div>';
-    }
+    var inner = "<style>#blazing-paddles-sponsors{margin:2rem auto;max-width:1100px;color:#040e27}#blazing-paddles-sponsors h2{font-size:28px;margin:8px 0 24px}#blazing-paddles-sponsors .confirmed-sponsors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}#blazing-paddles-sponsors figure{margin:0;min-width:0}#blazing-paddles-sponsors img{display:block;width:100%;height:auto;border-radius:10px}#blazing-paddles-sponsors figcaption{padding:12px 0;line-height:1.4;font-size:16px}#blazing-paddles-sponsors strong,#blazing-paddles-sponsors span{display:block}#blazing-paddles-sponsors span{font-size:14px;margin-top:4px}@media(min-width:900px){#blazing-paddles-sponsors .confirmed-sponsors{grid-template-columns:repeat(4,minmax(0,1fr))}}@media(max-width:420px){#blazing-paddles-sponsors .confirmed-sponsors{grid-template-columns:1fr}}</style><section class=\"section section-alt\" id=\"blazing-paddles-sponsors\"><div class=\"container\"><header class=\"section-head\"><p class=\"kicker\">2026 Blazing Paddles</p><h2 class=\"section-title\">Thank You to Our Sponsors</h2></header><div class=\"confirmed-sponsors\"><figure class=\"confirmed-sponsor\"><img src=\"https://pickleball.roundrockfirefoundation.org/assets/images/sponsor-2026-kalahari.webp\" alt=\"Kalahari Resorts &amp; Conventions \u2014 Presenting Sponsor\" width=\"640\" height=\"800\" loading=\"lazy\"><figcaption><strong>Kalahari Resorts &amp; Conventions</strong><span>Presenting Sponsor</span></figcaption></figure><figure class=\"confirmed-sponsor\"><img src=\"https://pickleball.roundrockfirefoundation.org/assets/images/sponsor-2026-primerica.webp\" alt=\"Primerica \u2014 Jeff &amp; Alyse Paull \u2014 Chief Sponsor\" width=\"640\" height=\"800\" loading=\"lazy\"><figcaption><strong>Primerica \u2014 Jeff &amp; Alyse Paull</strong><span>Chief Sponsor</span></figcaption></figure><figure class=\"confirmed-sponsor\"><img src=\"https://pickleball.roundrockfirefoundation.org/assets/images/sponsor-2026-john-king.webp\" alt=\"John King Construction, Ltd. \u2014 Lieutenant Sponsor\" width=\"640\" height=\"800\" loading=\"lazy\"><figcaption><strong>John King Construction, Ltd.</strong><span>Lieutenant Sponsor</span></figcaption></figure><figure class=\"confirmed-sponsor\"><img src=\"https://pickleball.roundrockfirefoundation.org/assets/images/sponsor-2026-nunn.webp\" alt=\"Gerald Nunn Electric \u2014 Firefighter Sponsor\" width=\"640\" height=\"800\" loading=\"lazy\"><figcaption><strong>Gerald Nunn Electric</strong><span>Firefighter Sponsor</span></figcaption></figure><figure class=\"confirmed-sponsor\"><img src=\"https://pickleball.roundrockfirefoundation.org/assets/images/sponsor-2026-utz.webp\" alt=\"Utz Environmental Services \u2014 Firefighter Sponsor\" width=\"640\" height=\"800\" loading=\"lazy\"><figcaption><strong>Utz Environmental Services</strong><span>Firefighter Sponsor</span></figcaption></figure><figure class=\"confirmed-sponsor\"><img src=\"https://pickleball.roundrockfirefoundation.org/assets/images/sponsor-2026-watkins.webp\" alt=\"Watkins Insurance Group \u2014 Firefighter Sponsor\" width=\"640\" height=\"800\" loading=\"lazy\"><figcaption><strong>Watkins Insurance Group</strong><span>Firefighter Sponsor</span></figcaption></figure><figure class=\"confirmed-sponsor\"><img src=\"https://pickleball.roundrockfirefoundation.org/assets/images/sponsor-2026-heb.webp\" alt=\"H-E-B \u2014 Firefighter Sponsor\" width=\"640\" height=\"800\" loading=\"lazy\"><figcaption><strong>H-E-B</strong><span>Firefighter Sponsor</span></figcaption></figure><figure class=\"confirmed-sponsor\"><img src=\"https://pickleball.roundrockfirefoundation.org/assets/images/sponsor-2026-blooms-skulls.webp\" alt=\"Blooms &amp; Skulls Face &amp; Body Art \u2014 Firefighter Sponsor\" width=\"640\" height=\"800\" loading=\"lazy\"><figcaption><strong>Blooms &amp; Skulls Face &amp; Body Art</strong><span>Firefighter Sponsor</span></figcaption></figure></div></div></section>";
 
     wrap.innerHTML = inner;
     return wrap;
