@@ -24,9 +24,10 @@
     events: {
       label: 'Our Events',
       items: [
-        { label: 'All Events',                   href: '/events/' },
-        { label: 'Blazing Paddles · Oct 10',     href: 'https://pickleball.roundrockfirefoundation.org/' },
+        { label: 'All Events', href: '/events/' },
         { label: 'Spouse Conference · Nov 6–8', href: 'https://spouseconference.roundrockfirefoundation.org/' },
+        { label: 'Past Events', heading: true },
+        { label: 'Blazing Paddles Pickleball Tournament', href: 'https://pickleball.roundrockfirefoundation.org/' },
       ],
     },
     pressRoom:  { label: 'Press Room',  href: '/#/press-room' },
@@ -52,7 +53,7 @@
       <div class="rrff-dropdown">
         <button type="button" aria-haspopup="true" aria-expanded="false">${NAV_GROUPS.events.label}</button>
         <div class="rrff-dropdown-menu" role="menu">
-          ${NAV_GROUPS.events.items.map(i => `<a href="${i.href}" role="menuitem"${/^https?:/.test(i.href) ? ' target="_blank" rel="noopener noreferrer"' : ''}>${i.label}</a>`).join('')}
+          ${NAV_GROUPS.events.items.map(i => i.heading ? `<div role="presentation" style="display:block;margin:8px 0 4px;padding:10px 14px 4px;border-top:1px solid rgba(255,255,255,.12);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#9D8346;">${i.label}</div>` : `<a href="${i.href}" role="menuitem"${/^https?:/.test(i.href) ? ' target="_blank" rel="noopener noreferrer"' : ''}>${i.label}</a>`).join('')}
         </div>
       </div>
       <a href="${NAV_GROUPS.pressRoom.href}">${NAV_GROUPS.pressRoom.label}</a>
@@ -69,7 +70,7 @@
       <div class="group-label">${NAV_GROUPS.programs.label}</div>
       ${NAV_GROUPS.programs.items.map(i => `<a class="sub" href="${i.href}">${i.label}</a>`).join('')}
       <div class="group-label">${NAV_GROUPS.events.label}</div>
-      ${NAV_GROUPS.events.items.map(i => `<a class="sub" href="${i.href}"${/^https?:/.test(i.href) ? ' target="_blank" rel="noopener noreferrer"' : ''}>${i.label}</a>`).join('')}
+      ${NAV_GROUPS.events.items.map(i => i.heading ? `<div class="group-label" style="margin-top:8px;border-top:1px solid rgba(255,255,255,.12);padding-top:10px;">${i.label}</div>` : `<a class="sub" href="${i.href}"${/^https?:/.test(i.href) ? ' target="_blank" rel="noopener noreferrer"' : ''}>${i.label}</a>`).join('')}
       <a href="${NAV_GROUPS.pressRoom.href}">${NAV_GROUPS.pressRoom.label}</a>
       <a href="${NAV_GROUPS.getInvolved.href}">${NAV_GROUPS.getInvolved.label}</a>
       <a class="rrff-donate" href="${DONATE_HREF}" target="_blank" rel="noopener noreferrer">Donate</a>
