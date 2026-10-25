@@ -41,6 +41,7 @@
       '<section class="c84-hero">',
         '<div class="c84-hero-photo" aria-hidden="true"></div>',
         '<div class="c84-hero-copy">',
+          '<h2 class="c84-headline">Be the reason a fire family doesn\u2019t face it alone</h2>',
           '<p class="c84-kicker">Round Rock Fire Foundation</p>',
           '<h1 class="c84-logo-h"><img src="/images/1884-fund-logo-navy.png" alt="The 1884 Fund" width="280"></h1>',
           STAR,
