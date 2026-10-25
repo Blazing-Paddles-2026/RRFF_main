@@ -23,7 +23,6 @@
     ] },
     { type: 'group', label: 'Our Programs', items: [
         { label: 'The 1884 Fund', href: '#/the-1884-fund' },
-        { label: 'Legacy Circle', href: '/legacy-circle/' },
     ] },
     { type: 'group', label: 'Our Events', items: [
         { label: 'All Events', href: '/events/' },

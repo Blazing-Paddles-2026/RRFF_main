@@ -6,14 +6,14 @@
    Routes:
      Why  → #/the-1884-fund
      What → #/the-1884-fund
-     How  → #/legacy-circle  (Squarespace-hosted page on this site)
+     How  → #/the-1884-fund  (Legacy Circle retired Oct 2026)
 */
 
 (function () {
   const ROUTES = {
     'why':  '/#/the-1884-fund',
     'what': '/#/the-1884-fund',
-    'how':  '/legacy-circle/',
+    'how':  '/#/the-1884-fund',
   };
 
   function wrap() {

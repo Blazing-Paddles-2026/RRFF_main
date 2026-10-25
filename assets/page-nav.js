@@ -18,7 +18,6 @@
       label: 'Our Programs',
       items: [
         { label: 'The 1884 Fund',  href: '/#/the-1884-fund' },
-        { label: 'Legacy Circle',  href: '/legacy-circle/' },
       ],
     },
     events: {
