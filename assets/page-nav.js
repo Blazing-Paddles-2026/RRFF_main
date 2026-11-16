@@ -24,8 +24,9 @@
       label: 'Our Events',
       items: [
         { label: 'All Events', href: '/events/' },
-        { label: 'Spouse Conference · Nov 6–8', href: 'https://spouseconference.roundrockfirefoundation.org/' },
+        { label: '2027 Spouse Conference · Nov 5–7', href: 'https://spouseconference.roundrockfirefoundation.org/' },
         { label: 'Past Events', heading: true },
+        { label: '2026 National Spouse Conference', href: '/events/#spouse-conference-2026' },
         { label: 'Blazing Paddles Pickleball Tournament', href: 'https://pickleball.roundrockfirefoundation.org/' },
       ],
     },
