@@ -111,6 +111,12 @@
         const dd = btn.parentElement;
         const isOpen = dd.classList.toggle('is-open');
         btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        document.querySelectorAll('.rrff-dropdown.is-open').forEach(other => {
+          if (other !== dd) {
+            other.classList.remove('is-open');
+            other.querySelector('button')?.setAttribute('aria-expanded', 'false');
+          }
+        });
         e.stopPropagation();
       });
     });

@@ -50,8 +50,74 @@ nav:has(.rrff-main-dd:focus-within) {
   color: hsl(43, 75%, 60%);
 }
 
-/* Keep the primary navigation across the header, including on tablets.
-   Phones retain the existing readable, expandable menu. */
+/* Keep the primary navigation across the header, including on tablets. */
+@media (max-width: 767px) {
+  nav[data-rrff-horizontal] {
+    position: sticky !important;
+    overflow: visible !important;
+  }
+  nav[data-rrff-horizontal] [data-rrff-mobile-donate] {
+    height: auto;
+    flex-wrap: wrap;
+  }
+  nav[data-rrff-horizontal] [data-rrff-icon-added] {
+    min-height: 4rem;
+    order: 0;
+  }
+  nav[data-rrff-horizontal] [data-rrff-mobile-donate] > .lg\:hidden {
+    order: 1;
+  }
+  nav[data-rrff-horizontal] [data-rrff-mobile-donate] > .lg\:hidden > a {
+    display: flex;
+    align-items: center;
+    min-height: 2.75rem;
+  }
+  nav[data-rrff-horizontal] button.lg\:hidden,
+  nav[data-rrff-horizontal] .px-4.py-4.space-y-3 {
+    display: none !important;
+  }
+  .rrff-main-links {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    flex-basis: 100%;
+    order: 2;
+    gap: 0.25rem 0.5rem;
+    padding-block: 0.5rem 0.75rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .rrff-main-links > a,
+  .rrff-main-links .rrff-main-dd-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.75rem;
+    width: 100%;
+    font-size: 0.875rem;
+    line-height: 1.3;
+    text-align: center;
+  }
+  .rrff-main-links > a:nth-child(7) { grid-column: 2; }
+  .rrff-main-links > a:last-child { display: none; }
+  .rrff-main-dd { position: static; }
+  .rrff-main-dd-menu {
+    top: 100%;
+    left: 1rem;
+    right: 1rem;
+    min-width: 0;
+    max-height: calc(100dvh - 15rem);
+    overflow-y: auto;
+    transform: none !important;
+    transition: opacity 0.15s;
+    visibility: hidden;
+  }
+  .rrff-main-dd:not(.is-open) .rrff-main-dd-menu {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .rrff-main-dd.is-open .rrff-main-dd-menu {
+    visibility: visible;
+  }
+}
 @media (min-width: 768px) {
   nav[data-rrff-horizontal] {
     overflow: visible !important;
