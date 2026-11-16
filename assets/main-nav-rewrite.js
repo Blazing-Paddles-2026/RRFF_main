@@ -103,6 +103,8 @@
   function rewriteDesktop() {
     const desktop = document.querySelector('nav .hidden.lg\\:flex.items-center.gap-6');
     if (!desktop || desktop.dataset.rrffNavRewritten === '1') return;
+    desktop.classList.add('rrff-main-links');
+    desktop.closest('nav').dataset.rrffHorizontal = '1';
     desktop.dataset.rrffNavRewritten = '1';
     desktop.innerHTML = '';
     NAV.forEach(item => {

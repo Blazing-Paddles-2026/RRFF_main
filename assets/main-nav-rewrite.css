@@ -49,3 +49,50 @@ nav:has(.rrff-main-dd:focus-within) {
   background: hsla(43, 75%, 55%, 0.10);
   color: hsl(43, 75%, 60%);
 }
+
+/* Keep the primary navigation across the header, including on tablets.
+   Phones retain the existing readable, expandable menu. */
+@media (min-width: 768px) {
+  nav[data-rrff-horizontal] {
+    overflow: visible !important;
+  }
+  nav[data-rrff-horizontal] > div {
+    max-width: none;
+    padding-inline: clamp(1.5rem, 3vw, 4rem);
+  }
+  nav[data-rrff-horizontal] [data-rrff-icon-added] {
+    flex-shrink: 0;
+  }
+  .rrff-main-links {
+    display: flex !important;
+    flex: 1;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-left: clamp(2rem, 5vw, 6rem);
+  }
+  .rrff-main-links > a,
+  .rrff-main-dd-btn {
+    white-space: nowrap;
+  }
+  nav[data-rrff-horizontal] .lg\:hidden,
+  nav[data-rrff-horizontal] .px-4.py-4.space-y-3 {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 1099px) {
+  nav[data-rrff-horizontal] [data-rrff-mobile-donate] {
+    height: auto;
+    flex-wrap: wrap;
+  }
+  nav[data-rrff-horizontal] [data-rrff-icon-added] {
+    min-height: 4rem;
+  }
+  .rrff-main-links {
+    flex-basis: 100%;
+    margin-left: 0;
+    padding-bottom: 1rem;
+  }
+  nav[data-rrff-horizontal] + main {
+    padding-top: 3rem;
+  }
+}

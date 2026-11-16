@@ -124,6 +124,44 @@ a:hover { color: var(--gold-hover); }
 .rrff-mobile-menu .group-label { padding: 1.1rem 0 0.3rem; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); }
 .rrff-mobile-menu a.rrff-donate { margin-top: 1rem; text-align: center; border-bottom: none; }
 
+/* Match the full-width horizontal navigation on the main site. */
+@media (min-width: 768px) {
+  .rrff-nav-inner {
+    max-width: none;
+    padding-inline: clamp(1.5rem, 3vw, 4rem);
+  }
+  .rrff-brand { flex-shrink: 0; }
+  .rrff-nav-links {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-left: clamp(2rem, 5vw, 6rem);
+  }
+  .rrff-nav-links > a,
+  .rrff-nav-links > .rrff-dropdown > button {
+    white-space: nowrap;
+  }
+  .rrff-nav .rrff-mobile-right,
+  .rrff-nav .rrff-menu-btn,
+  .rrff-nav .rrff-donate-mobile,
+  .rrff-nav .rrff-mobile-menu.is-open {
+    display: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 1099px) {
+  .rrff-nav-row {
+    height: auto;
+    flex-wrap: wrap;
+  }
+  .rrff-brand { min-height: 4rem; }
+  .rrff-nav-links {
+    flex-basis: 100%;
+    margin-left: 0;
+    padding-bottom: 1rem;
+  }
+}
+
 /* HERO */
 .hero { padding: 80px 0 56px; background:
   radial-gradient(ellipse at top right, hsla(43, 75%, 55%, 0.08), transparent 50%),
