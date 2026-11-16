@@ -32,7 +32,13 @@
       spouse.querySelector('h3').textContent = '2027 RRFF National Spouse Conference';
       spouse.querySelector('.text-xs.font-semibold').textContent = 'Upcoming Event';
       spouse.querySelector('p.text-xs').textContent = 'November 5–7, 2027';
-      spouse.querySelector('p.text-sm').textContent = 'Join us in Round Rock for an immersive, hands-on weekend built to strengthen firefighter marriages through shared experiences, expert guidance, and lasting connections. Registration opens April 1, 2027.';
+      var spouseDescription = spouse.querySelector('p.text-sm');
+      spouseDescription.textContent = 'Join us in Round Rock for an immersive, hands-on weekend built to strengthen firefighter marriages through shared experiences, expert guidance, and lasting connections.';
+      var registrationNote = document.createElement('p');
+      registrationNote.className = 'rrff-event-registration-note';
+      registrationNote.style.cssText = 'margin:0 0 12px;font-size:14px;font-weight:600;line-height:1.5;color:#e0b83f;';
+      registrationNote.textContent = 'Registration opens April 1st';
+      spouseDescription.insertAdjacentElement('afterend', registrationNote);
       spouse.querySelector('.flex.flex-wrap').innerHTML = '<a href="https://spouseconference.roundrockfirefoundation.org/" target="_blank" rel="noopener noreferrer" class="text-sm inline-flex items-center gap-1 text-gold hover:underline">View 2027 conference</a>';
     }
     if (foundation) foundation.parentElement.style.display = 'none';

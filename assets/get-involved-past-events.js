@@ -37,7 +37,13 @@
       pastLink.textContent = 'View past event';
       spouse.querySelector('h4').textContent = '2027 National Spouse Conference';
       spouse.querySelector('.text-gold.text-xs').textContent = 'November 5–7, 2027';
-      spouse.querySelector('p').textContent = 'A hands-on weekend for firefighter couples in Round Rock, Texas. Registration opens April 1, 2027.';
+      var spouseDescription = spouse.querySelector('p');
+      spouseDescription.textContent = 'A hands-on weekend for firefighter couples in Round Rock, Texas.';
+      var registrationNote = document.createElement('p');
+      registrationNote.className = 'rrff-event-registration-note';
+      registrationNote.style.cssText = 'margin:8px 0 0;font-size:14px;font-weight:600;line-height:1.5;color:#e0b83f;';
+      registrationNote.textContent = 'Registration opens April 1st';
+      spouseDescription.insertAdjacentElement('afterend', registrationNote);
       spouse.querySelector('a').textContent = 'View 2027 conference';
     }
     var completed = [spousePast, blazing, foundation];
