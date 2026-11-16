@@ -26,7 +26,7 @@
     ] },
     { type: 'group', label: 'Our Events', items: [
         { label: 'All Events', href: '/events/' },
-        { label: '2027 Spouse Conference · Nov 5–7', href: 'https://spouseconference.roundrockfirefoundation.org/' },
+        { label: '2027 Spouse Conference · Nov 5–7', href: 'https://spouseconference.roundrockfirefoundation.org/', note: 'Registration opens April 1, 2027' },
         { label: 'Past Events', heading: true },
         { label: '2026 National Spouse Conference', href: '/events/#spouse-conference-2026' },
         { label: 'Blazing Paddles Pickleball Tournament', href: 'https://pickleball.roundrockfirefoundation.org/' },
@@ -36,13 +36,17 @@
     { type: 'link',  label: "Chap's Corner", href: 'https://chap.roundrockfirefoundation.org/firechaplain' },
   ];
 
+  function registrationNote(item, mobile) {
+    return item.note ? `<p class="rrff-registration-note" style="margin:0;padding:0 12px ${mobile ? '8px' : '10px'};font-size:12px;line-height:1.45;color:#c9c3b5;">${item.note}</p>` : '';
+  }
+
   function makeDesktopGroup(label, items) {
     const wrap = document.createElement('div');
     wrap.className = 'rrff-main-dd';
     wrap.innerHTML = `
       <button type="button" class="text-sm transition-colors text-white/80 hover:text-gold rrff-main-dd-btn" aria-haspopup="true" aria-expanded="false">${label}</button>
       <div class="rrff-main-dd-menu" role="menu">
-        ${items.map(i => i.heading ? `<div role="presentation" style="display:block;margin:8px 0 4px;padding:10px 14px 4px;border-top:1px solid rgba(255,255,255,.12);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#9D8346;">${i.label}</div>` : `<a href="${i.href}" role="menuitem"${/^https?:/.test(i.href) ? ' target="_blank" rel="noopener noreferrer"' : ''}>${i.label}</a>`).join('')}
+        ${items.map(i => i.heading ? `<div role="presentation" style="display:block;margin:8px 0 4px;padding:10px 14px 4px;border-top:1px solid rgba(255,255,255,.12);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#9D8346;">${i.label}</div>` : `<a href="${i.href}" role="menuitem"${/^https?:/.test(i.href) ? ' target="_blank" rel="noopener noreferrer"' : ''}>${i.label}</a>${registrationNote(i)}`).join('')}
       </div>
     `;
     const btn = wrap.querySelector('button');
@@ -124,7 +128,7 @@
             html.push(`<div style="display:block;margin:8px 0 4px;padding:10px 14px 4px;border-top:1px solid rgba(255,255,255,.12);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#9D8346;">${sub.label}</div>`);
             return;
           }
-          html.push(`<a href="${sub.href}" class="block pl-3 py-1.5 text-sm transition-colors text-white/70 hover:text-gold"${/^https?:/.test(sub.href) ? ' target="_blank" rel="noopener noreferrer"' : ''}>${sub.label}</a>`);
+          html.push(`<a href="${sub.href}" class="block pl-3 py-1.5 text-sm transition-colors text-white/70 hover:text-gold"${/^https?:/.test(sub.href) ? ' target="_blank" rel="noopener noreferrer"' : ''}>${sub.label}</a>${registrationNote(sub, true)}`);
         });
       }
     });
